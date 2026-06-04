@@ -1,7 +1,7 @@
 .PHONY: up down migrate migration dev test test-live lint fmt install
 
 install:
-	uv venv
+	uv venv --python 3.11
 	. .venv/bin/activate && uv pip install -e ".[dev]" && playwright install chromium
 
 up:
