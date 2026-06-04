@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "id": "g-1001",
+      "title": "Backend Engineer (Node.js)",
+      "company": { "name": "Tokopedia" },
+      "city": { "name": "Jakarta" },
+      "workArrangementOption": "REMOTE",
+      "minSalary": 15000000,
+      "maxSalary": 22000000,
+      "currency": "IDR",
+      "description": "We are looking for a Node.js backend engineer. Skills: Node.js, Express, PostgreSQL, Docker, Kubernetes.",
+      "requirements": "3+ years experience. Node.js, Express, REST API design.",
+      "applyUrl": "https://glints.com/id/opportunities/jobs/g-1001",
+      "createdAt": "2026-05-25T00:00:00Z"
+    },
+    {
+      "id": "g-1002",
+      "title": "Senior Python Developer",
+      "company": { "name": "GoTo" },
+      "city": { "name": "Jakarta" },
+      "workArrangementOption": "HYBRID",
+      "minSalary": 20000000,
+      "maxSalary": 30000000,
+      "currency": "IDR",
+      "description": "Senior Python role with FastAPI and PostgreSQL. Skills: Python, FastAPI, PostgreSQL, Docker.",
+      "requirements": "5+ years Python.",
+      "applyUrl": "https://glints.com/id/opportunities/jobs/g-1002",
+      "createdAt": "2026-05-24T00:00:00Z"
+    }
+  ]
+}

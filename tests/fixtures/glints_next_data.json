@@ -1,0 +1,359 @@
+{
+  "props": {
+    "pageProps": {
+      "initialData": {
+        "code": 200,
+        "data": {
+          "CityId": 0,
+          "CitySubDivisionId": null,
+          "CompanyId": "0cfdb150-2f5c-4648-b1dd-d1a59445c72c",
+          "CountryCode": "ID",
+          "DistrictId": "63027b8c-d9a2-427c-b4d5-5d3f210f9932",
+          "HierarchicalJobCategoryId": "b16aede4-ad2c-4639-89d9-4614c19c3481",
+          "JobSkills": [
+            {
+              "mustHave": true,
+              "skill": {
+                "id": "1031669b-a066-44d3-a752-b2fde1ed6785",
+                "name": "Node.js",
+                "translationKey": "text-skill-nodejs"
+              }
+            },
+            {
+              "mustHave": true,
+              "skill": {
+                "id": "b6dd1192-9078-4078-8f58-dd6ba144a592",
+                "name": "Laravel",
+                "translationKey": "text-skill-laravel"
+              }
+            },
+            {
+              "mustHave": true,
+              "skill": {
+                "id": "104795e3-a3bc-4ba1-b6ec-ce9be6d5b120",
+                "name": "JavaScript",
+                "translationKey": "text-skill-javascript"
+              }
+            }
+          ],
+          "acceptsForeignApplications": false,
+          "attachmentsJsonString": "[]",
+          "bannerPic": null,
+          "benefits": [
+            {
+              "benefit": "PROFESSIONAL_DEVELOPMENT",
+              "description": "",
+              "logo": "professional_development",
+              "title": "Training/Certification"
+            },
+            {
+              "benefit": "CAREER_GROWTH",
+              "description": "",
+              "logo": "career_growth",
+              "title": "Career Path"
+            },
+            {
+              "benefit": "FLEXIBLE_WORK_HOURS",
+              "description": "",
+              "logo": "flexible_work_hours",
+              "title": "Flexible Hours"
+            },
+            {
+              "benefit": "THR_FINANCIAL_BENEFITS",
+              "description": "",
+              "logo": "",
+              "title": "THR"
+            },
+            {
+              "benefit": "VACATION_AND_LEAVES",
+              "description": "",
+              "logo": "vacation_and_leaves",
+              "title": "Annual Leave"
+            },
+            {
+              "benefit": "BPJS_TENAGA_KERJA_INSURANCE_AND_HEALTH",
+              "description": "",
+              "logo": "",
+              "title": "Work Insurance"
+            },
+            {
+              "benefit": "LOANS",
+              "description": "",
+              "logo": "loans",
+              "title": "Loan"
+            }
+          ],
+          "closedAt": null,
+          "company": {
+            "IndustryId": 4,
+            "LocationId": "0822446a-8784-4af4-bc88-9f9294fca382",
+            "address": "APL Tower 19th Floor At Central Park CBD, Jakarta Bara, DKI Jakarta",
+            "bannerPic": null,
+            "brandName": null,
+            "createdAt": "2023-06-28T10:50:03.320000Z",
+            "descriptionJsonString": "{\"blocks\":[{\"key\":\"7httk\",\"data\":{},\"text\":\"Nodewave.id is a leading software solution company specializing in innovative software solutions and cutting-edge artificial intelligence technologies. \",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[]},{\"key\":\"au0r\",\"data\":{},\"text\":\"At Nodewave, we pride ourselves on cultivating a dynamic and innovative company culture that blends professionalism with a vibrant, youthful energy. Our employment policies:\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[]},{\"key\":\"8rtpr\",\"data\":{},\"text\":\"No Clock In and Clock Out - No fingerprints, attendance reports, nothing!\",\"type\":\"ordered-list-item\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[]},{\"key\":\"81tm1\",\"data\":{},\"text\":\"Unlimited Leaves - No more 12 Hari Jatah Cuti\",\"type\":\"ordered-list-item\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[]},{\"key\":\"9pe9h\",\"data\":{},\"text\":\"No Bosses that Bosses around - Everyone is just doing their part in contributing to our big team work\",\"type\":\"ordered-list-item\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[]},{\"key\":\"487so\",\"data\":{},\"text\":\"No Office Politics - We embrace transparancies and appreciate everyone's good work.\",\"type\":\"ordered-list-item\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[]},{\"key\":\"5s5bd\",\"data\":{},\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[]},{\"key\":\"36vbh\",\"data\":{},\"text\":\"Our team of passionate professionals is dedicated to delivering top-notch software products that drive success for our clients. With a strong focus on creativity, efficiency, and collaboration, we foster a fun yet professional environment where ideas flourish and excellence is achieved. At Nodewave.id, we are committed to transforming industries through our expertise in AI and software development, making a significant impact in the tech industry in Indonesia. \",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[]},{\"key\":\"ei4eq\",\"data\":{},\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[]},{\"key\":\"eqrb0\",\"data\":{},\"text\":\"Join us in shaping the future of technology with a vibrant team spirit at the core of our culture.\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[]}],\"entityMap\":{}}",
+            "displayName": "Nodewave Indonesia",
+            "id": "0cfdb150-2f5c-4648-b1dd-d1a59445c72c",
+            "industry": {
+              "id": 4,
+              "name": "Computer Software"
+            },
+            "isApprovedToTalentHunt": false,
+            "isHiring": false,
+            "isVIP": true,
+            "isVIPFreeTrial": false,
+            "localOffice": true,
+            "logo": "bbd9c019e980525c2315c9f92d862088.png",
+            "name": "Nodewave Indonesia",
+            "photosJsonString": "[\"957478647dd846ed835ed15fa3f99bf0.jpg\",\"2002b3daf81a371a0273480d93acb1c7.jpg\",\"6f03e6c5195c347cfc7c1ec211f88df7.jpg\",\"d13e027bc343c289a12c998525ca1470.jpg\",\"5d691d20a61c6c8e6ee31bdd5525144a.jpg\"]",
+            "size": "BETWEEN_11_AND_50",
+            "socialMediaSitesJsonString": "{\"linkedin\":\"95753740\",\"instagram\":null,\"twitter\":null,\"facebook\":null}",
+            "status": "VERIFIED",
+            "tagline": "We do software development, Artificial Intelligence, and Internet of Things",
+            "verificationTier": {
+              "type": "LEGAL_DOCUMENTS"
+            },
+            "video": null,
+            "website": "http://nodewave.id"
+          },
+          "companyAddress": {
+            "additionalAddressInfo": null,
+            "companyId": "0cfdb150-2f5c-4648-b1dd-d1a59445c72c",
+            "creatorId": "ff597c58-c5a1-41b4-bdea-573eb24fcfe3",
+            "id": "e9e15be3-77f1-44b4-a0eb-e5c0301424b4",
+            "locationId": "63027b8c-d9a2-427c-b4d5-5d3f210f9932",
+            "poi": {
+              "addressLabel": "Kebon Jeruk Kel., Kebon Jeruk, Jakarta Barat, JABODETABEK, Indonesia",
+              "coordinate": {
+                "latitude": -6.19147,
+                "longitude": 106.76892
+              },
+              "id": "dbf84625-8ce1-4a51-9e42-0b43f4225c25",
+              "locationId": "63027b8c-d9a2-427c-b4d5-5d3f210f9932",
+              "name": "Kebon Jeruk Kel., Kebon Jeruk, Jakarta Barat, JABODETABEK, Indonesia",
+              "placeId": "AQAAADgAm4LoKh9QDdIcZggB6E9x978S4tG_9bZS1sgOEKNZWKl_F2cJGl2SCCBIDqzSLzwpZ3Hy82gm-WIqCVwMUHcw77nEzFZQq0uWhr-HVoheISUOmmeIAedRNw",
+              "provider": "AWS"
+            },
+            "pointOfInterestId": "dbf84625-8ce1-4a51-9e42-0b43f4225c25",
+            "status": "ACTIVE"
+          },
+          "country": {
+            "callingCode": "ID",
+            "callingCodes": [
+              "+62"
+            ],
+            "code": "ID",
+            "currency": [
+              "IDR"
+            ],
+            "demonym": "Indonesian",
+            "id": "ID",
+            "name": "Indonesia"
+          },
+          "createdAt": "2026-05-28T03:48:50.965Z",
+          "creatorResponseRate": 0.16806722689075632,
+          "creatorResponseTime": 154.96864572222222,
+          "descriptionJsonString": "{\"blocks\":[{\"text\":\"Job Descriptions\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"dp4mp\",\"data\":{}},{\"data\":{},\"text\":\"Provide solution and execute implementation for website development requirements (web and database) based on the agreed timeline\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"6cb9a\"},{\"inlineStyleRanges\":[],\"key\":\"3o015\",\"data\":{},\"text\":\"Assess potential improvements and potential bugs in the web development\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[]},{\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"41mar\",\"data\":{},\"text\":\"Work closely together with Front-End, Mobile, and Project Manager\"},{\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"46roi\",\"data\":{},\"text\":\"Work in a fast-paced team\"},{\"inlineStyleRanges\":[],\"key\":\"nrg1\",\"data\":{},\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[]},{\"inlineStyleRanges\":[],\"key\":\"3lp3c\",\"data\":{},\"text\":\"Job Requirements\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[]},{\"key\":\"eig9d\",\"data\":{},\"text\":\"Professional experienced/ freshgraduate\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[]},{\"key\":\"1lmbr\",\"data\":{},\"text\":\"Familiar with Gitflow\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[]},{\"text\":\"Passionate in learning new technologies\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"5sq2s\",\"data\":{}},{\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"40fae\",\"data\":{},\"text\":\"Good Knowledge of Javascript and NodeJS\"},{\"key\":\"5kuv7\",\"data\":{},\"text\":\"Knowledge of databases MySQL/NoSQL\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[]},{\"data\":{},\"text\":\"Familiar with NGINX, Redis, Message Queue\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"5uahs\"},{\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"e6gsp\",\"data\":{},\"text\":\"Strong attention to detail, analytical and problem solving skill\"},{\"key\":\"8j4m6\",\"data\":{},\"text\":\"Experienced working in teams\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[]},{\"data\":{},\"text\":\"Good communication and interpersonal skill\",\"type\":\"unstyled\",\"depth\":0,\"entityRanges\":[],\"inlineStyleRanges\":[],\"key\":\"8cs58\"}],\"entityMap\":{}}",
+          "educationLevel": "DIPLOMA",
+          "endDate": null,
+          "expInfo": "mgtOneTapApplyVIPJobs:B",
+          "expiryDate": "2026-06-28",
+          "externalApplyURL": null,
+          "fraudReportFlag": null,
+          "gender": null,
+          "hierarchicalJobCategory": {
+            "defaultName": "Full Stack Developer",
+            "id": "b16aede4-ad2c-4639-89d9-4614c19c3481",
+            "isPaidJobPossible": false,
+            "level": 3,
+            "name": "Full Stack Developer",
+            "parents": [
+              {
+                "defaultName": "Backend Development",
+                "id": "b298311a-b0e4-4265-8b11-1b17d3ea553e",
+                "isPaidJobPossible": false,
+                "level": 2,
+                "name": "Backend Development",
+                "parents": [
+                  {
+                    "defaultName": "Computer & Software",
+                    "id": "9dd9bc4d-38d5-4b5e-876a-de19bc22da45",
+                    "isPaidJobPossible": false,
+                    "level": 1,
+                    "name": "Computer & Software"
+                  }
+                ]
+              },
+              {
+                "defaultName": "Computer & Software",
+                "id": "9dd9bc4d-38d5-4b5e-876a-de19bc22da45",
+                "isPaidJobPossible": false,
+                "level": 1,
+                "name": "Computer & Software"
+              }
+            ],
+            "HierarchicalJobCategoryId": "b16aede4-ad2c-4639-89d9-4614c19c3481"
+          },
+          "id": "14727b33-5822-41a6-b777-388ef3135bf7",
+          "interviewProcessJsonString": null,
+          "isActivelyHiring": false,
+          "isApplied": false,
+          "isCoverLetterMandatory": false,
+          "isEducationRequiredForCandidate": false,
+          "isHighResponseRate": false,
+          "isHot": false,
+          "isLocationRequiredForCandidate": false,
+          "isMatched": null,
+          "isProfilePicRequired": false,
+          "isPublic": true,
+          "isRemote": false,
+          "isResumeRequiredForCandidate": false,
+          "jobSource": "EMPLOYER",
+          "labels": [],
+          "location": {
+            "administrativeLevelName": "District",
+            "countryCode": "ID",
+            "formattedName": "Kebon Jeruk",
+            "id": "63027b8c-d9a2-427c-b4d5-5d3f210f9932",
+            "latitude": -6.18889,
+            "level": 4,
+            "longitude": 106.77083,
+            "name": "Kebon Jeruk",
+            "parents": [
+              {
+                "administrativeLevelName": "City",
+                "countryCode": "ID",
+                "formattedName": "Jakarta Barat",
+                "id": "af0ed74f-1b51-43cf-a14c-459996e39105",
+                "latitude": -6.16667,
+                "level": 3,
+                "longitude": 106.75,
+                "name": "Jakarta Barat",
+                "parents": [
+                  {
+                    "administrativeLevelName": "Province",
+                    "countryCode": "ID",
+                    "formattedName": "DKI Jakarta",
+                    "id": "78d63064-78a1-4577-8516-036a6c5e903e",
+                    "latitude": -6.2,
+                    "level": 2,
+                    "longitude": 106.83333,
+                    "name": "DKI Jakarta",
+                    "parents": [
+                      {
+                        "administrativeLevelName": "Country",
+                        "countryCode": "ID",
+                        "formattedName": "Indonesia",
+                        "id": "7542a4d7-4324-4f76-ae1f-2e37ffb1198b",
+                        "latitude": -5,
+                        "level": 1,
+                        "longitude": 120,
+                        "name": "Indonesia",
+                        "slug": "indonesia"
+                      }
+                    ],
+                    "slug": "dki-jakarta"
+                  },
+                  {
+                    "administrativeLevelName": "Country",
+                    "countryCode": "ID",
+                    "formattedName": "Indonesia",
+                    "id": "7542a4d7-4324-4f76-ae1f-2e37ffb1198b",
+                    "latitude": -5,
+                    "level": 1,
+                    "longitude": 120,
+                    "name": "Indonesia",
+                    "slug": "indonesia"
+                  }
+                ],
+                "slug": "jakarta-barat"
+              },
+              {
+                "administrativeLevelName": "Province",
+                "countryCode": "ID",
+                "formattedName": "DKI Jakarta",
+                "id": "78d63064-78a1-4577-8516-036a6c5e903e",
+                "latitude": -6.2,
+                "level": 2,
+                "longitude": 106.83333,
+                "name": "DKI Jakarta",
+                "parents": [
+                  {
+                    "administrativeLevelName": "Country",
+                    "countryCode": "ID",
+                    "formattedName": "Indonesia",
+                    "id": "7542a4d7-4324-4f76-ae1f-2e37ffb1198b",
+                    "latitude": -5,
+                    "level": 1,
+                    "longitude": 120,
+                    "name": "Indonesia",
+                    "slug": "indonesia"
+                  }
+                ],
+                "slug": "dki-jakarta"
+              },
+              {
+                "administrativeLevelName": "Country",
+                "countryCode": "ID",
+                "formattedName": "Indonesia",
+                "id": "7542a4d7-4324-4f76-ae1f-2e37ffb1198b",
+                "latitude": -5,
+                "level": 1,
+                "longitude": 120,
+                "name": "Indonesia",
+                "slug": "indonesia"
+              }
+            ],
+            "slug": "kebon-jeruk"
+          },
+          "maxAge": null,
+          "maxYearsOfExperience": 1,
+          "minAge": null,
+          "minYearsOfExperience": 0,
+          "oneTapApply": {
+            "isEligible": false
+          },
+          "resumeRequiredStatus": "OPTIONAL",
+          "screeningQuestionsEnabled": false,
+          "shouldPublishOnLinkedin": false,
+          "shouldShowBenefits": true,
+          "shouldShowSalary": false,
+          "skills": [
+            {
+              "mustHave": true,
+              "skill": {
+                "id": "1031669b-a066-44d3-a752-b2fde1ed6785",
+                "name": "Node.js",
+                "translationKey": "text-skill-nodejs"
+              }
+            },
+            {
+              "mustHave": true,
+              "skill": {
+                "id": "b6dd1192-9078-4078-8f58-dd6ba144a592",
+                "name": "Laravel",
+                "translationKey": "text-skill-laravel"
+              }
+            },
+            {
+              "mustHave": true,
+              "skill": {
+                "id": "104795e3-a3bc-4ba1-b6ec-ce9be6d5b120",
+                "name": "JavaScript",
+                "translationKey": "text-skill-javascript"
+              }
+            }
+          ],
+          "source": "NATIVE",
+          "startDate": null,
+          "status": "OPEN",
+          "title": "Fullstack Engineer",
+          "traceInfo": "",
+          "type": "FULL_TIME",
+          "updatedAt": "2026-05-28T03:48:52.374Z",
+          "workArrangementOption": "ONSITE"
+        }
+      }
+    }
+  }
+}

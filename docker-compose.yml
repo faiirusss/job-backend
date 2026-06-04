@@ -1,0 +1,54 @@
+name: jhai-backend
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: jhai-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: jhai
+      POSTGRES_USER: jhai
+      POSTGRES_PASSWORD: jhai_dev_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - jhai-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U jhai"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - jhai-net
+
+  backend:
+    build:
+      context: .
+      target: prod
+    image: jhai-backend:latest
+    container_name: jhai-backend
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      PG_HOST: postgres
+      PG_PORT: "5432"
+      DATABASE_URL: postgresql+asyncpg://jhai:jhai_dev_password@postgres:5432/jhai
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    volumes:
+      - hf-cache:/opt/hf-cache
+      - backend-data:/app/data
+    networks:
+      - jhai-net
+
+volumes:
+  jhai-postgres-data:
+  hf-cache:
+  backend-data:
+
+networks:
+  jhai-net:
+    external: true

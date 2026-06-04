@@ -1,0 +1,16 @@
+{
+  "jobs": [
+    {
+      "id": "g-2001",
+      "jobTitle": "Frontend Engineer (React)",
+      "companyName": "Tokopedia",
+      "locationName": "Jakarta",
+      "workArrangement": "Remote",
+      "salary": { "min": 12000000, "max": 18000000 },
+      "jobDescription": "We need a React engineer who knows TypeScript.",
+      "jobRequirement": "2+ years React, TypeScript.",
+      "url": "https://glints.com/id/opportunities/jobs/g-2001",
+      "postedAt": "2026-05-20T00:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,711 @@
+{
+ "data": {
+  "jobApplicantsManagementSettingsUrn": "urn:li:fs_jobApplicantsManagementSettings:4400626671",
+  "standardizedTitle": "urn:li:fs_title:971",
+  "companyDetails": {
+   "company": "urn:li:fs_normalized_company:6624778",
+   "$type": "com.linkedin.voyager.jobs.JobPostingCompany"
+  },
+  "educationDescription": null,
+  "matchType": null,
+  "employmentStatus": "urn:li:fs_employmentStatus:FULL_TIME",
+  "costPerApplicant": null,
+  "testDriveEligible": null,
+  "urlPathSegment": "it-developer-at-pt.-adi-data-informatika-4400626671",
+  "ownerViewEnabled": false,
+  "skillMatches": null,
+  "hiringDashboardViewEnabled": false,
+  "trackingPixelUrl": null,
+  "talentHubJob": false,
+  "companyDescription": {
+   "attributes": [
+    {
+     "start": 322,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 323,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 699,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 700,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    }
+   ],
+   "text": "Adidata is your trusted partner in delivering total IT business solutions, IT infrastructure, and IT services designed to drive real business impact. Backed by deep industry experience and the latest technology trends, we help organizations solve complex challenges with reliable, high-quality, and future-ready solutions.\n\nWe have proudly supported leading businesses in Banking & Financial Services (including multi-finance, stock exchange, and securities/brokerage), Manufacturing, Plantation, and other industries. As a one-stop IT solutions provider, we deliver end-to-end services from strategy and implementation to ongoing support, ensuring every project is aligned with your business goals.\n\nFrom the very first meeting to full production rollout, our team works closely with you, offering personalized guidance, proactive support, and genuine commitment to your success. At Adidata, we believe in being more than just an IT vendor, we are your long-term technology partner, here to help your business grow, adapt, and thrive.",
+   "$type": "com.linkedin.pemberly.text.AttributedText"
+  },
+  "formattedLocation": "Jakarta Metropolitan Area",
+  "jobPostingUrl": "https://www.linkedin.com/jobs/view/4400626671/?trk=jobs_biz_prem_srch",
+  "requiredScreeningQuestions": [],
+  "applies": 0,
+  "poster": null,
+  "startDate": null,
+  "dashEntityUrn": "urn:li:fsd_jobPosting:4400626671",
+  "eligibleForLearningCourseRecsUpsell": true,
+  "eligibleForSharingProfileWithPoster": false,
+  "trustReviewDecision": null,
+  "originalListedAt": 1775857372000,
+  "entityUrn": "urn:li:fs_normalized_jobPosting:4400626671",
+  "workRemoteAllowed": false,
+  "briefBenefitsDescription": "",
+  "applyMethod": {
+   "companyApplyUrl": "https://www.kalibrr.com/c/pt-adi-data-informatika/jobs/265818/it-developer-2?ref=linkedin_feed",
+   "applyStartersPreferenceVoid": false,
+   "inPageOffsiteApply": false,
+   "$type": "com.linkedin.voyager.jobs.OffsiteApply"
+  },
+  "benefitsDataSource": "JOB_POSTER",
+  "inferredSkillMatches": null,
+  "*savingInfo": "urn:li:fs_jobSavingInfo:4400626671",
+  "draftApplicationInfo": null,
+  "formattedJobFunctions": [
+   "Engineering",
+   "Information Technology"
+  ],
+  "messagingStatus": null,
+  "dashJobPostingCardUrn": "urn:li:fsd_jobPostingCard:(4400626671,JOB_DETAILS)",
+  "locationVisibility": "ADDRESS",
+  "sponsored": false,
+  "appeal": null,
+  "expireAt": 1780782185000,
+  "$type": "com.linkedin.voyager.jobs.JobPosting",
+  "standardizedAddresses": null,
+  "candidateMonthsOfExperience": null,
+  "claimableByViewer": false,
+  "scheduleDescription": "",
+  "inferredBenefits": null,
+  "functionMatches": null,
+  "formattedIndustries": [
+   "IT Services and IT Consulting"
+  ],
+  "industries": [
+   96
+  ],
+  "openToHiringJobSharingState": "NOT_SHARED",
+  "salaryInsights": {
+   "lockModuleShown": false,
+   "salaryExplorerUrl": "https://www.linkedin.com/salary/",
+   "insightExists": false,
+   "jobCompensationAvailable": true,
+   "$type": "com.linkedin.voyager.premium.SalaryInsights"
+  },
+  "country": "urn:li:fs_country:id",
+  "locationMatches": null,
+  "jobPosterEntitlements": {
+   "entitledToViewFreeJobInfo": false,
+   "entitledToPromoteJob": false,
+   "entitledToEditJob": false,
+   "entitledToCopyJob": false,
+   "entitledToAccessJobDashboard": false,
+   "entitledToViewBillingInfo": false,
+   "$type": "com.linkedin.voyager.jobs.JobPosterEntitlements"
+  },
+  "smartSnippets": null,
+  "commuteDescription": "",
+  "listingType": "PREMIUM",
+  "estimatedNumberOfApplicants": null,
+  "chargeableApplies": null,
+  "createdAt": 1775857371000,
+  "*applyingInfo": "urn:li:fs_jobApplyingInfo:4400626671",
+  "locationUrn": "urn:li:fs_geo:90010101",
+  "industryMatches": null,
+  "jobApplicationLimitReached": false,
+  "closedAt": null,
+  "preferredScreeningQuestions": [],
+  "new": false,
+  "applicantTrackingSystem": null,
+  "eligibleForFreeTrialPromotion": false,
+  "totalChargeAmount": null,
+  "workplaceTypes": [],
+  "staffingRole": null,
+  "eligibleForBlacklistingAfterUserReportsInFlagship": true,
+  "contentSource": "JOBS_CREATE",
+  "postalAddress": null,
+  "messagingToken": null,
+  "formattedExperienceLevel": "Mid-Senior level",
+  "yearsOfExperienceMatch": null,
+  "jobFunctions": [
+   "ENG",
+   "IT"
+  ],
+  "benefits": [],
+  "encryptedPricingParams": "CwIAAAGegsZOqTg8aUc7FrydLzD6OQxSbrpL12hjjkdDizQ3nmf1V0R2l-jC-DR5hFTotUXmOsXFeKy20LyKuPUf33sSdN117GfJieClfkr6x-NVfKUn-WEqc2B9eEmdyAFvns-pvpDskn9SFcc9hNr5-iymbsHLppW2WY9a2U7JTprKwFAI-bnIBCp8oaPpttzvYYxmYzGH",
+  "jobState": "LISTED",
+  "trackingUrn": "urn:li:jobPosting:4400626671",
+  "formattedSalaryDescription": "",
+  "description": {
+   "attributes": [
+    {
+     "start": 23,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 24,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 71,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 72,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 123,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 124,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 162,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 163,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 188,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 189,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 238,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 239,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 256,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 257,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 288,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 289,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 312,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 313,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 290,
+     "length": 24,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.Bold"
+     },
+     "attributeKindUnion": {
+      "bold": {
+       "$type": "com.linkedin.pemberly.text.Bold"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 326,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 327,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 374,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 375,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 426,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 427,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 465,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 466,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 491,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 492,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 541,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 542,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 559,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 560,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 591,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 592,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 614,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    },
+    {
+     "start": 615,
+     "length": 1,
+     "type": {
+      "$type": "com.linkedin.pemberly.text.LineBreak"
+     },
+     "attributeKindUnion": {
+      "lineBreak": {
+       "$type": "com.linkedin.pemberly.text.LineBreak"
+      }
+     },
+     "$type": "com.linkedin.pemberly.text.Attribute"
+    }
+   ],
+   "text": "Experience IT Developer\n\nBackend Developer - Java Springboot (15 Orang)\n\nFrontend Developer - Angular, Javascript (2 Orang)\n\nAndroid Developer - Kotlin (10 Orang)\n\nSystem Analyst (4 Orang)\n\nAI Engineer - Phyton, Pandas, Numpys - (5 Orang)\n\nDevops (2 Orang)\n\nIntegration Engineer (5 Orang)\n\nMinimum Qualifications\n\nIT Developer\n\nBackend Developer - Java Springboot (15 Orang)\n\nFrontend Developer - Angular, Javascript (2 Orang)\n\nAndroid Developer - Kotlin (10 Orang)\n\nSystem Analyst (4 Orang)\n\nAI Engineer - Phyton, Pandas, Numpys - (5 Orang)\n\nDevops (2 Orang)\n\nIntegration Engineer (5 Orang)\n\nMin S1 Bidang Ilmu IT\n\nMemiliki pengalaman min 3 tahun di posisi yang sama",
+   "$type": "com.linkedin.pemberly.text.AttributedText"
+  },
+  "hiringTeamEntitlements": null,
+  "formattedEmploymentStatus": "Full-time",
+  "repostedJobPosting": null,
+  "title": "IT Developer",
+  "ownerContract": null,
+  "localizedCostPerApplicantChargeableRegion": "Indonesia",
+  "duration": null,
+  "skillsDescription": null,
+  "jobRegion": null,
+  "trustReviewSla": null,
+  "thirdPartySourced": true,
+  "freeTrialExpireAt": null,
+  "views": 0,
+  "productType": null,
+  "eligibleForReferrals": false,
+  "listedAt": 1775857372000,
+  "videoIntroSetupText": "I reviewed your application for the IT Developer role at PT. Adi Data Informatika, and I’m impressed with your background. As a next step, I’d like to invite you to answer a few questions with a short video intro or written response. We’d prefer a video response so we can see your verbal communication skills. Feel free to message me with any questions.",
+  "degreeMatches": null,
+  "lifetimeBudget": null,
+  "jobPostingId": 4400626671,
+  "dailyBudget": null,
+  "allowedToEdit": false,
+  "location": null,
+  "sourceDomain": "www.kalibrr.com"
+ },
+ "included": [
+  {
+   "resumeDownloadUrl": null,
+   "appliedTime": null,
+   "resumeFileType": null,
+   "entityUrn": "urn:li:fs_jobApplyingInfo:4400626671",
+   "applied": false,
+   "activities": null,
+   "closed": false,
+   "viewedByJobPosterAt": null,
+   "resumeFileName": null,
+   "appliedAt": null,
+   "$type": "com.linkedin.voyager.entities.shared.JobApplyingInfo"
+  },
+  {
+   "savedAt": null,
+   "saved": false,
+   "entityUrn": "urn:li:fs_jobSavingInfo:4400626671",
+   "dashSaveStateUrn": "urn:li:fsd_saveState:(SAVE,urn:li:fsd_jobPosting:4400626671)",
+   "$type": "com.linkedin.voyager.entities.shared.JobSavingInfo"
+  }
+ ]
+}

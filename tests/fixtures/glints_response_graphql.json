@@ -1,0 +1,63 @@
+{
+  "data": {
+    "searchJobsV3": {
+      "__typename": "JobSearchResults",
+      "hasMore": true,
+      "jobsInPage": [
+        {
+          "__typename": "Job",
+          "id": "204606b4-109f-4f8c-bf77-f5bf759ed732",
+          "title": "Backend Engineer",
+          "workArrangementOption": "ONSITE",
+          "status": "OPEN",
+          "createdAt": "2026-05-20T07:54:51.515Z",
+          "shouldShowSalary": false,
+          "company": {
+            "__typename": "Company",
+            "id": "602449ac-a87f-4712-9ce8-0cc999bc10a4",
+            "name": "PT Ionpay Networks"
+          },
+          "location": {
+            "__typename": "HierarchicalLocation",
+            "id": "0f29b981-b084-4687-8167-4469b954ccd1",
+            "name": "Tebet",
+            "formattedName": "Tebet"
+          },
+          "salaries": null
+        },
+        {
+          "__typename": "Job",
+          "id": "abc12345-0000-0000-0000-000000000001",
+          "title": "Senior Frontend Engineer (React)",
+          "workArrangementOption": "REMOTE",
+          "status": "OPEN",
+          "createdAt": "2026-05-22T03:00:00.000Z",
+          "shouldShowSalary": true,
+          "company": {
+            "__typename": "Company",
+            "id": "company-2",
+            "name": "Tokopedia"
+          },
+          "location": {
+            "__typename": "HierarchicalLocation",
+            "id": "loc-2",
+            "name": "Jakarta",
+            "formattedName": "Jakarta"
+          },
+          "salaries": [
+            {
+              "__typename": "JobSalary",
+              "id": "255b0805-a7d3-4a92-83a3-e61dc250e1b3",
+              "CurrencyCode": "IDR",
+              "minAmount": 5000000,
+              "maxAmount": 7000000,
+              "salaryMode": "MONTH",
+              "salaryType": "BASIC"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "isAuthenticated": false
+}

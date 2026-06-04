@@ -1,0 +1,77 @@
+[project]
+name = "jhai-backend"
+version = "0.1.0"
+description = "Job Hunter AI backend — vertical slice"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115,<0.116",
+    "uvicorn[standard]>=0.32,<0.33",
+    "websockets>=13,<14",
+    "asyncpg>=0.29,<0.30",
+    "SQLAlchemy[asyncio]>=2.0,<2.1",
+    "alembic>=1.13,<1.14",
+    "pgvector>=0.3,<0.4",
+    "pydantic>=2.9,<3.0",
+    "pydantic-settings>=2.5,<3.0",
+    "httpx>=0.27,<0.28",
+    "google-genai>=0.3,<2.0",
+    "sentence-transformers>=3.0,<4.0",
+    # Declared explicitly so the CPU-only index in [tool.uv.sources] applies
+    # (uv sources are honored only for direct dependencies). sentence-transformers
+    # would otherwise pull the default CUDA torch build.
+    "torch>=2.2,<3.0",
+    "pdfplumber>=0.11,<0.12",
+    "playwright>=1.48,<1.49",
+    "playwright-stealth>=1.0.6",
+    "beautifulsoup4>=4.12,<5.0",
+    "loguru>=0.7,<0.8",
+    "tenacity>=9.0,<10.0",
+    "python-multipart>=0.0.9",
+    "numpy>=1.26,<3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "pytest-timeout>=2.3",
+    "ruff>=0.7",
+    "mypy>=1.13",
+    "types-beautifulsoup4",
+]
+
+# Use the CPU-only PyTorch build. sentence-transformers pulls torch, which by
+# default bundles multi-GB CUDA libraries (~15 nvidia-* packages + triton) we
+# never use — inference here is CPU-only. The explicit index is applied solely
+# to torch via [tool.uv.sources], so nothing else is affected.
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+markers = [
+    "live: live network tests (skipped by default)",
+]
+addopts = "-q -m 'not live'"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501", "B008"]  # B008: FastAPI Depends/File in defaults is idiomatic
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.mypy]
+python_version = "3.11"
+strict = false
+ignore_missing_imports = true

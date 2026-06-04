@@ -1,0 +1,3816 @@
+{
+ "data": {
+  "data": {
+   "$recipeTypes": [
+    "com.linkedin.c692173c6e45d6b9527f0afb00c47c7f"
+   ],
+   "jobsDashJobCardsBySemanticSearch": {
+    "metadata": {
+     "promotedJobsLabel": {
+      "textDirection": "USER_LOCALE",
+      "text": "How promoted jobs are ranked",
+      "attributesV2": [],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+       "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+     },
+     "*geo": "urn:li:fsd_geo:102478259",
+     "keywords": "software engineer Indonesia",
+     "referenceTrackingId": "ã5¨¦/'ç\u0019ñ¤XE=",
+     "fuzzyCount": {
+      "textDirection": "USER_LOCALE",
+      "text": "99+ results",
+      "attributesV2": [],
+      "accessibilityTextAttributesV2": [],
+      "accessibilityText": null,
+      "$recipeTypes": [
+       "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+     },
+     "matchingJobAlert": null,
+     "semanticSearchFilterCluster": {
+      "primaryFilterGroups": [
+       {
+        "filters": [
+         {
+          "appliedCount": 1,
+          "displayName": {
+           "textDirection": "USER_LOCALE",
+           "text": "Jobs",
+           "attributesV2": [],
+           "accessibilityTextAttributesV2": [],
+           "accessibilityText": null,
+           "$recipeTypes": [
+            "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+           ],
+           "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+          },
+          "secondaryFilterValues": [
+           {
+            "default": false,
+            "displayName": "All",
+            "value": "ALL",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "People",
+            "value": "PEOPLE",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "Jobs",
+            "value": "JOBS",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": true,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "Posts",
+            "value": "CONTENT",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "Companies",
+            "value": "COMPANIES",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "Products",
+            "value": "PRODUCTS",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "Schools",
+            "value": "SCHOOLS",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "Groups",
+            "value": "GROUPS",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "Events",
+            "value": "EVENTS",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "Courses",
+            "value": "LEARNING",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "Services",
+            "value": "SERVICES",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           }
+          ],
+          "highlighted": false,
+          "typeaheadFilterQuery": null,
+          "parameterName": "resultType",
+          "typeaheadHint": null,
+          "typeaheadType": null,
+          "typeaheadUseCase": null,
+          "$recipeTypes": [
+           "com.linkedin.00873735c6b892d5043cb2e12f48e044"
+          ],
+          "$type": "com.linkedin.voyager.dash.search.SearchFilterViewModel",
+          "primaryFilterValues": [],
+          "renderType": "NAVIGATION"
+         }
+        ],
+        "title": "Jobs",
+        "$recipeTypes": [
+         "com.linkedin.1f975282d4d11d8a5cf62c407f682ff7"
+        ],
+        "$type": "com.linkedin.voyager.dash.search.SearchFilterGroupViewModel"
+       },
+       {
+        "filters": [
+         {
+          "appliedCount": 1,
+          "highlighted": true,
+          "displayName": {
+           "textDirection": "USER_LOCALE",
+           "text": "Location",
+           "attributesV2": [],
+           "accessibilityTextAttributesV2": [],
+           "accessibilityText": null,
+           "$recipeTypes": [
+            "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+           ],
+           "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+          },
+          "secondaryFilterValues": [
+           {
+            "default": false,
+            "displayName": "Indonesia",
+            "value": "102478259",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": true,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           }
+          ],
+          "typeaheadFilterQuery": {
+           "countryCodesResolutionResults": [],
+           "$recipeTypes": [
+            "com.linkedin.046be6b5b7a53f38a72ff6ce4228647e"
+           ],
+           "$type": "com.linkedin.voyager.dash.search.TypeaheadFilterQuery"
+          },
+          "parameterName": "populatedPlace",
+          "typeaheadHint": "Indonesia",
+          "typeaheadType": "GEO",
+          "typeaheadUseCase": "JOBS_SEMANTIC_SEARCH",
+          "$recipeTypes": [
+           "com.linkedin.00873735c6b892d5043cb2e12f48e044"
+          ],
+          "$type": "com.linkedin.voyager.dash.search.SearchFilterViewModel",
+          "primaryFilterValues": [],
+          "renderType": "SINGLE_SELECT"
+         }
+        ],
+        "title": "Location",
+        "$recipeTypes": [
+         "com.linkedin.1f975282d4d11d8a5cf62c407f682ff7"
+        ],
+        "$type": "com.linkedin.voyager.dash.search.SearchFilterGroupViewModel"
+       },
+       {
+        "filters": [
+         {
+          "appliedCount": 0,
+          "highlighted": false,
+          "displayName": {
+           "textDirection": "USER_LOCALE",
+           "text": "Date posted",
+           "attributesV2": [],
+           "accessibilityTextAttributesV2": [],
+           "accessibilityText": null,
+           "$recipeTypes": [
+            "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+           ],
+           "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+          },
+          "secondaryFilterValues": [
+           {
+            "default": false,
+            "displayName": "Past month",
+            "value": "r2592000",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "Past week",
+            "value": "r604800",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "Past 24 hours",
+            "value": "r86400",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           }
+          ],
+          "typeaheadFilterQuery": null,
+          "parameterName": "timePostedRange",
+          "typeaheadHint": null,
+          "typeaheadType": null,
+          "typeaheadUseCase": null,
+          "$recipeTypes": [
+           "com.linkedin.00873735c6b892d5043cb2e12f48e044"
+          ],
+          "$type": "com.linkedin.voyager.dash.search.SearchFilterViewModel",
+          "primaryFilterValues": [],
+          "renderType": "SINGLE_SELECT"
+         }
+        ],
+        "title": "Date posted",
+        "$recipeTypes": [
+         "com.linkedin.1f975282d4d11d8a5cf62c407f682ff7"
+        ],
+        "$type": "com.linkedin.voyager.dash.search.SearchFilterGroupViewModel"
+       },
+       {
+        "filters": [
+         {
+          "appliedCount": 0,
+          "highlighted": false,
+          "displayName": {
+           "textDirection": "USER_LOCALE",
+           "text": "Company",
+           "attributesV2": [],
+           "accessibilityTextAttributesV2": [],
+           "accessibilityText": null,
+           "$recipeTypes": [
+            "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+           ],
+           "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+          },
+          "secondaryFilterValues": [
+           {
+            "default": false,
+            "displayName": "Kredivo Group",
+            "value": "96882773",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "PT Astra International Tbk",
+            "value": "771828",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "NTT DATA, Inc.",
+            "value": "19126858",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "Vodjo",
+            "value": "7165832",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "Anteraja",
+            "value": "14524361",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "PT. Intikom Berlian Mustika",
+            "value": "942394",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "PT Adicipta Inovasi Teknologi",
+            "value": "1413144",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "PT. PASSION ABADI KORPORA",
+            "value": "80139114",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "Cermati.com",
+            "value": "9245223",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           },
+           {
+            "default": false,
+            "displayName": "The Flex",
+            "value": "30140376",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           }
+          ],
+          "typeaheadFilterQuery": null,
+          "parameterName": "company",
+          "typeaheadHint": "Add a company",
+          "typeaheadType": "COMPANY",
+          "typeaheadUseCase": null,
+          "$recipeTypes": [
+           "com.linkedin.00873735c6b892d5043cb2e12f48e044"
+          ],
+          "$type": "com.linkedin.voyager.dash.search.SearchFilterViewModel",
+          "primaryFilterValues": [],
+          "renderType": "MULTI_SELECT"
+         }
+        ],
+        "title": "Company",
+        "$recipeTypes": [
+         "com.linkedin.1f975282d4d11d8a5cf62c407f682ff7"
+        ],
+        "$type": "com.linkedin.voyager.dash.search.SearchFilterGroupViewModel"
+       },
+       {
+        "filters": [
+         {
+          "appliedCount": 0,
+          "highlighted": false,
+          "displayName": {
+           "textDirection": "USER_LOCALE",
+           "text": "LinkedIn Apply",
+           "attributesV2": [],
+           "accessibilityTextAttributesV2": [],
+           "accessibilityText": null,
+           "$recipeTypes": [
+            "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+           ],
+           "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+          },
+          "secondaryFilterValues": [
+           {
+            "default": false,
+            "displayName": "Easy Apply",
+            "value": "true",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           }
+          ],
+          "typeaheadFilterQuery": null,
+          "parameterName": "applyWithLinkedin",
+          "typeaheadHint": null,
+          "typeaheadType": null,
+          "typeaheadUseCase": null,
+          "$recipeTypes": [
+           "com.linkedin.00873735c6b892d5043cb2e12f48e044"
+          ],
+          "$type": "com.linkedin.voyager.dash.search.SearchFilterViewModel",
+          "primaryFilterValues": [],
+          "renderType": "TOGGLE"
+         }
+        ],
+        "title": "LinkedIn Apply",
+        "$recipeTypes": [
+         "com.linkedin.1f975282d4d11d8a5cf62c407f682ff7"
+        ],
+        "$type": "com.linkedin.voyager.dash.search.SearchFilterGroupViewModel"
+       },
+       {
+        "filters": [
+         {
+          "appliedCount": 0,
+          "highlighted": false,
+          "displayName": {
+           "textDirection": "USER_LOCALE",
+           "text": "Under 10 applicants",
+           "attributesV2": [],
+           "accessibilityTextAttributesV2": [],
+           "accessibilityText": null,
+           "$recipeTypes": [
+            "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+           ],
+           "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+          },
+          "secondaryFilterValues": [
+           {
+            "default": false,
+            "displayName": "Under 10 applicants",
+            "value": "true",
+            "$recipeTypes": [
+             "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+            ],
+            "selected": false,
+            "$type": "com.linkedin.voyager.dash.search.SearchFilterValue"
+           }
+          ],
+          "typeaheadFilterQuery": null,
+          "parameterName": "earlyApplicant",
+          "typeaheadHint": null,
+          "typeaheadType": null,
+          "typeaheadUseCase": null,
+          "$recipeTypes": [
+           "com.linkedin.00873735c6b892d5043cb2e12f48e044"
+          ],
+          "$type": "com.linkedin.voyager.dash.search.SearchFilterViewModel",
+          "primaryFilterValues": [],
+          "renderType": "TOGGLE"
+         }
+        ],
+        "title": "Under 10 applicants",
+        "$recipeTypes": [
+         "com.linkedin.1f975282d4d11d8a5cf62c407f682ff7"
+        ],
+        "$type": "com.linkedin.voyager.dash.search.SearchFilterGroupViewModel"
+       }
+      ],
+      "$recipeTypes": [
+       "com.linkedin.31141a165489b09910ef6285305e3865"
+      ],
+      "$type": "com.linkedin.voyager.dash.search.SearchFilterCluster"
+     },
+     "$recipeTypes": [
+      "com.linkedin.072a8ae0eceec55cad8d484f6ff830c2"
+     ],
+     "displayKeywords": "software engineer Indonesia",
+     "$type": "com.linkedin.voyager.dash.jobs.search.JobSearchMetadata"
+    },
+    "paging": {
+     "count": 25,
+     "start": 0,
+     "total": 250,
+     "$recipeTypes": [
+      "com.linkedin.00ad54e6c12ed6875cd63bb438b9f1ce"
+     ],
+     "$type": "com.linkedin.restli.common.CollectionMetadata"
+    },
+    "$recipeTypes": [
+     "com.linkedin.5fd466ac17f76723a0b850b4fcfb63bd"
+    ],
+    "elements": [
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4367246423,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4367246423&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=a29l030HeakYs5UGzZ%2F1Iw%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "a29l030HeakYs5UGzZ/1Iw==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4415111623,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4415111623&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=xH6J0gWgYHLOHF5bDIkMfw%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "xH6J0gWgYHLOHF5bDIkMfw==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4333059478,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4333059478&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=jr0vKS2Mcvz0Y8xfSa1A%2BA%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "jr0vKS2Mcvz0Y8xfSa1A+A==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4415113563,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4415113563&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=PMYGYvRBnTuNm5OCcmOIBQ%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "PMYGYvRBnTuNm5OCcmOIBQ==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4404017050,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4404017050&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=mc3iP2gzRnoPFYaexOweZg%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "mc3iP2gzRnoPFYaexOweZg==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4401722916,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4401722916&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=snlJlGR%2BViR7S8qiJ8%2FxdQ%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "snlJlGR+ViR7S8qiJ8/xdQ==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4418621292,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4418621292&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=Uo%2Bq1bFwZkwcmA%2FUWq4vjQ%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "Uo+q1bFwZkwcmA/UWq4vjQ==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4415120441,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4415120441&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=4%2Bv8BA5MhZ2QM8ithtHNqg%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "4+v8BA5MhZ2QM8ithtHNqg==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4142451879,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4142451879&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=a1i4wWKXfGsaY%2BKwGD%2BLyg%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "a1i4wWKXfGsaY+KwGD+Lyg==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4368626902,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4368626902&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=7auN67h65qqt%2BSGlWy0Dbg%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "7auN67h65qqt+SGlWy0Dbg==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4296534248,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4296534248&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=BJv%2BpJ8z0AhlkC8Kz3ICng%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "BJv+pJ8z0AhlkC8Kz3ICng==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4359600060,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4359600060&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=KFqh7c6fpBydn%2FhhARrt9Q%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "KFqh7c6fpBydn/hhARrt9Q==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4415111608,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4415111608&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=pL2TtPl%2FnS1MdTfLGU4A%2FQ%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "pL2TtPl/nS1MdTfLGU4A/Q==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4403793004,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4403793004&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=gCq23hIMLFPAFaJJkQb5pw%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "gCq23hIMLFPAFaJJkQb5pw==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4332554777,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4332554777&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=3iLRRvYiKDYEYtOgBkcUGA%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "3iLRRvYiKDYEYtOgBkcUGA==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4407553528,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4407553528&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=6jJU386ADlMBElusg6pm0g%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "6jJU386ADlMBElusg6pm0g==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4415104822,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4415104822&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=QI3Qxt2RYL5wLFKjDrtquQ%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "QI3Qxt2RYL5wLFKjDrtquQ==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4277612327,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4277612327&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=j7sAqjZHiTaoKUIhEvJK%2BQ%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "j7sAqjZHiTaoKUIhEvJK+Q==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4414289142,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4414289142&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=Z39s2LN1FYGnRvv0pFG9Iw%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "Z39s2LN1FYGnRvv0pFG9Iw==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4354910034,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4354910034&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=lJ5LBQiVOBbdeotID1KUxg%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "lJ5LBQiVOBbdeotID1KUxg==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4377574376,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4377574376&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=%2FEsDWJv9IxYfQyhNadPiwg%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "/EsDWJv9IxYfQyhNadPiwg==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4373456639,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4373456639&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=5LOQn6DWVkK7A8hn61MMPw%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "5LOQn6DWVkK7A8hn61MMPw==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4413277555,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4413277555&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=m8XyqcrLm0DIdsOj%2FBVWgw%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "m8XyqcrLm0DIdsOj/BVWgw==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4403894880,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4403894880&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=ImXvD5d3gmbV7fhQ%2F6UJAA%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "ImXvD5d3gmbV7fhQ/6UJAA==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     },
+     {
+      "$recipeTypes": [
+       "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+      ],
+      "jobCard": {
+       "errorStateCard": null,
+       "inlineResultCard": null,
+       "jobPostingCard": null,
+       "jobPostingCardWrapper": {
+        "promotedFooter": null,
+        "*jobPostingCard": "urn:li:fsd_jobPostingCard:(4409777478,SEMANTIC_SEARCH)",
+        "__typename": "dash_jobs_JobPostingCardWrapper",
+        "jobTrackingData": {
+         "encryptedBiddingParameters": "NOT_ELIGIBLE_FOR_CHARGING",
+         "trackingCode": null,
+         "navigationAction": {
+          "controlName": "two_pane_job_view",
+          "displayText": null,
+          "actionTarget": "https://www.linkedin.com/jobs/search-results/?currentJobId=4409777478&keywords=software%20engineer%20Indonesia&origin=JOBS_HOME_SEARCH_BUTTON&trackingId=7Wdets9Xki34hH0bqhX5cA%3D%3D&refId=luM1qKaeLyfnGYHxpFhFPQ%3D%3D&eBP=NOT_ELIGIBLE_FOR_CHARGING",
+          "$recipeTypes": [
+           "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+          ],
+          "$type": "com.linkedin.voyager.dash.jobs.NavigationAction"
+         },
+         "$recipeTypes": [
+          "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+         ],
+         "referenceId": "luM1qKaeLyfnGYHxpFhFPQ==",
+         "trackingId": "7Wdets9Xki34hH0bqhX5cA==",
+         "$type": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+        },
+        "$recipeTypes": [
+         "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        ],
+        "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+       }
+      },
+      "$type": "com.linkedin.voyager.dash.jobs.JobCard"
+     }
+    ],
+    "$type": "com.linkedin.restli.common.CollectionResponse"
+   },
+   "$type": "com.linkedin.c692173c6e45d6b9527f0afb00c47c7f"
+  },
+  "extensions": {
+   "webMetadata": {}
+  }
+ },
+ "meta": {
+  "microSchema": {
+   "isGraphQL": true,
+   "version": "2.1",
+   "types": {
+    "com.linkedin.bd5b442292f11ce109552c7e9b0a43fe": {
+     "fields": {
+      "dismissed": {
+       "type": "boolean"
+      },
+      "feedbackType": {
+       "type": "com.linkedin.voyager.dash.jobs.feedback.FeedbackType"
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.JobPostingRelevanceFeedbackUrn"
+      },
+      "dismissedEntityRelevanceFeedbackUrn": {
+       "type": "string"
+      },
+      "dismissedEntityRelevanceFeedback": {
+       "resolvedFrom": "dismissedEntityRelevanceFeedbackUrn",
+       "type": "com.linkedin.5a3b8b05d56e42fc066dff1bfa8221c5"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.feedback.JobPostingRelevanceFeedback"
+    },
+    "com.linkedin.c6f6b8ba60418a06f76be78c19bb02ab": {
+     "fields": {
+      "type": {
+       "type": "com.linkedin.voyager.dash.jobs.JobPostingCardFooterItemType"
+      },
+      "timeAt": {
+       "type": "com.linkedin.common.Time"
+      },
+      "text": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.JobPostingCardFooterItem"
+    },
+    "com.linkedin.8065786438df79c27d2326a1680aca5a": {
+     "fields": {
+      "name": {
+       "type": "string"
+      },
+      "logo": {
+       "type": {
+        "union": {
+         "url": "com.linkedin.common.Url",
+         "vectorImage": "com.linkedin.55600587d5659c2fda181973445f7157"
+        }
+       }
+      },
+      "logoResolutionResult": {
+       "derivedFrom": "logo",
+       "type": {
+        "union": {
+         "url": "com.linkedin.common.Url",
+         "vectorImage": "com.linkedin.55600587d5659c2fda181973445f7157"
+        }
+       }
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.GroupUrn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.groups.Group"
+    },
+    "com.linkedin.5c51e59f5f1fd72781d7dab03fd1f785": {
+     "fields": {
+      "controlName": {
+       "type": "com.linkedin.voyager.dash.common.tracking.ControlName"
+      },
+      "viewingBehavior": {
+       "type": "com.linkedin.voyager.dash.common.ux.UrlViewingBehavior"
+      },
+      "sponsoredUrlAttributes": {
+       "type": "com.linkedin.502e33ef42edfc629c151d741471c1d4"
+      },
+      "url": {
+       "type": "com.linkedin.common.Url"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.text.TextLink"
+    },
+    "com.linkedin.baeb9cb668cf6afa8b24300caa3ff552": {
+     "fields": {
+      "credentialIssuedAt": {
+       "type": "long"
+      },
+      "credentialIssuer": {
+       "type": "string"
+      },
+      "issuedAt": {
+       "type": "long"
+      },
+      "issuer": {
+       "type": "string"
+      },
+      "expiresAt": {
+       "type": "long"
+      },
+      "signer": {
+       "type": "string"
+      }
+     },
+     "baseType": "pegasus.com.linkedin.mediaInfra.C2paSignature"
+    },
+    "com.linkedin.1f975282d4d11d8a5cf62c407f682ff7": {
+     "fields": {
+      "title": {
+       "type": "string"
+      },
+      "filters": {
+       "type": {
+        "array": "com.linkedin.00873735c6b892d5043cb2e12f48e044"
+       }
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.search.SearchFilterGroupViewModel"
+    },
+    "com.linkedin.31141a165489b09910ef6285305e3865": {
+     "fields": {
+      "primaryFilterGroups": {
+       "type": {
+        "array": "com.linkedin.1f975282d4d11d8a5cf62c407f682ff7"
+       }
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.search.SearchFilterCluster"
+    },
+    "com.linkedin.7aa7481c1c7a3aac185455502ca68b33": {
+     "fields": {
+      "actionType": {
+       "type": "com.linkedin.voyager.dash.jobs.ErrorStateCtaAction"
+      },
+      "text": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.ErrorStateCta"
+    },
+    "com.linkedin.afbdf62e348dc29b2bcd32a08288bac5": {
+     "fields": {
+      "value": {
+       "type": "string"
+      },
+      "key": {
+       "type": "string"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.premium.PremiumDebugInfoDetail"
+    },
+    "com.linkedin.cab3139f0e820751f39c932f84998b26": {
+     "fields": {
+      "isAiGenerated": {
+       "type": "boolean"
+      },
+      "signature": {
+       "type": "com.linkedin.baeb9cb668cf6afa8b24300caa3ff552"
+      },
+      "appOrDeviceUsed": {
+       "type": "string"
+      },
+      "aiUsageType": {
+       "type": "pegasus.com.linkedin.mediaInfra.AiUsageType"
+      },
+      "isValid": {
+       "type": "boolean"
+      }
+     },
+     "baseType": "pegasus.com.linkedin.mediaInfra.C2paManifestData"
+    },
+    "com.linkedin.414ab88a51ca240c438edbedf402e80b": {
+     "fields": {
+      "jobTrackingData": {
+       "type": "com.linkedin.07b81ad0d725fc73214d2620d428ee53"
+      },
+      "jobPostingCardUrn": {
+       "type": "string"
+      },
+      "promotedFooter": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      },
+      "jobPostingCard": {
+       "resolvedFrom": "jobPostingCardUrn",
+       "type": "com.linkedin.c6a60719638f3738d98e19d328860537"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.JobPostingCardWrapper"
+    },
+    "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb": {
+     "fields": {
+      "default": {
+       "type": "boolean"
+      },
+      "value": {
+       "type": "string"
+      },
+      "selected": {
+       "type": "boolean"
+      },
+      "displayName": {
+       "type": "string"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.search.SearchFilterValue"
+    },
+    "com.linkedin.5e34caad07717d927c5d20e018d3df43": {
+     "fields": {
+      "type": {
+       "type": "com.linkedin.voyager.dash.common.text.EpochFormat"
+      },
+      "epochAt": {
+       "type": "com.linkedin.common.Time"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.text.EpochTime"
+    },
+    "com.linkedin.b71becd82cc091f4ec8dd7f07cab3ae5": {
+     "fields": {
+      "controlNameDefault": {
+       "type": "com.linkedin.voyager.dash.common.tracking.ControlName"
+      },
+      "accessibilityNameDefault": {
+       "type": "string"
+      },
+      "iconSelected": {
+       "type": "com.linkedin.voyager.dash.common.SystemImageName"
+      },
+      "controlNameSelected": {
+       "type": "com.linkedin.voyager.dash.common.tracking.ControlName"
+      },
+      "iconDefault": {
+       "type": "com.linkedin.voyager.dash.common.SystemImageName"
+      },
+      "accessibilityNameSelected": {
+       "type": "string"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.JobActionInfo"
+    },
+    "com.linkedin.8fce5dc10e7ec148cb183daa44ccc6bb": {
+     "fields": {
+      "type": {
+       "type": "com.linkedin.voyager.dash.common.text.ListStyleType"
+      },
+      "index": {
+       "type": "int"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.text.ListItemStyle"
+    },
+    "com.linkedin.da4e65e5be1ff5f6bb32634b3c462a31": {
+     "fields": {
+      "type": {
+       "type": "com.linkedin.voyager.dash.jobs.search.DismissedFeedbackReasonType"
+      },
+      "text": {
+       "type": "string"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.search.DismissedFeedbackReason"
+    },
+    "com.linkedin.033cfe06e52ba8587712b3fe4b3e338e": {
+     "fields": {
+      "title": {
+       "type": "string"
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.JobPostingUrn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.JobPosting"
+    },
+    "com.linkedin.7d6f0fb72c846ea7f60f568fbf3eaaff": {
+     "fields": {
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.JobAlertUrn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.JobAlert"
+    },
+    "com.linkedin.907a90b778053090296b319c25d22f65": {
+     "fields": {
+      "followerCount": {
+       "type": "long"
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.FollowingStateUrn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.feed.FollowingState"
+    },
+    "com.linkedin.d819570fa72cd4be43576b33124cc146": {
+     "fields": {
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.ConnectionUrn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.relationships.Connection"
+    },
+    "com.linkedin.96bb55d071a640916e520991e947977a": {
+     "fields": {},
+     "baseType": "com.linkedin.voyager.dash.jobs.ResponsivenessInsightViewModel"
+    },
+    "com.linkedin.c692173c6e45d6b9527f0afb00c47c7f": {
+     "fields": {
+      "jobsDashJobCardsBySemanticSearch": {
+       "type": "com.linkedin.5fd466ac17f76723a0b850b4fcfb63bd"
+      }
+     },
+     "baseType": "com.linkedin.graphql.Query"
+    },
+    "com.linkedin.153fc1ede74b023360001e0e3d4c3bd0": {
+     "fields": {
+      "description": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.InlineResultCard"
+    },
+    "com.linkedin.ac8407331b66ee27a0aefb3d742e4ef8": {
+     "fields": {
+      "debugInfoDetails": {
+       "type": {
+        "array": "com.linkedin.afbdf62e348dc29b2bcd32a08288bac5"
+       }
+      },
+      "useCaseType": {
+       "type": "com.linkedin.voyager.dash.common.premium.PremiumDevToolUseCase"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.premium.PremiumDebugInfo"
+    },
+    "com.linkedin.9e2d48c7777c088c185f02a8f9ba3725": {
+     "fields": {
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.JobVerifiedHiringInsightUrn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.JobVerifiedHiringInsight"
+    },
+    "com.linkedin.d48f52635bbb72303bc52967d9167d17": {
+     "fields": {
+      "lastPageLeftOff": {
+       "type": "int"
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.JobDraftApplicationInfoUrn"
+      },
+      "saveAsDraftAt": {
+       "type": "com.linkedin.common.Time"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.JobDraftApplicationInfo"
+    },
+    "com.linkedin.2b5718d855788ff5029688cbf5921148": {
+     "fields": {
+      "logoImage": {
+       "type": {
+        "union": {
+         "url": "com.linkedin.common.Url",
+         "vectorImage": "com.linkedin.55600587d5659c2fda181973445f7157"
+        }
+       }
+      },
+      "logoImageResolutionResult": {
+       "derivedFrom": "logoImage",
+       "type": {
+        "union": {
+         "url": "com.linkedin.common.Url",
+         "vectorImage": "com.linkedin.55600587d5659c2fda181973445f7157"
+        }
+       }
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.ProfessionalEventUrn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.events.ProfessionalEvent"
+    },
+    "com.linkedin.10705d159cddcdfc98ff9707e12811f8": {
+     "fields": {
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.JobSkillMatchInsightUrn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.assessments.JobSkillMatchInsight"
+    },
+    "com.linkedin.e0eaeeb3d6e356c4a0c916c663c8308f": {
+     "fields": {
+      "profilePicture": {
+       "type": "com.linkedin.66e0527212e5449c43fff179a8e3971f"
+      },
+      "lastName": {
+       "type": "string"
+      },
+      "firstName": {
+       "type": "string"
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.ProfileUrn"
+      },
+      "memberRelationship": {
+       "type": "com.linkedin.042b0ae47393793fbccd548bbf4f9323",
+       "isInjection": true
+      },
+      "ringStatus": {
+       "type": "com.linkedin.a8d68d3ebb582260c1a809c78aa35c25",
+       "isInjection": true
+      },
+      "headline": {
+       "type": "string"
+      },
+      "publicIdentifier": {
+       "type": "string"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.identity.profile.Profile"
+    },
+    "com.linkedin.ab2752e97ef9d152754bcdb07dfb5a0f": {
+     "fields": {
+      "jobSeekerJobStateActions": {
+       "type": {
+        "array": "com.linkedin.d5811557cded71e72d4d403d465e2fd7"
+       }
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.JobSeekerJobStateUrn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.JobSeekerJobState"
+    },
+    "com.linkedin.14a86d919f3abd03718853412727a46d": {
+     "fields": {
+      "ringStatus": {
+       "type": "com.linkedin.a8d68d3ebb582260c1a809c78aa35c25"
+      },
+      "profileUrn": {
+       "type": "string"
+      },
+      "vectorImage": {
+       "type": "com.linkedin.55600587d5659c2fda181973445f7157"
+      },
+      "profile": {
+       "resolvedFrom": "profileUrn",
+       "type": "com.linkedin.e0eaeeb3d6e356c4a0c916c663c8308f"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.image.NonEntityProfilePicture"
+    },
+    "com.linkedin.4817f9084f56ac0942dacc064e6598a3": {
+     "fields": {
+      "jobPostingRelevanceFeedback": {
+       "resolvedFrom": "jobPostingRelevanceFeedbackUrn",
+       "type": "com.linkedin.bd5b442292f11ce109552c7e9b0a43fe"
+      },
+      "jobActionInfo": {
+       "type": "com.linkedin.b71becd82cc091f4ec8dd7f07cab3ae5"
+      },
+      "channel": {
+       "type": "com.linkedin.voyager.dash.jobs.feedback.JobPostingRelevanceFeedbackChannel"
+      },
+      "followUpFeedbackReasons": {
+       "type": {
+        "array": "com.linkedin.da4e65e5be1ff5f6bb32634b3c462a31"
+       }
+      },
+      "jobPostingRelevanceFeedbackUrn": {
+       "type": "string"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.DismissJobAction"
+    },
+    "com.linkedin.40201cc8debe80e6fea357edadcb4085": {
+     "fields": {
+      "detailData": {
+       "resolvedFrom": "detailDataUnion",
+       "type": {
+        "union": {
+         "profilePictureWithoutFrame": "com.linkedin.e0eaeeb3d6e356c4a0c916c663c8308f",
+         "profilePictureWithRingStatus": "com.linkedin.e0eaeeb3d6e356c4a0c916c663c8308f",
+         "companyLogo": "com.linkedin.21ae25f6ace299cdc54aed52dd5d5460",
+         "icon": "com.linkedin.voyager.dash.common.ArtDecoIconName",
+         "systemImage": "com.linkedin.voyager.dash.common.SystemImageName",
+         "nonEntityGroupLogo": "com.linkedin.13eee0210bd3c419b275be22189408f6",
+         "vectorImage": "com.linkedin.55600587d5659c2fda181973445f7157",
+         "nonEntityProfessionalEventLogo": "com.linkedin.8f0c059db5846a9a43faabbb049491af",
+         "profilePicture": "com.linkedin.e0eaeeb3d6e356c4a0c916c663c8308f",
+         "imageUrl": "com.linkedin.4ee9d099bc78085160e141356d32427b",
+         "professionalEventLogo": "com.linkedin.2b5718d855788ff5029688cbf5921148",
+         "nonEntitySchoolLogo": "com.linkedin.d88c8d9c29f518370adf84f784231652",
+         "nonEntityCompanyLogo": "com.linkedin.4a4ac4042e9052a2313ad19f4b062a66",
+         "schoolLogo": "com.linkedin.89f5dd5b35d999c8f102a061c6b2f736",
+         "groupLogo": "com.linkedin.8065786438df79c27d2326a1680aca5a",
+         "ghostImage": "com.linkedin.voyager.dash.common.image.GhostImageType",
+         "nonEntityProfilePicture": "com.linkedin.14a86d919f3abd03718853412727a46d"
+        }
+       }
+      },
+      "tintColor": {
+       "type": "com.linkedin.voyager.dash.common.SystemImageTintColor"
+      },
+      "detailDataUnion": {
+       "type": {
+        "union": {
+         "profilePictureWithoutFrame": "string",
+         "profilePictureWithRingStatus": "string",
+         "companyLogo": "string",
+         "icon": "com.linkedin.voyager.dash.common.ArtDecoIconName",
+         "systemImage": "com.linkedin.voyager.dash.common.SystemImageName",
+         "nonEntityGroupLogo": "com.linkedin.13eee0210bd3c419b275be22189408f6",
+         "vectorImage": "com.linkedin.55600587d5659c2fda181973445f7157",
+         "nonEntityProfessionalEventLogo": "com.linkedin.8f0c059db5846a9a43faabbb049491af",
+         "profilePicture": "string",
+         "imageUrl": "com.linkedin.4ee9d099bc78085160e141356d32427b",
+         "professionalEventLogo": "string",
+         "nonEntitySchoolLogo": "com.linkedin.d88c8d9c29f518370adf84f784231652",
+         "nonEntityCompanyLogo": "com.linkedin.4a4ac4042e9052a2313ad19f4b062a66",
+         "schoolLogo": "string",
+         "groupLogo": "string",
+         "ghostImage": "com.linkedin.voyager.dash.common.image.GhostImageType",
+         "nonEntityProfilePicture": "com.linkedin.14a86d919f3abd03718853412727a46d"
+        }
+       }
+      },
+      "tapTargets": {
+       "type": {
+        "array": "com.linkedin.ed181549d47bb30ed698b4ab26f97423"
+       }
+      },
+      "scalingType": {
+       "type": "com.linkedin.voyager.dash.common.image.ScalingType"
+      },
+      "displayAspectRatio": {
+       "type": "double"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.image.ImageAttribute"
+    },
+    "com.linkedin.046be6b5b7a53f38a72ff6ce4228647e": {
+     "fields": {
+      "countryCodes": {
+       "type": {
+        "array": "string"
+       }
+      },
+      "countryCodesResolutionResults": {
+       "resolvedFrom": "countryCodes",
+       "type": {
+        "array": "com.linkedin.08611961cc1ceb888e5814d9cedce18f"
+       }
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.search.TypeaheadFilterQuery"
+    },
+    "com.linkedin.13eee0210bd3c419b275be22189408f6": {
+     "fields": {
+      "groupUrn": {
+       "type": "string"
+      },
+      "vectorImage": {
+       "type": "com.linkedin.55600587d5659c2fda181973445f7157"
+      },
+      "group": {
+       "resolvedFrom": "groupUrn",
+       "type": "com.linkedin.8065786438df79c27d2326a1680aca5a"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.image.NonEntityGroupLogo"
+    },
+    "com.linkedin.07b81ad0d725fc73214d2620d428ee53": {
+     "fields": {
+      "encryptedBiddingParameters": {
+       "type": "string"
+      },
+      "trackingCode": {
+       "type": "string"
+      },
+      "navigationAction": {
+       "type": "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65"
+      },
+      "referenceId": {
+       "type": "com.linkedin.voyager.dash.common.Base64String"
+      },
+      "trackingId": {
+       "type": "com.linkedin.voyager.dash.common.Base64String"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.JobTrackingData"
+    },
+    "com.linkedin.68b13539b7a1f45f6d4f65eabf4a5503": {
+     "fields": {
+      "memberDistance": {
+       "type": "com.linkedin.voyager.dash.relationships.NoConnectionMemberDistance"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.relationships.NoConnection"
+    },
+    "com.linkedin.072a8ae0eceec55cad8d484f6ff830c2": {
+     "fields": {
+      "geo": {
+       "resolvedFrom": "geoUrn",
+       "type": "com.linkedin.08611961cc1ceb888e5814d9cedce18f"
+      },
+      "promotedJobsLabel": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      },
+      "keywords": {
+       "type": "string"
+      },
+      "fuzzyCount": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      },
+      "referenceTrackingId": {
+       "type": "com.linkedin.common.TrackingId"
+      },
+      "geoUrn": {
+       "type": "string"
+      },
+      "matchingJobAlert": {
+       "resolvedFrom": "matchingJobAlertUrn",
+       "type": "com.linkedin.7d6f0fb72c846ea7f60f568fbf3eaaff"
+      },
+      "matchingJobAlertUrn": {
+       "type": "string"
+      },
+      "semanticSearchFilterCluster": {
+       "type": "com.linkedin.31141a165489b09910ef6285305e3865"
+      },
+      "displayKeywords": {
+       "type": "string"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.search.JobSearchMetadata"
+    },
+    "com.linkedin.4ee9d099bc78085160e141356d32427b": {
+     "fields": {
+      "originalImageUrl": {
+       "type": "com.linkedin.common.Url"
+      },
+      "originalHeight": {
+       "type": "int"
+      },
+      "originalWidth": {
+       "type": "int"
+      },
+      "url": {
+       "type": "com.linkedin.common.Url"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.ImageUrl"
+    },
+    "com.linkedin.502e33ef42edfc629c151d741471c1d4": {
+     "fields": {
+      "impressionId": {
+       "type": "string"
+      },
+      "unwrappedUrlDomain": {
+       "type": "string"
+      },
+      "creativeId": {
+       "type": "string"
+      },
+      "campaignId": {
+       "type": "string"
+      },
+      "memberId": {
+       "type": "string"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.sponsored.SponsoredUrlAttributes"
+    },
+    "com.linkedin.434ce996469a2a21a6447dde11fb7e12": {
+     "fields": {
+      "applyJobActionResolutionResult": {
+       "resolvedFrom": "applyJobAction",
+       "type": "com.linkedin.0a8b7a0ce97ad764b59e069959b090af"
+      },
+      "applyControlName": {
+       "type": "com.linkedin.voyager.dash.common.tracking.ControlName"
+      },
+      "applyJobAction": {
+       "type": "string"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.ApplyJobAction"
+    },
+    "com.linkedin.c6a60719638f3738d98e19d328860537": {
+     "fields": {
+      "preDashNormalizedJobPostingUrn": {
+       "type": "com.linkedin.voyager.dash.common.PreDashUrn"
+      },
+      "jobInsightsV2": {
+       "type": {
+        "array": {
+         "union": {
+          "premiumUpsellCard": "string",
+          "noLongerVisibleInsightViewModel": "com.linkedin.e7982d21e069cfe126ea7adf0b2699a5",
+          "jobInsightViewModel": "com.linkedin.e249a585bfc9892e8d82de4c87926e3d",
+          "premiumUpsell": "string",
+          "insightViewModel": "com.linkedin.e7982d21e069cfe126ea7adf0b2699a5",
+          "skillMatchInsight": "string",
+          "verifiedHiringInsight": "string",
+          "responsivenessInsightViewModel": "com.linkedin.96bb55d071a640916e520991e947977a",
+          "trustInsightViewModel": "com.linkedin.57de55e678814c1d8dc73d5545e5d996"
+         }
+        }
+       }
+      },
+      "footerItems": {
+       "type": {
+        "array": "com.linkedin.c6f6b8ba60418a06f76be78c19bb02ab"
+       }
+      },
+      "jobSeekerJobStateUrn": {
+       "type": "string"
+      },
+      "jobPostingTitle": {
+       "type": "string"
+      },
+      "primaryActions": {
+       "derivedFrom": "primaryActionsUnions",
+       "type": {
+        "array": {
+         "union": {
+          "overflowAction": "com.linkedin.08a177310e751e081e0f456b411e57d2",
+          "dismissJobAction": "com.linkedin.4817f9084f56ac0942dacc064e6598a3",
+          "applyJobAction": "com.linkedin.434ce996469a2a21a6447dde11fb7e12",
+          "saveJobAction": "com.linkedin.ae0c2e23213c578c1deb145012f53098"
+         }
+        }
+       }
+      },
+      "primaryDescription": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      },
+      "jobInsightsV2ResolutionResults": {
+       "resolvedFrom": "jobInsightsV2",
+       "type": {
+        "array": {
+         "union": {
+          "premiumUpsellCard": "com.linkedin.033cfe06e52ba8587712b3fe4b3e338e",
+          "noLongerVisibleInsightViewModel": "com.linkedin.e7982d21e069cfe126ea7adf0b2699a5",
+          "jobInsightViewModel": "com.linkedin.e249a585bfc9892e8d82de4c87926e3d",
+          "premiumUpsell": "com.linkedin.033cfe06e52ba8587712b3fe4b3e338e",
+          "insightViewModel": "com.linkedin.e7982d21e069cfe126ea7adf0b2699a5",
+          "skillMatchInsight": "com.linkedin.10705d159cddcdfc98ff9707e12811f8",
+          "verifiedHiringInsight": "com.linkedin.9e2d48c7777c088c185f02a8f9ba3725",
+          "responsivenessInsightViewModel": "com.linkedin.96bb55d071a640916e520991e947977a",
+          "trustInsightViewModel": "com.linkedin.57de55e678814c1d8dc73d5545e5d996"
+         }
+        }
+       }
+      },
+      "debugInfo": {
+       "type": "com.linkedin.ac8407331b66ee27a0aefb3d742e4ef8"
+      },
+      "title": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      },
+      "jobSeekerJobState": {
+       "resolvedFrom": "jobSeekerJobStateUrn",
+       "type": "com.linkedin.ab2752e97ef9d152754bcdb07dfb5a0f"
+      },
+      "relevanceInsight": {
+       "type": "com.linkedin.e7982d21e069cfe126ea7adf0b2699a5"
+      },
+      "secondaryDescription": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.JobPostingCardUrn"
+      },
+      "logo": {
+       "type": "com.linkedin.88781d1af842bd1a2698b9bbbbcea321"
+      },
+      "primaryActionsUnions": {
+       "type": {
+        "array": {
+         "union": {
+          "overflowAction": "com.linkedin.08a177310e751e081e0f456b411e57d2",
+          "dismissJobAction": "com.linkedin.4817f9084f56ac0942dacc064e6598a3",
+          "applyJobAction": "com.linkedin.434ce996469a2a21a6447dde11fb7e12",
+          "saveJobAction": "com.linkedin.ae0c2e23213c578c1deb145012f53098"
+         }
+        }
+       }
+      },
+      "tertiaryDescription": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.JobPostingCard"
+    },
+    "com.linkedin.11813f8d91033b2be8480034c0a8c86a": {
+     "fields": {
+      "title": {
+       "type": "string"
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.LearningCourseUrn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.learning.LearningCourse"
+    },
+    "com.linkedin.28d257bd68b85bd4e621ada8b692485e": {
+     "fields": {
+      "image": {
+       "type": "com.linkedin.voyager.dash.common.SystemImageName"
+      },
+      "description": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      },
+      "cta": {
+       "type": "com.linkedin.7aa7481c1c7a3aac185455502ca68b33"
+      },
+      "title": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      },
+      "learnMore": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.ErrorStateCard"
+    },
+    "com.linkedin.89f5dd5b35d999c8f102a061c6b2f736": {
+     "fields": {
+      "name": {
+       "type": "string"
+      },
+      "logo": {
+       "type": {
+        "union": {
+         "url": "com.linkedin.common.Url",
+         "vectorImage": "com.linkedin.55600587d5659c2fda181973445f7157"
+        }
+       }
+      },
+      "logoResolutionResult": {
+       "derivedFrom": "logo",
+       "type": {
+        "union": {
+         "url": "com.linkedin.common.Url",
+         "vectorImage": "com.linkedin.55600587d5659c2fda181973445f7157"
+        }
+       }
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.SchoolUrn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.organization.School"
+    },
+    "com.linkedin.81305d4989d145c52569d521966f84d0": {
+     "fields": {
+      "controlName": {
+       "type": "com.linkedin.voyager.dash.common.tracking.ControlName"
+      },
+      "icon": {
+       "type": "com.linkedin.voyager.dash.common.SystemImageName"
+      },
+      "accessibilityName": {
+       "type": "string"
+      },
+      "text": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      },
+      "entityUrn": {
+       "type": "com.linkedin.common.Urn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.InfoPromptAction"
+    },
+    "com.linkedin.88781d1af842bd1a2698b9bbbbcea321": {
+     "fields": {
+      "editableAccessibilityText": {
+       "type": "boolean"
+      },
+      "attributes": {
+       "type": {
+        "array": "com.linkedin.40201cc8debe80e6fea357edadcb4085"
+       }
+      },
+      "actionTarget": {
+       "type": "com.linkedin.common.Url"
+      },
+      "accessibilityTextAttributes": {
+       "type": {
+        "array": "com.linkedin.1711068b5ebc3bf28ba6f767993066fc"
+       }
+      },
+      "totalCount": {
+       "type": "int"
+      },
+      "accessibilityText": {
+       "type": "string"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.image.ImageViewModel"
+    },
+    "com.linkedin.00873735c6b892d5043cb2e12f48e044": {
+     "fields": {
+      "appliedCount": {
+       "type": "int"
+      },
+      "secondaryFilterValues": {
+       "type": {
+        "array": "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+       }
+      },
+      "displayName": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      },
+      "highlighted": {
+       "type": "boolean"
+      },
+      "typeaheadFilterQuery": {
+       "type": "com.linkedin.046be6b5b7a53f38a72ff6ce4228647e"
+      },
+      "primaryFilterValues": {
+       "type": {
+        "array": "com.linkedin.222048caeb417cc20a158d8c1ec6ebcb"
+       }
+      },
+      "typeaheadHint": {
+       "type": "string"
+      },
+      "typeaheadType": {
+       "type": "com.linkedin.voyager.dash.search.TypeaheadType"
+      },
+      "typeaheadUseCase": {
+       "type": "com.linkedin.voyager.dash.search.TypeaheadUseCase"
+      },
+      "parameterName": {
+       "type": "string"
+      },
+      "renderType": {
+       "type": "com.linkedin.voyager.dash.search.SearchFilterRenderType"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.search.SearchFilterViewModel"
+    },
+    "com.linkedin.d88c8d9c29f518370adf84f784231652": {
+     "fields": {
+      "school": {
+       "resolvedFrom": "schoolUrn",
+       "type": "com.linkedin.89f5dd5b35d999c8f102a061c6b2f736"
+      },
+      "vectorImage": {
+       "type": "com.linkedin.55600587d5659c2fda181973445f7157"
+      },
+      "schoolUrn": {
+       "type": "string"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.image.NonEntitySchoolLogo"
+    },
+    "com.linkedin.1711068b5ebc3bf28ba6f767993066fc": {
+     "fields": {
+      "detailData": {
+       "resolvedFrom": "detailDataUnion",
+       "type": {
+        "union": {
+         "jobPostingName": "com.linkedin.033cfe06e52ba8587712b3fe4b3e338e",
+         "profileFamiliarName": "com.linkedin.e0eaeeb3d6e356c4a0c916c663c8308f",
+         "hyperlink": "com.linkedin.common.Url",
+         "color": "com.linkedin.voyager.dash.common.text.TextColor",
+         "companyName": "com.linkedin.21ae25f6ace299cdc54aed52dd5d5460",
+         "icon": "com.linkedin.voyager.dash.common.ArtDecoIconName",
+         "epoch": "com.linkedin.5e34caad07717d927c5d20e018d3df43",
+         "systemImage": "com.linkedin.voyager.dash.common.SystemImageName",
+         "textLink": "com.linkedin.5c51e59f5f1fd72781d7dab03fd1f785",
+         "listItemStyle": "com.linkedin.8fce5dc10e7ec148cb183daa44ccc6bb",
+         "listStyle": "com.linkedin.voyager.dash.common.text.ListStyleType",
+         "groupName": "com.linkedin.8065786438df79c27d2326a1680aca5a",
+         "hyperlinkOpenExternally": "com.linkedin.common.Url",
+         "stringFieldReference": "com.linkedin.bf12b2bc1b425a8d9b9f774c2ca335e1",
+         "profileFullName": "com.linkedin.e0eaeeb3d6e356c4a0c916c663c8308f",
+         "learningCourseName": "com.linkedin.11813f8d91033b2be8480034c0a8c86a",
+         "profileMention": "com.linkedin.e0eaeeb3d6e356c4a0c916c663c8308f",
+         "style": "com.linkedin.voyager.dash.common.text.TextStyle",
+         "schoolName": "com.linkedin.89f5dd5b35d999c8f102a061c6b2f736",
+         "hashtag": "com.linkedin.4735cd2f95eb69a56abd197d1309562a"
+        }
+       }
+      },
+      "length": {
+       "type": "int"
+      },
+      "start": {
+       "type": "int"
+      },
+      "detailDataUnion": {
+       "type": {
+        "union": {
+         "jobPostingName": "string",
+         "profileFamiliarName": "string",
+         "hyperlink": "com.linkedin.common.Url",
+         "color": "com.linkedin.voyager.dash.common.text.TextColor",
+         "companyName": "string",
+         "icon": "com.linkedin.voyager.dash.common.ArtDecoIconName",
+         "epoch": "com.linkedin.5e34caad07717d927c5d20e018d3df43",
+         "systemImage": "com.linkedin.voyager.dash.common.SystemImageName",
+         "textLink": "com.linkedin.5c51e59f5f1fd72781d7dab03fd1f785",
+         "listItemStyle": "com.linkedin.8fce5dc10e7ec148cb183daa44ccc6bb",
+         "listStyle": "com.linkedin.voyager.dash.common.text.ListStyleType",
+         "groupName": "string",
+         "hyperlinkOpenExternally": "com.linkedin.common.Url",
+         "stringFieldReference": "com.linkedin.bf12b2bc1b425a8d9b9f774c2ca335e1",
+         "profileFullName": "string",
+         "learningCourseName": "string",
+         "profileMention": "string",
+         "style": "com.linkedin.voyager.dash.common.text.TextStyle",
+         "schoolName": "string",
+         "hashtag": "string"
+        }
+       }
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.text.TextAttribute"
+    },
+    "com.linkedin.5fd466ac17f76723a0b850b4fcfb63bd": {
+     "fields": {
+      "metadata": {
+       "type": "com.linkedin.072a8ae0eceec55cad8d484f6ff830c2"
+      },
+      "paging": {
+       "type": "com.linkedin.00ad54e6c12ed6875cd63bb438b9f1ce"
+      },
+      "elements": {
+       "type": {
+        "array": "com.linkedin.77310ef1ad324b51c309d00eea23075a"
+       }
+      }
+     },
+     "baseType": "com.linkedin.restli.common.CollectionResponse"
+    },
+    "com.linkedin.505dec0f9d8176db6c25f2ac53f37389": {
+     "fields": {
+      "width": {
+       "type": "int"
+      },
+      "fileIdentifyingUrlPathSegment": {
+       "type": "string"
+      },
+      "expiresAt": {
+       "type": "com.linkedin.common.Time"
+      },
+      "height": {
+       "type": "int"
+      }
+     },
+     "baseType": "com.linkedin.common.VectorArtifact"
+    },
+    "com.linkedin.4a4ac4042e9052a2313ad19f4b062a66": {
+     "fields": {
+      "companyUrn": {
+       "type": "string"
+      },
+      "company": {
+       "resolvedFrom": "companyUrn",
+       "type": "com.linkedin.21ae25f6ace299cdc54aed52dd5d5460"
+      },
+      "vectorImage": {
+       "type": "com.linkedin.55600587d5659c2fda181973445f7157"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.image.NonEntityCompanyLogo"
+    },
+    "com.linkedin.bc16115aac89e1407b0c6eebfc50ca7f": {
+     "fields": {},
+     "baseType": "com.linkedin.restli.common.EmptyRecord"
+    },
+    "com.linkedin.5a3b8b05d56e42fc066dff1bfa8221c5": {
+     "fields": {
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.EntityRelevanceFeedbackUrn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.feedback.EntityRelevanceFeedback"
+    },
+    "com.linkedin.08a177310e751e081e0f456b411e57d2": {
+     "fields": {
+      "subActionUnions": {
+       "type": {
+        "array": {
+         "union": {
+          "reportAdAction": "com.linkedin.81305d4989d145c52569d521966f84d0",
+          "waisteAction": "com.linkedin.81305d4989d145c52569d521966f84d0"
+         }
+        }
+       }
+      },
+      "subAction": {
+       "derivedFrom": "subActionUnions",
+       "type": {
+        "array": {
+         "union": {
+          "reportAdAction": "com.linkedin.81305d4989d145c52569d521966f84d0",
+          "waisteAction": "com.linkedin.81305d4989d145c52569d521966f84d0"
+         }
+        }
+       }
+      },
+      "icon": {
+       "type": "com.linkedin.voyager.dash.common.SystemImageName"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.OverflowAction"
+    },
+    "com.linkedin.0130b19f418e59acc74c8daef60b7b89": {
+     "fields": {
+      "preDashEntityUrn": {
+       "type": "com.linkedin.voyager.dash.common.PreDashUrn"
+      },
+      "saved": {
+       "type": "boolean"
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.SaveStateUrn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.feed.SaveState"
+    },
+    "com.linkedin.66e0527212e5449c43fff179a8e3971f": {
+     "fields": {
+      "displayImageWithFrameReferenceUnion": {
+       "type": {
+        "union": {
+         "url": "com.linkedin.common.Url",
+         "vectorImage": "com.linkedin.55600587d5659c2fda181973445f7157"
+        }
+       }
+      },
+      "originalImageUrn": {
+       "type": "com.linkedin.common.Urn"
+      },
+      "displayImageReferenceResolutionResult": {
+       "derivedFrom": "displayImageReference",
+       "type": {
+        "union": {
+         "url": "com.linkedin.common.Url",
+         "vectorImage": "com.linkedin.55600587d5659c2fda181973445f7157"
+        }
+       }
+      },
+      "displayImageWithFrameReference": {
+       "derivedFrom": "displayImageWithFrameReferenceUnion",
+       "type": {
+        "union": {
+         "url": "com.linkedin.common.Url",
+         "vectorImage": "com.linkedin.55600587d5659c2fda181973445f7157"
+        }
+       }
+      },
+      "a11yText": {
+       "type": "string"
+      },
+      "displayImageReference": {
+       "type": {
+        "union": {
+         "url": "com.linkedin.common.Url",
+         "vectorImage": "com.linkedin.55600587d5659c2fda181973445f7157"
+        }
+       }
+      },
+      "frameType": {
+       "type": "com.linkedin.voyager.dash.identity.profile.PhotoFrameType"
+      },
+      "displayImageUrn": {
+       "type": "com.linkedin.common.Urn"
+      },
+      "isGeneratedOrModifiedByAi": {
+       "type": "boolean"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.identity.profile.PhotoFilterPicture"
+    },
+    "com.linkedin.4735cd2f95eb69a56abd197d1309562a": {
+     "fields": {
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.HashtagUrn"
+      },
+      "trackingUrn": {
+       "type": "com.linkedin.common.Urn"
+      },
+      "actionTarget": {
+       "type": "com.linkedin.common.Url"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.feed.Hashtag"
+    },
+    "com.linkedin.a8d68d3ebb582260c1a809c78aa35c25": {
+     "fields": {
+      "ringContentType": {
+       "type": "com.linkedin.voyager.dash.common.image.RingContentType"
+      },
+      "actionTarget": {
+       "type": "com.linkedin.common.Url"
+      },
+      "preDashEntityUrn": {
+       "type": "com.linkedin.voyager.dash.common.PreDashUrn"
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.RingStatusUrn"
+      },
+      "emphasized": {
+       "type": "boolean"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.image.RingStatus"
+    },
+    "com.linkedin.77310ef1ad324b51c309d00eea23075a": {
+     "fields": {
+      "jobCardUnion": {
+       "type": {
+        "union": {
+         "errorStateCard": "com.linkedin.28d257bd68b85bd4e621ada8b692485e",
+         "inlineResultCard": "com.linkedin.153fc1ede74b023360001e0e3d4c3bd0",
+         "jobPostingCard": "com.linkedin.c6a60719638f3738d98e19d328860537",
+         "jobPostingCardWrapper": "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        }
+       }
+      },
+      "jobCard": {
+       "derivedFrom": "jobCardUnion",
+       "type": {
+        "union": {
+         "errorStateCard": "com.linkedin.28d257bd68b85bd4e621ada8b692485e",
+         "inlineResultCard": "com.linkedin.153fc1ede74b023360001e0e3d4c3bd0",
+         "jobPostingCard": "com.linkedin.c6a60719638f3738d98e19d328860537",
+         "jobPostingCardWrapper": "com.linkedin.414ab88a51ca240c438edbedf402e80b"
+        }
+       }
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.JobCard"
+    },
+    "com.linkedin.08611961cc1ceb888e5814d9cedce18f": {
+     "fields": {
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.GeoUrn"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.Geo"
+    },
+    "com.linkedin.21ae25f6ace299cdc54aed52dd5d5460": {
+     "fields": {
+      "followingStateUrn": {
+       "type": "string"
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.CompanyUrn"
+      },
+      "followingState": {
+       "resolvedFrom": "followingStateUrn",
+       "type": "com.linkedin.907a90b778053090296b319c25d22f65"
+      },
+      "name": {
+       "type": "string"
+      },
+      "logo": {
+       "type": {
+        "union": {
+         "url": "com.linkedin.common.Url",
+         "vectorImage": "com.linkedin.55600587d5659c2fda181973445f7157"
+        }
+       }
+      },
+      "logoResolutionResult": {
+       "derivedFrom": "logo",
+       "type": {
+        "union": {
+         "url": "com.linkedin.common.Url",
+         "vectorImage": "com.linkedin.55600587d5659c2fda181973445f7157"
+        }
+       }
+      },
+      "universalName": {
+       "type": "string"
+      },
+      "url": {
+       "type": "com.linkedin.common.Url"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.organization.Company"
+    },
+    "com.linkedin.ed181549d47bb30ed698b4ab26f97423": {
+     "fields": {
+      "tapTargetEntityUnion": {
+       "type": {
+        "union": {
+         "companyUrn": "string",
+         "profileUrn": "string"
+        }
+       }
+      },
+      "firstCornerXOffsetPercentage": {
+       "type": "float"
+      },
+      "type": {
+       "type": "com.linkedin.voyager.dash.common.TapTargetAttributeType"
+      },
+      "thirdCornerYOffsetPercentage": {
+       "type": "float"
+      },
+      "url": {
+       "type": "com.linkedin.common.Url"
+      },
+      "urn": {
+       "type": "com.linkedin.common.Urn"
+      },
+      "thirdCornerXOffsetPercentage": {
+       "type": "float"
+      },
+      "secondCornerYOffsetPercentage": {
+       "type": "float"
+      },
+      "fourthCornerXOffsetPercentage": {
+       "type": "float"
+      },
+      "tapTargetEntity": {
+       "resolvedFrom": "tapTargetEntityUnion",
+       "type": {
+        "union": {
+         "companyUrn": "com.linkedin.21ae25f6ace299cdc54aed52dd5d5460",
+         "profileUrn": "com.linkedin.e0eaeeb3d6e356c4a0c916c663c8308f"
+        }
+       }
+      },
+      "firstCornerYOffsetPercentage": {
+       "type": "float"
+      },
+      "rank": {
+       "type": "int"
+      },
+      "untaggable": {
+       "type": "boolean"
+      },
+      "fourthCornerYOffsetPercentage": {
+       "type": "float"
+      },
+      "text": {
+       "type": "string"
+      },
+      "secondCornerXOffsetPercentage": {
+       "type": "float"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.TapTarget"
+    },
+    "com.linkedin.e7982d21e069cfe126ea7adf0b2699a5": {
+     "fields": {
+      "image": {
+       "type": "com.linkedin.88781d1af842bd1a2698b9bbbbcea321"
+      },
+      "text": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.ux.InsightViewModel"
+    },
+    "com.linkedin.8f0c059db5846a9a43faabbb049491af": {
+     "fields": {
+      "professionalEvent": {
+       "resolvedFrom": "professionalEventUrn",
+       "type": "com.linkedin.2b5718d855788ff5029688cbf5921148"
+      },
+      "vectorImage": {
+       "type": "com.linkedin.55600587d5659c2fda181973445f7157"
+      },
+      "professionalEventUrn": {
+       "type": "string"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.image.NonEntityProfessionalEventLogo"
+    },
+    "com.linkedin.55600587d5659c2fda181973445f7157": {
+     "fields": {
+      "attribution": {
+       "type": "string"
+      },
+      "c2paManifestData": {
+       "type": "com.linkedin.cab3139f0e820751f39c932f84998b26"
+      },
+      "digitalmediaAsset": {
+       "type": "com.linkedin.common.DigitalmediaAssetUrn"
+      },
+      "rootUrl": {
+       "type": "string"
+      },
+      "artifacts": {
+       "type": {
+        "array": "com.linkedin.505dec0f9d8176db6c25f2ac53f37389"
+       }
+      }
+     },
+     "baseType": "com.linkedin.common.VectorImage"
+    },
+    "com.linkedin.e249a585bfc9892e8d82de4c87926e3d": {
+     "fields": {},
+     "baseType": "com.linkedin.voyager.dash.jobs.JobInsightViewModel"
+    },
+    "com.linkedin.5eb1a97a538a4324b791de9469fc5690": {
+     "fields": {
+      "textDirection": {
+       "type": "com.linkedin.voyager.dash.common.text.TextDirection"
+      },
+      "attributesV2": {
+       "type": {
+        "array": "com.linkedin.1711068b5ebc3bf28ba6f767993066fc"
+       }
+      },
+      "text": {
+       "type": "string"
+      },
+      "accessibilityTextAttributesV2": {
+       "type": {
+        "array": "com.linkedin.1711068b5ebc3bf28ba6f767993066fc"
+       }
+      },
+      "accessibilityText": {
+       "type": "string"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "com.linkedin.3090f7664c90bc6db9482ea0f46e0e65": {
+     "fields": {
+      "controlName": {
+       "type": "com.linkedin.voyager.dash.common.tracking.ControlName"
+      },
+      "displayText": {
+       "type": "string"
+      },
+      "actionTarget": {
+       "type": "com.linkedin.common.Url"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.NavigationAction"
+    },
+    "com.linkedin.d5811557cded71e72d4d403d465e2fd7": {
+     "fields": {
+      "jobSeekerJobStateEnums": {
+       "type": "com.linkedin.voyager.dash.jobs.JobSeekerJobStateEnum"
+      },
+      "jobStatePerformedAt": {
+       "type": "com.linkedin.common.Time"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.JobSeekerJobStateAction"
+    },
+    "com.linkedin.0a8b7a0ce97ad764b59e069959b090af": {
+     "fields": {
+      "hasConfirmedEmailAddress": {
+       "type": "boolean"
+      },
+      "applyCtaText": {
+       "type": "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+      },
+      "applyStartersPreferenceVoid": {
+       "type": "boolean"
+      },
+      "applied": {
+       "type": "boolean"
+      },
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.JobSeekerApplicationDetailUrn"
+      },
+      "applicantTrackingSystemName": {
+       "type": "string"
+      },
+      "jobDraftApplicationInfo": {
+       "type": "com.linkedin.d48f52635bbb72303bc52967d9167d17"
+      },
+      "companyApplyUrl": {
+       "type": "com.linkedin.common.Url"
+      },
+      "formattedApplyDate": {
+       "type": "string"
+      },
+      "onsiteApply": {
+       "type": "boolean"
+      },
+      "appliedAt": {
+       "type": "com.linkedin.common.Time"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.JobSeekerApplicationDetail"
+    },
+    "com.linkedin.57de55e678814c1d8dc73d5545e5d996": {
+     "fields": {},
+     "baseType": "com.linkedin.voyager.dash.jobs.TrustInsightViewModel"
+    },
+    "com.linkedin.042b0ae47393793fbccd548bbf4f9323": {
+     "fields": {
+      "entityUrn": {
+       "type": "com.linkedin.voyager.dash.common.MemberRelationshipUrn"
+      },
+      "memberRelationshipUnion": {
+       "type": {
+        "union": {
+         "self": "com.linkedin.bc16115aac89e1407b0c6eebfc50ca7f",
+         "connection": "com.linkedin.d819570fa72cd4be43576b33124cc146",
+         "noConnection": "com.linkedin.68b13539b7a1f45f6d4f65eabf4a5503"
+        }
+       }
+      },
+      "memberRelationship": {
+       "derivedFrom": "memberRelationshipUnion",
+       "type": {
+        "union": {
+         "self": "com.linkedin.bc16115aac89e1407b0c6eebfc50ca7f",
+         "connection": "com.linkedin.d819570fa72cd4be43576b33124cc146",
+         "noConnection": "com.linkedin.68b13539b7a1f45f6d4f65eabf4a5503"
+        }
+       }
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.relationships.MemberRelationship"
+    },
+    "com.linkedin.00ad54e6c12ed6875cd63bb438b9f1ce": {
+     "fields": {
+      "start": {
+       "type": "int"
+      },
+      "count": {
+       "type": "int"
+      },
+      "total": {
+       "type": "int"
+      }
+     },
+     "baseType": "com.linkedin.restli.common.CollectionMetadata"
+    },
+    "com.linkedin.bf12b2bc1b425a8d9b9f774c2ca335e1": {
+     "fields": {
+      "urn": {
+       "type": "com.linkedin.common.Urn"
+      },
+      "modelName": {
+       "type": "string"
+      },
+      "fieldName": {
+       "type": "string"
+      },
+      "value": {
+       "type": "string"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.common.StringFieldReference"
+    },
+    "com.linkedin.ae0c2e23213c578c1deb145012f53098": {
+     "fields": {
+      "jobActionInfo": {
+       "type": "com.linkedin.b71becd82cc091f4ec8dd7f07cab3ae5"
+      },
+      "saveState": {
+       "type": "string"
+      },
+      "saveStateResolutionResult": {
+       "resolvedFrom": "saveState",
+       "type": "com.linkedin.0130b19f418e59acc74c8daef60b7b89"
+      }
+     },
+     "baseType": "com.linkedin.voyager.dash.jobs.SaveJobAction"
+    }
+   }
+  }
+ },
+ "included": [
+  {
+   "preDashNormalizedJobPostingUrn": "urn:li:fs_normalized_jobPosting:4277612327",
+   "footerItems": [
+    {
+     "text": null,
+     "type": "LISTED_DATE",
+     "timeAt": 1753780902000,
+     "$recipeTypes": [
+      "com.linkedin.c6f6b8ba60418a06f76be78c19bb02ab"
+     ],
+     "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardFooterItem"
+    }
+   ],
+   "jobPostingTitle": "Java Full Stack Developer",
+   "*jobSeekerJobState": "urn:li:fsd_jobSeekerJobState:4277612327",
+   "primaryActions": [
+    {
+     "overflowAction": null,
+     "dismissJobAction": {
+      "jobActionInfo": {
+       "controlNameDefault": "semantic_search_job_action_dismiss",
+       "accessibilityNameDefault": "Dismiss Java Full Stack Developer job",
+       "iconDefault": "SYS_ICN_CLOSE_SMALL",
+       "iconSelected": "SYS_ICN_UNDO_SMALL",
+       "controlNameSelected": "semantic_search_job_action_dismiss_undo",
+       "$recipeTypes": [
+        "com.linkedin.b71becd82cc091f4ec8dd7f07cab3ae5"
+       ],
+       "accessibilityNameSelected": "Java Full Stack Developer job is dismissed, undo",
+       "$type": "com.linkedin.voyager.dash.jobs.JobActionInfo"
+      },
+      "channel": "SEMANTIC_SEARCH",
+      "*jobPostingRelevanceFeedback": "urn:li:fsd_jobPostingRelevanceFeedback:urn:li:fsd_jobPosting:4277612327",
+      "followUpFeedbackReasons": [],
+      "$recipeTypes": [
+       "com.linkedin.4817f9084f56ac0942dacc064e6598a3"
+      ],
+      "$type": "com.linkedin.voyager.dash.jobs.DismissJobAction"
+     },
+     "applyJobAction": null,
+     "saveJobAction": null
+    }
+   ],
+   "primaryDescription": {
+    "textDirection": "USER_LOCALE",
+    "text": "PT IKONSULTAN INOVATAMA",
+    "attributesV2": [],
+    "accessibilityTextAttributesV2": [],
+    "accessibilityText": null,
+    "$recipeTypes": [
+     "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+    ],
+    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+   },
+   "debugInfo": null,
+   "jobInsightsV2ResolutionResults": [],
+   "title": {
+    "textDirection": "USER_LOCALE",
+    "text": "Java Full Stack Developer",
+    "attributesV2": [
+     {
+      "start": 0,
+      "length": 25,
+      "detailData": {
+       "jobPostingName": null,
+       "hyperlink": null,
+       "profileFamiliarName": null,
+       "color": null,
+       "companyName": null,
+       "icon": null,
+       "epoch": null,
+       "systemImage": null,
+       "textLink": null,
+       "listItemStyle": null,
+       "groupName": null,
+       "hyperlinkOpenExternally": null,
+       "listStyle": null,
+       "profileFullName": null,
+       "stringFieldReference": null,
+       "learningCourseName": null,
+       "profileMention": null,
+       "style": "BOLD",
+       "schoolName": null,
+       "hashtag": null
+      },
+      "$recipeTypes": [
+       "com.linkedin.1711068b5ebc3bf28ba6f767993066fc"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+     }
+    ],
+    "accessibilityTextAttributesV2": [],
+    "accessibilityText": "Java Full Stack Developer",
+    "$recipeTypes": [
+     "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+    ],
+    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+   },
+   "$recipeTypes": [
+    "com.linkedin.c6a60719638f3738d98e19d328860537"
+   ],
+   "relevanceInsight": null,
+   "$type": "com.linkedin.voyager.dash.jobs.JobPostingCard",
+   "secondaryDescription": {
+    "textDirection": "USER_LOCALE",
+    "text": "Gambir, Jakarta, Indonesia (On-site)",
+    "attributesV2": [],
+    "accessibilityTextAttributesV2": [],
+    "accessibilityText": null,
+    "$recipeTypes": [
+     "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+    ],
+    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+   },
+   "entityUrn": "urn:li:fsd_jobPostingCard:(4277612327,SEMANTIC_SEARCH)",
+   "logo": {
+    "attributes": [
+     {
+      "scalingType": null,
+      "detailData": {
+       "profilePictureWithoutFrame": null,
+       "profilePictureWithRingStatus": null,
+       "icon": null,
+       "systemImage": null,
+       "*companyLogo": "urn:li:fsd_company:13436020",
+       "nonEntityGroupLogo": null,
+       "vectorImage": null,
+       "nonEntityProfessionalEventLogo": null,
+       "profilePicture": null,
+       "imageUrl": null,
+       "professionalEventLogo": null,
+       "nonEntityCompanyLogo": null,
+       "nonEntitySchoolLogo": null,
+       "groupLogo": null,
+       "schoolLogo": null,
+       "ghostImage": null,
+       "nonEntityProfilePicture": null
+      },
+      "tintColor": null,
+      "$recipeTypes": [
+       "com.linkedin.40201cc8debe80e6fea357edadcb4085"
+      ],
+      "tapTargets": [],
+      "displayAspectRatio": null,
+      "$type": "com.linkedin.voyager.dash.common.image.ImageAttribute"
+     }
+    ],
+    "editableAccessibilityText": false,
+    "actionTarget": "https://www.linkedin.com/company/pt-ikonsultan-inovatama/life",
+    "accessibilityTextAttributes": [],
+    "totalCount": null,
+    "accessibilityText": "PT IKONSULTAN INOVATAMA logo",
+    "$recipeTypes": [
+     "com.linkedin.88781d1af842bd1a2698b9bbbbcea321"
+    ],
+    "$type": "com.linkedin.voyager.dash.common.image.ImageViewModel"
+   },
+   "tertiaryDescription": null
+  },
+  {
+   "preDashNormalizedJobPostingUrn": "urn:li:fs_normalized_jobPosting:4418621292",
+   "footerItems": [
+    {
+     "text": null,
+     "type": "LISTED_DATE",
+     "timeAt": 1779557205000,
+     "$recipeTypes": [
+      "com.linkedin.c6f6b8ba60418a06f76be78c19bb02ab"
+     ],
+     "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardFooterItem"
+    }
+   ],
+   "jobPostingTitle": "Backend Developer",
+   "*jobSeekerJobState": "urn:li:fsd_jobSeekerJobState:4418621292",
+   "primaryActions": [
+    {
+     "overflowAction": null,
+     "dismissJobAction": {
+      "jobActionInfo": {
+       "controlNameDefault": "semantic_search_job_action_dismiss",
+       "accessibilityNameDefault": "Dismiss Backend Developer job",
+       "iconDefault": "SYS_ICN_CLOSE_SMALL",
+       "iconSelected": "SYS_ICN_UNDO_SMALL",
+       "controlNameSelected": "semantic_search_job_action_dismiss_undo",
+       "$recipeTypes": [
+        "com.linkedin.b71becd82cc091f4ec8dd7f07cab3ae5"
+       ],
+       "accessibilityNameSelected": "Backend Developer job is dismissed, undo",
+       "$type": "com.linkedin.voyager.dash.jobs.JobActionInfo"
+      },
+      "channel": "SEMANTIC_SEARCH",
+      "*jobPostingRelevanceFeedback": "urn:li:fsd_jobPostingRelevanceFeedback:urn:li:fsd_jobPosting:4418621292",
+      "followUpFeedbackReasons": [],
+      "$recipeTypes": [
+       "com.linkedin.4817f9084f56ac0942dacc064e6598a3"
+      ],
+      "$type": "com.linkedin.voyager.dash.jobs.DismissJobAction"
+     },
+     "applyJobAction": null,
+     "saveJobAction": null
+    }
+   ],
+   "primaryDescription": {
+    "textDirection": "USER_LOCALE",
+    "text": "PT Barrans Global Mandiri",
+    "attributesV2": [],
+    "accessibilityTextAttributesV2": [],
+    "accessibilityText": null,
+    "$recipeTypes": [
+     "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+    ],
+    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+   },
+   "debugInfo": null,
+   "jobInsightsV2ResolutionResults": [],
+   "title": {
+    "textDirection": "USER_LOCALE",
+    "text": "Backend Developer",
+    "attributesV2": [
+     {
+      "start": 0,
+      "length": 17,
+      "detailData": {
+       "jobPostingName": null,
+       "hyperlink": null,
+       "profileFamiliarName": null,
+       "color": null,
+       "companyName": null,
+       "icon": null,
+       "epoch": null,
+       "systemImage": null,
+       "textLink": null,
+       "listItemStyle": null,
+       "groupName": null,
+       "hyperlinkOpenExternally": null,
+       "listStyle": null,
+       "profileFullName": null,
+       "stringFieldReference": null,
+       "learningCourseName": null,
+       "profileMention": null,
+       "style": "BOLD",
+       "schoolName": null,
+       "hashtag": null
+      },
+      "$recipeTypes": [
+       "com.linkedin.1711068b5ebc3bf28ba6f767993066fc"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+     }
+    ],
+    "accessibilityTextAttributesV2": [],
+    "accessibilityText": "Backend Developer",
+    "$recipeTypes": [
+     "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+    ],
+    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+   },
+   "$recipeTypes": [
+    "com.linkedin.c6a60719638f3738d98e19d328860537"
+   ],
+   "relevanceInsight": null,
+   "$type": "com.linkedin.voyager.dash.jobs.JobPostingCard",
+   "secondaryDescription": {
+    "textDirection": "USER_LOCALE",
+    "text": "Gambir, Jakarta, Indonesia (On-site)",
+    "attributesV2": [],
+    "accessibilityTextAttributesV2": [],
+    "accessibilityText": null,
+    "$recipeTypes": [
+     "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+    ],
+    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+   },
+   "entityUrn": "urn:li:fsd_jobPostingCard:(4418621292,SEMANTIC_SEARCH)",
+   "logo": {
+    "attributes": [
+     {
+      "scalingType": null,
+      "detailData": {
+       "profilePictureWithoutFrame": null,
+       "profilePictureWithRingStatus": null,
+       "icon": null,
+       "systemImage": null,
+       "*companyLogo": "urn:li:fsd_company:82412585",
+       "nonEntityGroupLogo": null,
+       "vectorImage": null,
+       "nonEntityProfessionalEventLogo": null,
+       "profilePicture": null,
+       "imageUrl": null,
+       "professionalEventLogo": null,
+       "nonEntityCompanyLogo": null,
+       "nonEntitySchoolLogo": null,
+       "groupLogo": null,
+       "schoolLogo": null,
+       "ghostImage": null,
+       "nonEntityProfilePicture": null
+      },
+      "tintColor": null,
+      "$recipeTypes": [
+       "com.linkedin.40201cc8debe80e6fea357edadcb4085"
+      ],
+      "tapTargets": [],
+      "displayAspectRatio": null,
+      "$type": "com.linkedin.voyager.dash.common.image.ImageAttribute"
+     }
+    ],
+    "editableAccessibilityText": false,
+    "actionTarget": "https://www.linkedin.com/company/pt-barrans-global-mandiri/life",
+    "accessibilityTextAttributes": [],
+    "totalCount": null,
+    "accessibilityText": "PT Barrans Global Mandiri logo",
+    "$recipeTypes": [
+     "com.linkedin.88781d1af842bd1a2698b9bbbbcea321"
+    ],
+    "$type": "com.linkedin.voyager.dash.common.image.ImageViewModel"
+   },
+   "tertiaryDescription": null
+  },
+  {
+   "preDashNormalizedJobPostingUrn": "urn:li:fs_normalized_jobPosting:4332554777",
+   "footerItems": [
+    {
+     "text": null,
+     "type": "LISTED_DATE",
+     "timeAt": 1768126885000,
+     "$recipeTypes": [
+      "com.linkedin.c6f6b8ba60418a06f76be78c19bb02ab"
+     ],
+     "$type": "com.linkedin.voyager.dash.jobs.JobPostingCardFooterItem"
+    }
+   ],
+   "jobPostingTitle": "Junior Programmer",
+   "*jobSeekerJobState": "urn:li:fsd_jobSeekerJobState:4332554777",
+   "primaryActions": [
+    {
+     "overflowAction": null,
+     "dismissJobAction": {
+      "jobActionInfo": {
+       "controlNameDefault": "semantic_search_job_action_dismiss",
+       "accessibilityNameDefault": "Dismiss Junior Programmer job",
+       "iconDefault": "SYS_ICN_CLOSE_SMALL",
+       "iconSelected": "SYS_ICN_UNDO_SMALL",
+       "controlNameSelected": "semantic_search_job_action_dismiss_undo",
+       "$recipeTypes": [
+        "com.linkedin.b71becd82cc091f4ec8dd7f07cab3ae5"
+       ],
+       "accessibilityNameSelected": "Junior Programmer job is dismissed, undo",
+       "$type": "com.linkedin.voyager.dash.jobs.JobActionInfo"
+      },
+      "channel": "SEMANTIC_SEARCH",
+      "*jobPostingRelevanceFeedback": "urn:li:fsd_jobPostingRelevanceFeedback:urn:li:fsd_jobPosting:4332554777",
+      "followUpFeedbackReasons": [],
+      "$recipeTypes": [
+       "com.linkedin.4817f9084f56ac0942dacc064e6598a3"
+      ],
+      "$type": "com.linkedin.voyager.dash.jobs.DismissJobAction"
+     },
+     "applyJobAction": null,
+     "saveJobAction": null
+    }
+   ],
+   "primaryDescription": {
+    "textDirection": "USER_LOCALE",
+    "text": "PKF Hadiwinata",
+    "attributesV2": [],
+    "accessibilityTextAttributesV2": [],
+    "accessibilityText": null,
+    "$recipeTypes": [
+     "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+    ],
+    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+   },
+   "debugInfo": null,
+   "jobInsightsV2ResolutionResults": [],
+   "title": {
+    "textDirection": "USER_LOCALE",
+    "text": "Junior Programmer",
+    "attributesV2": [
+     {
+      "start": 0,
+      "length": 17,
+      "detailData": {
+       "jobPostingName": null,
+       "hyperlink": null,
+       "profileFamiliarName": null,
+       "color": null,
+       "companyName": null,
+       "icon": null,
+       "epoch": null,
+       "systemImage": null,
+       "textLink": null,
+       "listItemStyle": null,
+       "groupName": null,
+       "hyperlinkOpenExternally": null,
+       "listStyle": null,
+       "profileFullName": null,
+       "stringFieldReference": null,
+       "learningCourseName": null,
+       "profileMention": null,
+       "style": "BOLD",
+       "schoolName": null,
+       "hashtag": null
+      },
+      "$recipeTypes": [
+       "com.linkedin.1711068b5ebc3bf28ba6f767993066fc"
+      ],
+      "$type": "com.linkedin.voyager.dash.common.text.TextAttribute"
+     }
+    ],
+    "accessibilityTextAttributesV2": [],
+    "accessibilityText": "Junior Programmer",
+    "$recipeTypes": [
+     "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+    ],
+    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+   },
+   "$recipeTypes": [
+    "com.linkedin.c6a60719638f3738d98e19d328860537"
+   ],
+   "relevanceInsight": {
+    "image": {
+     "attributes": [
+      {
+       "scalingType": null,
+       "detailData": {
+        "profilePictureWithoutFrame": null,
+        "profilePictureWithRingStatus": null,
+        "icon": null,
+        "systemImage": null,
+        "*companyLogo": "urn:li:fsd_company:14376743",
+        "nonEntityGroupLogo": null,
+        "vectorImage": null,
+        "nonEntityProfessionalEventLogo": null,
+        "profilePicture": null,
+        "imageUrl": null,
+        "professionalEventLogo": null,
+        "nonEntityCompanyLogo": null,
+        "nonEntitySchoolLogo": null,
+        "groupLogo": null,
+        "schoolLogo": null,
+        "ghostImage": null,
+        "nonEntityProfilePicture": null
+       },
+       "tintColor": null,
+       "$recipeTypes": [
+        "com.linkedin.40201cc8debe80e6fea357edadcb4085"
+       ],
+       "tapTargets": [],
+       "displayAspectRatio": null,
+       "$type": "com.linkedin.voyager.dash.common.image.ImageAttribute"
+      }
+     ],
+     "editableAccessibilityText": false,
+     "actionTarget": null,
+     "accessibilityTextAttributes": [],
+     "totalCount": null,
+     "accessibilityText": null,
+     "$recipeTypes": [
+      "com.linkedin.88781d1af842bd1a2698b9bbbbcea321"
+     ],
+     "$type": "com.linkedin.voyager.dash.common.image.ImageViewModel"
+    },
+    "text": {
+     "textDirection": "USER_LOCALE",
+     "text": "5 school alumni work here",
+     "attributesV2": [],
+     "accessibilityTextAttributesV2": [],
+     "accessibilityText": "5 Universitas Pendidikan Indonesia school alumni work here",
+     "$recipeTypes": [
+      "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+     ],
+     "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+    },
+    "$recipeTypes": [
+     "com.linkedin.e7982d21e069cfe126ea7adf0b2699a5"
+    ],
+    "$type": "com.linkedin.voyager.dash.common.ux.InsightViewModel"
+   },
+   "$type": "com.linkedin.voyager.dash.jobs.JobPostingCard",
+   "secondaryDescription": {
+    "textDirection": "USER_LOCALE",
+    "text": "Jakarta, Jakarta, Indonesia (On-site)",
+    "attributesV2": [],
+    "accessibilityTextAttributesV2": [],
+    "accessibilityText": null,
+    "$recipeTypes": [
+     "com.linkedin.5eb1a97a538a4324b791de9469fc5690"
+    ],
+    "$type": "com.linkedin.voyager.dash.common.text.TextViewModel"
+   },
+   "entityUrn": "urn:li:fsd_jobPostingCard:(4332554777,SEMANTIC_SEARCH)",
+   "logo": {
+    "attributes": [
+     {
+      "scalingType": null,
+      "detailData": {
+       "profilePictureWithoutFrame": null,
+       "profilePictureWithRingStatus": null,
+       "icon": null,
+       "systemImage": null,
+       "*companyLogo": "urn:li:fsd_company:27205658",
+       "nonEntityGroupLogo": null,
+       "vectorImage": null,
+       "nonEntityProfessionalEventLogo": null,
+       "profilePicture": null,
+       "imageUrl": null,
+       "professionalEventLogo": null,
+       "nonEntityCompanyLogo": null,
+       "nonEntitySchoolLogo": null,
+       "groupLogo": null,
+       "schoolLogo": null,
+       "ghostImage": null,
+       "nonEntityProfilePicture": null
+      },
+      "tintColor": null,
+      "$recipeTypes": [
+       "com.linkedin.40201cc8debe80e6fea357edadcb4085"
+      ],
+      "tapTargets": [],
+      "displayAspectRatio": null,
+      "$type": "com.linkedin.voyager.dash.common.image.ImageAttribute"
+     }
+    ],
+    "editableAccessibilityText": false,
+    "actionTarget": "https://www.linkedin.com/company/pkf-indonesia/life",
+    "accessibilityTextAttributes": [],
+    "totalCount": null,
+    "accessibilityText": "PKF Hadiwinata logo",
+    "$recipeTypes": [
+     "com.linkedin.88781d1af842bd1a2698b9bbbbcea321"
+    ],
+    "$type": "com.linkedin.voyager.dash.common.image.ImageViewModel"
+   },
+   "tertiaryDescription": null
+  },
+  {
+   "entityUrn": "urn:li:fsd_company:27205658",
+   "logoResolutionResult": {
+    "url": null,
+    "vectorImage": {
+     "digitalmediaAsset": "urn:li:digitalmediaAsset:C560BAQHasi04AXGlTA",
+     "attribution": null,
+     "c2paManifestData": null,
+     "$recipeTypes": [
+      "com.linkedin.55600587d5659c2fda181973445f7157"
+     ],
+     "artifacts": [
+      {
+       "width": 200,
+       "$recipeTypes": [
+        "com.linkedin.505dec0f9d8176db6c25f2ac53f37389"
+       ],
+       "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1679543288009?e=1781740800&v=beta&t=JuKubx2_rVmqxU0nyJMmT68pC3HBNKjUl7lwZotrss0",
+       "expiresAt": 1781740800000,
+       "height": 200,
+       "$type": "com.linkedin.common.VectorArtifact"
+      },
+      {
+       "width": 100,
+       "$recipeTypes": [
+        "com.linkedin.505dec0f9d8176db6c25f2ac53f37389"
+       ],
+       "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1679543288009?e=1781740800&v=beta&t=zuRMl8bKd0Paep1RIUcGnEIOScUw5WzHNaSZqY5JUvA",
+       "expiresAt": 1781740800000,
+       "height": 100,
+       "$type": "com.linkedin.common.VectorArtifact"
+      },
+      {
+       "width": 400,
+       "$recipeTypes": [
+        "com.linkedin.505dec0f9d8176db6c25f2ac53f37389"
+       ],
+       "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1679543288010?e=1781740800&v=beta&t=AVGFsluig2C7lr6V4-jxBvqU4Io5gy7QMIkaGKUIY4Q",
+       "expiresAt": 1781740800000,
+       "height": 400,
+       "$type": "com.linkedin.common.VectorArtifact"
+      }
+     ],
+     "rootUrl": "https://media.licdn.com/dms/image/v2/C560BAQHasi04AXGlTA/company-logo_",
+     "$type": "com.linkedin.common.VectorImage"
+    }
+   },
+   "$recipeTypes": [
+    "com.linkedin.21ae25f6ace299cdc54aed52dd5d5460"
+   ],
+   "$type": "com.linkedin.voyager.dash.organization.Company"
+  },
+  {
+   "entityUrn": "urn:li:fsd_company:13436020",
+   "logoResolutionResult": {
+    "url": null,
+    "vectorImage": {
+     "digitalmediaAsset": "urn:li:digitalmediaAsset:C560BAQH-OKNci0WBBw",
+     "attribution": null,
+     "c2paManifestData": null,
+     "$recipeTypes": [
+      "com.linkedin.55600587d5659c2fda181973445f7157"
+     ],
+     "artifacts": [
+      {
+       "width": 200,
+       "$recipeTypes": [
+        "com.linkedin.505dec0f9d8176db6c25f2ac53f37389"
+       ],
+       "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1678859878266/pt_ikonsultan_inovatama_logo?e=1781740800&v=beta&t=FyDuRzL9t35xqcY3FjzRSezKQRj9CIBCxpULwwUTQJc",
+       "expiresAt": 1781740800000,
+       "height": 200,
+       "$type": "com.linkedin.common.VectorArtifact"
+      },
+      {
+       "width": 100,
+       "$recipeTypes": [
+        "com.linkedin.505dec0f9d8176db6c25f2ac53f37389"
+       ],
+       "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1678859878266/pt_ikonsultan_inovatama_logo?e=1781740800&v=beta&t=16BTT90hzXO4aGq_cWTgtwJO1m8L8gmW5pNSqt3R4w8",
+       "expiresAt": 1781740800000,
+       "height": 100,
+       "$type": "com.linkedin.common.VectorArtifact"
+      },
+      {
+       "width": 400,
+       "$recipeTypes": [
+        "com.linkedin.505dec0f9d8176db6c25f2ac53f37389"
+       ],
+       "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1678859878266/pt_ikonsultan_inovatama_logo?e=1781740800&v=beta&t=klm3iHyu5VVngdqK_Noj5uDChr5wQzbbBdFnCpALEpU",
+       "expiresAt": 1781740800000,
+       "height": 400,
+       "$type": "com.linkedin.common.VectorArtifact"
+      }
+     ],
+     "rootUrl": "https://media.licdn.com/dms/image/v2/C560BAQH-OKNci0WBBw/company-logo_",
+     "$type": "com.linkedin.common.VectorImage"
+    }
+   },
+   "$recipeTypes": [
+    "com.linkedin.21ae25f6ace299cdc54aed52dd5d5460"
+   ],
+   "$type": "com.linkedin.voyager.dash.organization.Company"
+  },
+  {
+   "entityUrn": "urn:li:fsd_company:82412585",
+   "logoResolutionResult": {
+    "url": null,
+    "vectorImage": {
+     "digitalmediaAsset": "urn:li:digitalmediaAsset:C4E0BAQHwC20H5iHlGA",
+     "attribution": null,
+     "c2paManifestData": null,
+     "$recipeTypes": [
+      "com.linkedin.55600587d5659c2fda181973445f7157"
+     ],
+     "artifacts": [
+      {
+       "width": 200,
+       "$recipeTypes": [
+        "com.linkedin.505dec0f9d8176db6c25f2ac53f37389"
+       ],
+       "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1644383340441?e=1781740800&v=beta&t=aT2zZn5BVEe2_dReE576l7d_pv7XYelaGj7zlJOfiV8",
+       "expiresAt": 1781740800000,
+       "height": 200,
+       "$type": "com.linkedin.common.VectorArtifact"
+      },
+      {
+       "width": 100,
+       "$recipeTypes": [
+        "com.linkedin.505dec0f9d8176db6c25f2ac53f37389"
+       ],
+       "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1644383340441?e=1781740800&v=beta&t=082dpHkj-VjcwzxpE2RCGafzig8KeoXFJhEjlnh0Esg",
+       "expiresAt": 1781740800000,
+       "height": 100,
+       "$type": "com.linkedin.common.VectorArtifact"
+      },
+      {
+       "width": 400,
+       "$recipeTypes": [
+        "com.linkedin.505dec0f9d8176db6c25f2ac53f37389"
+       ],
+       "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1644383340441?e=1781740800&v=beta&t=eZFKfZ5Eyvv2DE70DCXdr_YH3e9SgmYsD_MH6Hc1zog",
+       "expiresAt": 1781740800000,
+       "height": 400,
+       "$type": "com.linkedin.common.VectorArtifact"
+      }
+     ],
+     "rootUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQHwC20H5iHlGA/company-logo_",
+     "$type": "com.linkedin.common.VectorImage"
+    }
+   },
+   "$recipeTypes": [
+    "com.linkedin.21ae25f6ace299cdc54aed52dd5d5460"
+   ],
+   "$type": "com.linkedin.voyager.dash.organization.Company"
+  },
+  {
+   "entityUrn": "urn:li:fsd_geo:102478259",
+   "$recipeTypes": [
+    "com.linkedin.08611961cc1ceb888e5814d9cedce18f"
+   ],
+   "$type": "com.linkedin.voyager.dash.common.Geo"
+  }
+ ]
+}

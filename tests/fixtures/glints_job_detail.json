@@ -1,0 +1,26 @@
+{
+  "props": {
+    "pageProps": {
+      "job": {
+        "__typename": "Job",
+        "id": "abc12345-0000-0000-0000-000000000001",
+        "title": "Backend Engineer",
+        "descriptionHtml": "<p>We are looking for a Backend Engineer to join our team.</p>\n\n<p>Responsibilities</p>\n<ul><li>Build REST and GraphQL APIs with FastAPI</li><li>Write unit and integration tests</li><li>Review pull requests and mentor juniors</li></ul>\n\n<p>Requirements</p>\n<ul><li>3+ years Python experience</li><li>Strong PostgreSQL knowledge</li><li>Experience with Docker and containerization</li></ul>\n\n<p>Nice to Have</p>\n<ul><li>AWS or GCP cloud experience</li><li>Redis and caching patterns</li></ul>",
+        "skills": [
+          {"__typename": "JobSkill", "skill": {"__typename": "Skill", "name": "Python"}},
+          {"__typename": "JobSkill", "skill": {"__typename": "Skill", "name": "FastAPI"}},
+          {"__typename": "JobSkill", "skill": {"__typename": "Skill", "name": "PostgreSQL"}},
+          {"__typename": "JobSkill", "skill": {"__typename": "Skill", "name": "Docker"}}
+        ],
+        "benefits": [
+          {"__typename": "Benefit", "title": "Health Insurance"},
+          {"__typename": "Benefit", "title": "Remote Work Allowance"},
+          {"__typename": "Benefit", "title": "Annual Leave 14 Days"}
+        ]
+      }
+    }
+  },
+  "page": "/opportunities/jobs/[id]",
+  "query": {"id": "abc12345-0000-0000-0000-000000000001"},
+  "buildId": "test-build-id"
+}
