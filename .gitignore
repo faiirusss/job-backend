@@ -14,6 +14,9 @@ data/
 # Playwright auth state (service-account session)
 storage_state*.json
 
+# Isolated Playwright browser download (see Makefile PLAYWRIGHT_BROWSERS_PATH)
+.ms-playwright/
+
 # Local agent / editor tooling
 .claude/
 .agents/
