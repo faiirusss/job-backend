@@ -1,41 +1,75 @@
+"""Qwen LLM provider over any OpenAI-compatible endpoint.
+
+Works against OpenRouter or Alibaba Cloud Model Studio (DashScope
+compatible-mode) — the endpoint is chosen by ``base_url``. Behavior parity with
+``GeminiLLM`` (``app/ai/gemini.py``): same prompts, same batching, same graceful
+degradation. Transport is async ``httpx`` against ``{base}/chat/completions``.
+
+Free tiers are heavily rate-limited (HTTP 429 on OpenRouter; ``insufficient_quota``
+on Model Studio), so calls retry with exponential backoff and the JSON parsing is
+tolerant of models that wrap output in prose or code fences, or emit a separate
+``reasoning_content`` step, instead of honoring ``response_format``.
+"""
+
 import asyncio
 import json
 import re
 from typing import Any
 
-from google import genai
-from google.genai import types as genai_types
+import httpx
 from loguru import logger
-from pydantic import BaseModel
 from tenacity import retry, stop_after_attempt, wait_exponential
 
 from app.ai.llm import ChatResolution, CoverLetterPair, JDExtraction, MatchOutput
 from app.ai.prompts import (
-    CHAT_RESOLUTION_PROMPT as _CHAT_RESOLUTION_PROMPT,
-    COVER_PROMPT as _COVER_PROMPT,
-    INTENT_PROMPT as _INTENT_PROMPT,
-    INTRO_PROMPT as _INTRO_PROMPT,
-    JD_EXTRACT_PROMPT as _JD_EXTRACT_PROMPT,
-    MATCH_PROMPT as _MATCH_PROMPT,
+    CHAT_RESOLUTION_PROMPT,
+    COVER_PROMPT,
+    INTENT_PROMPT,
+    INTRO_PROMPT,
+    JD_EXTRACT_PROMPT,
+    MATCH_PROMPT,
 )
 from app.schemas import JobListingDTO, SearchParams
 
-
-class _JDExtractItem(BaseModel):
-    """response_schema for a single job's extracted fields (Gemini structured output)."""
-
-    responsibilities: list[str] = []
-    mandatory_requirements: list[str] = []
-    nice_to_have_requirements: list[str] = []
-    skills_tags: list[str] = []
-    benefits: list[str] = []
-
-
-# Internal batch size for JD extraction. Full description blocks are large, so keep
-# batches small to bound prompt size and avoid cross-job contamination.
+# Mirror Gemini's JD-extraction batching: full description blocks are large, so
+# keep batches small to bound prompt size and avoid cross-job contamination.
 _EXTRACT_BATCH = 5
-# Per-job description cap fed to the extractor; generous enough for full JDs.
 _EXTRACT_DESC_CAP = 6000
+
+_FENCE_RE = re.compile(r"^```(?:json)?\s*|\s*```$")
+
+
+def _extract_json(text: str) -> Any:
+    """Parse JSON out of an LLM text response.
+
+    Handles three cases, in order: clean JSON, a ```json fenced block, and JSON
+    embedded in surrounding prose (recover the first balanced ``[...]`` or
+    ``{...}`` span). Raises ``ValueError`` if no JSON can be found.
+    """
+    stripped = _FENCE_RE.sub("", text.strip())
+    try:
+        return json.loads(stripped)
+    except json.JSONDecodeError:
+        pass
+
+    # Recover the first balanced array/object from prose-wrapped output.
+    for opener, closer in (("[", "]"), ("{", "}")):
+        start = stripped.find(opener)
+        if start == -1:
+            continue
+        depth = 0
+        for i in range(start, len(stripped)):
+            ch = stripped[i]
+            if ch == opener:
+                depth += 1
+            elif ch == closer:
+                depth -= 1
+                if depth == 0:
+                    try:
+                        return json.loads(stripped[start : i + 1])
+                    except json.JSONDecodeError:
+                        break
+    raise ValueError(f"no parseable JSON in model response: {text[:200]!r}")
 
 
 class _RateLimiter:
@@ -53,34 +87,59 @@ class _RateLimiter:
             self._last = asyncio.get_event_loop().time()
 
 
-class GeminiLLM:
-    def __init__(self, api_key: str, model: str, rpm: int = 15) -> None:
-        self._client = genai.Client(api_key=api_key)
+class QwenLLM:
+    def __init__(
+        self,
+        api_key: str,
+        model: str,
+        base_url: str = "https://openrouter.ai/api/v1",
+        rpm: int = 15,
+        enable_thinking: bool | None = None,
+    ) -> None:
         self._model = model
+        self._enable_thinking = enable_thinking
         self._limiter = _RateLimiter(rpm)
+        self._client = httpx.AsyncClient(
+            base_url=base_url.rstrip("/"),
+            timeout=httpx.Timeout(60.0),
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+                # OpenRouter courtesy attribution headers (optional, harmless).
+                "HTTP-Referer": "https://github.com/faiirusss/job-backend",
+                "X-Title": "JHAI",
+            },
+        )
+
+    async def _complete(self, prompt: str, *, temperature: float, json_mode: bool) -> str:
+        await self._limiter.acquire()
+        payload: dict[str, Any] = {
+            "model": self._model,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": temperature,
+        }
+        if self._enable_thinking is not None:
+            # Alibaba Model Studio: disabling thinking strips reasoning_content,
+            # cutting completion tokens ~10x. Unknown params are ignored by
+            # OpenRouter, so this stays safe when pointed elsewhere.
+            payload["enable_thinking"] = self._enable_thinking
+        if json_mode:
+            # Best-effort: free models may ignore this; parsing stays tolerant.
+            payload["response_format"] = {"type": "json_object"}
+        resp = await self._client.post("/chat/completions", json=payload)
+        resp.raise_for_status()
+        data = resp.json()
+        if "error" in data:
+            raise RuntimeError(f"qwen endpoint error: {data['error']}")
+        return data["choices"][0]["message"]["content"] or ""
 
     @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=1, max=10))
-    async def _call_json(self, prompt: str, response_schema: Any = None) -> Any:
-        await self._limiter.acquire()
-        config = genai_types.GenerateContentConfig(
-            temperature=0.0,
-            response_mime_type="application/json",
-            # When a schema is supplied Gemini constrains its output to it, which
-            # makes the structured-data-cleaner step far more reliable.
-            response_schema=response_schema,
-        )
-        response = await asyncio.to_thread(
-            self._client.models.generate_content,
-            model=self._model,
-            contents=prompt,
-            config=config,
-        )
-        text = response.text or ""
-        text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text.strip())
-        return json.loads(text)
+    async def _call_json(self, prompt: str) -> Any:
+        text = await self._complete(prompt, temperature=0.0, json_mode=True)
+        return _extract_json(text)
 
     async def parse_intent(self, query: str) -> SearchParams:
-        data = await self._call_json(_INTENT_PROMPT + query)
+        data = await self._call_json(INTENT_PROMPT + query)
         return SearchParams(
             role_keywords=data.get("role_keywords") or [],
             location=data.get("location") or ["Indonesia"],
@@ -95,7 +154,7 @@ class GeminiLLM:
         previous_params: SearchParams | None,
         recent_messages: list[dict[str, str]],
     ) -> ChatResolution:
-        prompt = _CHAT_RESOLUTION_PROMPT.format(
+        prompt = CHAT_RESOLUTION_PROMPT.format(
             previous_params=json.dumps(
                 previous_params.model_dump() if previous_params else None, ensure_ascii=False
             ),
@@ -116,29 +175,19 @@ class GeminiLLM:
 
     async def generate_intro(self, query: str, params: SearchParams) -> str:
         safe_query = query.replace("{", "{{").replace("}", "}}")
-        prompt = _INTRO_PROMPT.format(
+        prompt = INTRO_PROMPT.format(
             query=safe_query,
             roles=", ".join(params.role_keywords) or "—",
             location=", ".join(params.location) or "Indonesia",
             work_type=", ".join(params.work_type) or "semua",
         )
-        await self._limiter.acquire()
         try:
-            response = await asyncio.to_thread(
-                self._client.models.generate_content,
-                model=self._model,
-                contents=prompt,
-                config=genai_types.GenerateContentConfig(
-                    temperature=0.7,  # warmer for conversational tone
-                    response_mime_type="text/plain",
-                ),
-            )
-            text = (response.text or "").strip().strip('"').strip("'")
+            text = await self._complete(prompt, temperature=0.7, json_mode=False)
+            text = text.strip().strip('"').strip("'")
             if text:
                 return text
         except Exception as exc:
-            logger.warning("generate_intro Gemini call failed, using template fallback: {}", exc)
-        # Fallback if Gemini fails: templated greeting
+            logger.warning("generate_intro Qwen call failed, using template fallback: {}", exc)
         role = params.role_keywords[0] if params.role_keywords else "pekerjaan"
         loc = ", ".join(params.location) if params.location else "Indonesia"
         return f"Baik, saya akan mencari lowongan {role} di {loc} via Glints."
@@ -164,7 +213,7 @@ class GeminiLLM:
             }
             for j in jobs
         ]
-        prompt = _MATCH_PROMPT.format(cv=cv_text[:2000], jobs=json.dumps(jobs_payload))
+        prompt = MATCH_PROMPT.format(cv=cv_text[:2000], jobs=json.dumps(jobs_payload))
         data = await self._call_json(prompt)
         out: list[MatchOutput] = []
         for item in data:
@@ -180,10 +229,9 @@ class GeminiLLM:
         return out
 
     async def extract_jd_fields(self, jobs: list[JobListingDTO]) -> list[JDExtraction]:
-        """Distil each job's free-form description block into structured fields,
-        batched and schema-constrained. A failed batch degrades to empty
-        extractions for that batch so the pipeline always proceeds (the raw
-        ``description`` is preserved regardless)."""
+        """Distil each job's free-form description into structured fields, batched.
+        A failed batch degrades to empty extractions for that batch so the
+        pipeline always proceeds (the raw ``description`` is preserved)."""
         if not jobs:
             return []
 
@@ -198,19 +246,17 @@ class GeminiLLM:
                 }
                 for i, j in enumerate(batch)
             ]
-            prompt = _JD_EXTRACT_PROMPT.format(jobs=json.dumps(payload, ensure_ascii=False))
+            prompt = JD_EXTRACT_PROMPT.format(jobs=json.dumps(payload, ensure_ascii=False))
             try:
-                data = await self._call_json(prompt, response_schema=list[_JDExtractItem])
+                data = await self._call_json(prompt)
                 if not isinstance(data, list):
                     raise ValueError(f"expected JSON array, got {type(data).__name__}")
             except Exception as e:
                 logger.warning(
-                    f"gemini: extract_jd_fields batch [{start}:{start + len(batch)}] "
+                    f"qwen: extract_jd_fields batch [{start}:{start + len(batch)}] "
                     f"failed: {e}; falling back to empty extractions for this batch"
                 )
                 data = []
-            # Align by order; pad short responses and ignore extras so the result
-            # length always matches the input batch.
             for offset in range(len(batch)):
                 item = data[offset] if offset < len(data) and isinstance(data[offset], dict) else {}
                 results.append(
@@ -231,7 +277,7 @@ class GeminiLLM:
     async def generate_cover_letter(
         self, cv_text: str, job: JobListingDTO, matched_skills: list[str]
     ) -> CoverLetterPair:
-        prompt = _COVER_PROMPT.format(
+        prompt = COVER_PROMPT.format(
             cv=cv_text[:2500],
             title=job.title,
             company=job.company,

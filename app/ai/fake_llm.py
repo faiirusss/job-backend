@@ -1,7 +1,7 @@
 import re
 from hashlib import sha1
 
-from app.ai.llm import CoverLetterPair, JDExtraction, MatchOutput
+from app.ai.llm import ChatResolution, CoverLetterPair, JDExtraction, MatchOutput
 from app.schemas import JobListingDTO, SearchParams
 
 # Keyword cues used by the FakeLLM stand-in to bucket description lines without a
@@ -71,6 +71,25 @@ _STOP_WORDS = {
     "di",
     "juta",
 }
+
+_REFINE_HINTS = {
+    "ganti",
+    "ubah",
+    "jadi",
+    "jadikan",
+    "lokasi",
+    "lokasinya",
+    "kota",
+    "filter",
+    "hanya",
+    "aja",
+    "saja",
+    "min",
+    "minimal",
+    "skip",
+}
+
+_REFINE_ROLE_STOP_WORDS = _STOP_WORDS | _REFINE_HINTS | {"ke", "nya", "carinya", "tolong", "please"}
 
 _CL_TEMPLATE_ID = """Yth. Tim HRD {company},
 
@@ -152,6 +171,99 @@ class FakeLLM:
             seniority=None,
             salary_min_idr=salary_min,
         )
+
+    async def resolve_chat_message(
+        self,
+        message: str,
+        previous_params: SearchParams | None,
+        recent_messages: list[dict[str, str]],
+    ) -> ChatResolution:
+        del recent_messages
+        q = message.lower()
+        parsed = await self.parse_intent(message)
+        has_search_hint = any(
+            token in q
+            for token in (
+                "cari",
+                "carikan",
+                "kerja",
+                "kerjaan",
+                "pekerjaan",
+                "lowongan",
+                "loker",
+                "job",
+            )
+        )
+        has_refine_hint = any(token in q for token in _REFINE_HINTS)
+        has_specific_filter = any(
+            token in q
+            for token in (
+                "remote",
+                "hybrid",
+                "onsite",
+                "wfo",
+                "wfh",
+                "jakarta",
+                "bandung",
+                "surabaya",
+                "yogyakarta",
+                "medan",
+                "bali",
+                "juta",
+            )
+        )
+
+        if previous_params and (has_refine_hint or (has_specific_filter and not has_search_hint)):
+            params = self._merge_refinement(previous_params, parsed, message)
+            role = params.role_keywords[0] if params.role_keywords else "pekerjaan"
+            loc = ", ".join(params.location) if params.location else "Indonesia"
+            return ChatResolution(
+                action="refine_search",
+                params=params,
+                response_text=f"Siap, saya cari ulang lowongan {role} di {loc}.",
+            )
+
+        if has_search_hint or parsed.role_keywords:
+            role = parsed.role_keywords[0] if parsed.role_keywords else "pekerjaan"
+            loc = ", ".join(parsed.location) if parsed.location else "Indonesia"
+            return ChatResolution(
+                action="new_search",
+                params=parsed,
+                response_text=f"Siap, saya cari lowongan {role} di {loc}.",
+            )
+
+        return ChatResolution(
+            action="general_chat",
+            params=None,
+            response_text="Saya bisa bantu cari lowongan dan menyesuaikan kriterianya dari chat ini.",
+        )
+
+    def _merge_refinement(
+        self, previous: SearchParams, patch: SearchParams, message: str
+    ) -> SearchParams:
+        q = message.lower()
+        update = previous.model_dump()
+        if patch.location and patch.location != ["Indonesia"]:
+            update["location"] = patch.location
+        if any(token in q for token in ("remote", "hybrid", "onsite", "wfo", "wfh")):
+            update["work_type"] = patch.work_type
+        if patch.salary_min_idr is not None:
+            update["salary_min_idr"] = patch.salary_min_idr
+
+        location_tokens = {loc.lower() for loc in patch.location}
+        role_keywords: list[str] = []
+        for raw in patch.role_keywords:
+            token = raw.strip()
+            low = token.lower()
+            if low in _REFINE_ROLE_STOP_WORDS or low in location_tokens:
+                continue
+            if low in {"jakarta", "bandung", "surabaya", "yogyakarta", "medan", "bali"}:
+                continue
+            role_keywords.append(token)
+        if role_keywords:
+            update["role_keywords"] = role_keywords
+
+        return SearchParams.model_validate(update)
 
     async def score_jobs(self, cv_text: str, jobs: list[JobListingDTO]) -> list[MatchOutput]:
         cv_tokens = set(re.findall(r"[A-Za-z][A-Za-z0-9.+#-]{2,}", cv_text.lower()))
