@@ -6,8 +6,13 @@ import pytest
 import pytest_asyncio
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
-# Ensure default test env BEFORE app imports
+# Ensure default test env BEFORE app imports. Pin the LLM provider to the offline
+# fake regardless of the developer's `.env` (which may select gemini/qwen) — these
+# are OS env vars, which take precedence over the `.env` file. Tests that exercise a
+# real provider monkeypatch LLM_PROVIDER explicitly.
 os.environ.setdefault("USE_FAKE_LLM", "true")
+os.environ.setdefault("LLM_PROVIDER", "fake")
+os.environ.setdefault("LLM_FALLBACK_PROVIDERS", "")
 
 
 @pytest.fixture(autouse=True)
@@ -81,3 +86,17 @@ async def db_session(db_engine) -> AsyncIterator[AsyncSession]:
     factory = async_sessionmaker(db_engine, expire_on_commit=False)
     async with factory() as session:
         yield session
+
+
+@pytest_asyncio.fixture
+async def test_user_id(db_session: AsyncSession) -> int:
+    from app.models import UserAccount
+
+    user = UserAccount(
+        email=f"test-{uuid.uuid4().hex[:8]}@example.com",
+        password_hash="test-hash",
+    )
+    db_session.add(user)
+    await db_session.flush()
+    await db_session.refresh(user)
+    return user.id

@@ -18,14 +18,14 @@ class NoActiveCVError(Exception):
     pass
 
 
-async def generate(session: AsyncSession, job_id: int) -> CoverLetterResponse:
+async def generate(session: AsyncSession, user_id: int, job_id: int) -> CoverLetterResponse:
     job = (
         await session.execute(select(JobListing).where(JobListing.id == job_id))
     ).scalar_one_or_none()
     if job is None:
         raise JobNotFoundError(str(job_id))
 
-    cv = await cv_service.get_active_cv_full(session)
+    cv = await cv_service.get_active_cv_full(session, user_id)
     if cv is None:
         raise NoActiveCVError()
 
@@ -48,7 +48,11 @@ async def generate(session: AsyncSession, job_id: int) -> CoverLetterResponse:
     match = (
         await session.execute(
             select(MatchResult)
-            .where(MatchResult.job_id == job.id, MatchResult.cv_id == cv.id)
+            .where(
+                MatchResult.user_id == user_id,
+                MatchResult.job_id == job.id,
+                MatchResult.cv_id == cv.id,
+            )
             .limit(1)
         )
     ).scalar_one_or_none()
@@ -56,6 +60,7 @@ async def generate(session: AsyncSession, job_id: int) -> CoverLetterResponse:
 
     pair = await get_llm().generate_cover_letter(cv.text_content, job_dto, matched_skills)
     row = CoverLetter(
+        user_id=user_id,
         job_id=job.id,
         cv_id=cv.id,
         content_id=pair.content_id,

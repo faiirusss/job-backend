@@ -28,6 +28,7 @@ dependencies = [
     "tenacity>=9.0,<10.0",
     "python-multipart>=0.0.9",
     "numpy>=1.26,<3.0",
+    "argon2-cffi>=23.1,<26.0",
 ]
 
 [project.optional-dependencies]

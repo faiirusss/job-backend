@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.ai.embeddings import embeddings_service
-from app.api import cv, health, history, jobs, search
+from app.api import auth, conversations, cv, health, history, jobs, search
 from app.config import settings
 from app.utils.logger import configure_logging
 from app.ws import search as ws_search
@@ -28,7 +28,9 @@ app.add_middleware(
 )
 
 app.include_router(health.router, prefix="/api/v1")
+app.include_router(auth.router, prefix="/api/v1")
 app.include_router(cv.router, prefix="/api/v1")
+app.include_router(conversations.router, prefix="/api/v1")
 app.include_router(search.router, prefix="/api/v1")
 app.include_router(jobs.router, prefix="/api/v1")
 app.include_router(history.router, prefix="/api/v1")

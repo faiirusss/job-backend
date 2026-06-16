@@ -44,7 +44,7 @@ def _to_cv_data(cv: CV) -> CVData:
     )
 
 
-async def upload_cv(session: AsyncSession, filename: str, pdf_bytes: bytes) -> CVData:
+async def upload_cv(session: AsyncSession, user_id: int, filename: str, pdf_bytes: bytes) -> CVData:
     if len(pdf_bytes) > MAX_PDF_BYTES:
         raise CVTooLargeError(f"CV exceeds {MAX_PDF_BYTES} bytes")
 
@@ -54,13 +54,16 @@ async def upload_cv(session: AsyncSession, filename: str, pdf_bytes: bytes) -> C
 
     os.makedirs(settings.cv_files_dir, exist_ok=True)
     safe_name = filename.replace("/", "_")
-    file_path = os.path.join(settings.cv_files_dir, safe_name)
+    user_dir = os.path.join(settings.cv_files_dir, str(user_id))
+    os.makedirs(user_dir, exist_ok=True)
+    file_path = os.path.join(user_dir, safe_name)
     with open(file_path, "wb") as f:
         f.write(pdf_bytes)
 
-    await session.execute(delete(CV))
+    await session.execute(delete(CV).where(CV.user_id == user_id))
 
     cv = CV(
+        user_id=user_id,
         filename=safe_name,
         file_path=file_path,
         text_content=text,
@@ -72,16 +75,20 @@ async def upload_cv(session: AsyncSession, filename: str, pdf_bytes: bytes) -> C
     return _to_cv_data(cv)
 
 
-async def get_active_cv(session: AsyncSession) -> CVData | None:
-    result = await session.execute(select(CV).order_by(CV.id.desc()).limit(1))
+async def get_active_cv(session: AsyncSession, user_id: int) -> CVData | None:
+    result = await session.execute(
+        select(CV).where(CV.user_id == user_id).order_by(CV.id.desc()).limit(1)
+    )
     cv = result.scalar_one_or_none()
     if cv is None:
         return None
     return _to_cv_data(cv)
 
 
-async def get_active_cv_full(session: AsyncSession) -> ActiveCV | None:
-    result = await session.execute(select(CV).order_by(CV.id.desc()).limit(1))
+async def get_active_cv_full(session: AsyncSession, user_id: int) -> ActiveCV | None:
+    result = await session.execute(
+        select(CV).where(CV.user_id == user_id).order_by(CV.id.desc()).limit(1)
+    )
     cv = result.scalar_one_or_none()
     if cv is None:
         return None
@@ -95,13 +102,15 @@ async def get_active_cv_full(session: AsyncSession) -> ActiveCV | None:
     )
 
 
-async def delete_active_cv(session: AsyncSession) -> bool:
-    result = await session.execute(select(CV).order_by(CV.id.desc()).limit(1))
+async def delete_active_cv(session: AsyncSession, user_id: int) -> bool:
+    result = await session.execute(
+        select(CV).where(CV.user_id == user_id).order_by(CV.id.desc()).limit(1)
+    )
     cv = result.scalar_one_or_none()
     if cv is None:
         return False
     file_path = cv.file_path
-    await session.execute(delete(CV))
+    await session.execute(delete(CV).where(CV.user_id == user_id))
     try:
         if file_path and os.path.exists(file_path):
             os.remove(file_path)

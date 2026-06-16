@@ -24,18 +24,18 @@ async def _seed_job(db_session: AsyncSession) -> int:
     return job.id
 
 
-async def test_generate_then_cache_hit(db_session: AsyncSession):
+async def test_generate_then_cache_hit(db_session: AsyncSession, test_user_id: int):
     embeddings_service.load()
-    await cv_service.upload_cv(db_session, "cv.pdf", PDF.read_bytes())
+    await cv_service.upload_cv(db_session, test_user_id, "cv.pdf", PDF.read_bytes())
     await db_session.commit()
     job_id = await _seed_job(db_session)
     await db_session.commit()
 
-    out1 = await cover_letter_service.generate(db_session, job_id)
+    out1 = await cover_letter_service.generate(db_session, test_user_id, job_id)
     await db_session.commit()
     assert out1.from_cache is False
     assert "Tokopedia" in out1.content_id
 
-    out2 = await cover_letter_service.generate(db_session, job_id)
+    out2 = await cover_letter_service.generate(db_session, test_user_id, job_id)
     assert out2.from_cache is True
     assert out2.content_id == out1.content_id

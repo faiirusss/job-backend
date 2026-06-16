@@ -148,6 +148,8 @@ class SearchRecord(BaseModel):
     count: int
     duration_ms: int
     from_cache: bool
+    conversation_id: int | None = None
+    status: str = "completed"
 
 
 class SearchParams(BaseModel):
@@ -237,5 +239,84 @@ class SearchAccepted(BaseModel):
     query_id: int
 
 
+class UserDTO(BaseModel):
+    id: int
+    email: str
+    name: str | None = None
+
+
+class RegisterRequest(BaseModel):
+    email: str
+    password: str = Field(min_length=8)
+    name: str | None = None
+
+
+class LoginRequest(BaseModel):
+    email: str
+    password: str
+
+
+class AuthResponse(BaseModel):
+    user: UserDTO
+
+
+class ConversationDTO(BaseModel):
+    id: int
+    title: str
+    created_at: datetime
+    updated_at: datetime
+    deleted_at: datetime | None = None
+    last_query_id: int | None = None
+
+
+class ConversationMessageDTO(BaseModel):
+    id: int
+    conversation_id: int
+    role: Literal["user", "assistant", "system"]
+    content: str
+    search_query_id: int | None = None
+    metadata: dict = Field(default_factory=dict)
+    created_at: datetime
+
+
+class ConversationDetailDTO(BaseModel):
+    conversation: ConversationDTO
+    messages: list[ConversationMessageDTO]
+
+
+class ConversationCreateRequest(BaseModel):
+    title: str | None = None
+
+
+class ConversationUpdateRequest(BaseModel):
+    title: str
+
+
+class ConversationMessageRequest(BaseModel):
+    content: str
+    force_refresh: bool = False
+
+
+class ConversationMessageResponse(BaseModel):
+    conversation_id: int
+    user_message: ConversationMessageDTO
+    assistant_message: ConversationMessageDTO
+    action: Literal["new_search", "refine_search", "general_chat"]
+    query_id: int | None = None
+
+
+class SearchResultsResponse(BaseModel):
+    query_id: int
+    conversation_id: int | None = None
+    jobs: list[JobListingDTO]
+    status: str
+    result_count: int
+    duration_ms: int | None = None
+
+
 class CoverLetterRequest(BaseModel):
     tone: str = "professional"
+
+
+class MatchScoreRequest(BaseModel):
+    force_refresh: bool = False
