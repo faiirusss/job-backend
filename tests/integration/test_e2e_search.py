@@ -71,9 +71,13 @@ def _patch_db_for_tests(monkeypatch, db_engine) -> None:
     from sqlalchemy.ext.asyncio import async_sessionmaker
 
     import app.db as db_mod
+    import app.api.deps as deps_mod
+    import app.ws.search as ws_search_mod
 
     db_mod.engine = db_engine
     db_mod.SessionLocal = async_sessionmaker(db_engine, expire_on_commit=False)
+    deps_mod.SessionLocal = db_mod.SessionLocal
+    ws_search_mod.SessionLocal = db_mod.SessionLocal
     monkeypatch.setattr("app.services.search_service.orchestrator.run_portals", _fake_run_portals)
     embeddings_service.load()
 
@@ -88,6 +92,14 @@ def _make_client(monkeypatch, db_engine) -> TestClient:
 def _upload_cv(client: TestClient) -> None:
     with open(PDF, "rb") as f:
         r = client.post("/api/v1/cv/upload", files={"file": ("cv.pdf", f, "application/pdf")})
+    assert r.status_code == 201
+
+
+def _register(client: TestClient) -> None:
+    r = client.post(
+        "/api/v1/auth/register",
+        json={"email": "test@example.com", "password": "password123", "name": "Test User"},
+    )
     assert r.status_code == 201
 
 
@@ -121,6 +133,11 @@ def test_search_api_job_query_flow(monkeypatch, db_engine):
     """Full flow in one TestClient session: POST search → WS jobs → REST metadata."""
     with _make_client(monkeypatch, db_engine) as client:
         r = client.post("/api/v1/search", json={"query": SEARCH_QUERY})
+        assert r.status_code == 401
+
+        _register(client)
+
+        r = client.post("/api/v1/search", json={"query": SEARCH_QUERY})
         assert r.status_code == 409
         assert r.json()["detail"]["error"]["code"] == "NO_CV"
 
@@ -135,14 +152,13 @@ def test_search_api_job_query_flow(monkeypatch, db_engine):
         assert "intro" in types_seen
         assert "params" in types_seen
         assert "partial_result" in types_seen
-        assert "match" in types_seen
+        assert "match" not in types_seen
         assert types_seen[-1] == "complete"
 
         assert len(jobs) == 2
         for job in jobs:
             assert job["portal"] == "glints"
-            assert job["match_score"] is not None
-            assert 0 <= job["match_score"] <= 100
+            assert job["match_score"] is None
             assert job["description"]
             assert job["apply_url"].startswith("https://")
 
@@ -173,4 +189,13 @@ def test_search_api_job_query_flow(monkeypatch, db_engine):
         assert detail.status_code == 200
         detail_body = detail.json()
         assert int(detail_body["id"]) == job_id
-        assert detail_body["match_score"] is not None
+        assert detail_body["match_score"] is None
+
+        # POST /api/v1/jobs/{id}/match-score runs the on-demand Career Copilot
+        # analysis for one selected job.
+        scored = client.post(f"/api/v1/jobs/{job_id}/match-score", json={})
+        assert scored.status_code == 200
+        scored_body = scored.json()
+        assert int(scored_body["id"]) == job_id
+        assert scored_body["match_score"] is not None
+        assert 0 <= scored_body["match_score"] <= 100

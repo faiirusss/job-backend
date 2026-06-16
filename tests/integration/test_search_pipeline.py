@@ -1,5 +1,6 @@
 import asyncio
 from pathlib import Path
+from types import SimpleNamespace
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -47,9 +48,11 @@ async def _fake_run_portals(portals, params, on_event):
     return jobs
 
 
-async def test_run_pipeline_emits_full_event_sequence(db_session: AsyncSession, monkeypatch):
+async def test_run_pipeline_emits_full_event_sequence(
+    db_session: AsyncSession, monkeypatch, test_user_id: int
+):
     embeddings_service.load()
-    await cv_service.upload_cv(db_session, "cv.pdf", PDF.read_bytes())
+    await cv_service.upload_cv(db_session, test_user_id, "cv.pdf", PDF.read_bytes())
     await db_session.commit()
 
     from sqlalchemy.ext.asyncio import async_sessionmaker
@@ -62,7 +65,9 @@ async def test_run_pipeline_emits_full_event_sequence(db_session: AsyncSession, 
 
     monkeypatch.setattr("app.services.search_service.orchestrator.run_portals", _fake_run_portals)
 
-    query_id = await search_service.create_search_row(db_session, "Cari backend python remote")
+    query_id = await search_service.create_search_row(
+        db_session, "Cari backend python remote", user_id=test_user_id
+    )
     await db_session.commit()
 
     bus.open(query_id)
@@ -78,16 +83,17 @@ async def test_run_pipeline_emits_full_event_sequence(db_session: AsyncSession, 
 
     assert "status" in received_types
     assert "params" in received_types
-    # 2 pre-score + 2 post-score = 4 partial_result events for 2 fake jobs
-    assert received_types.count("partial_result") == 4
-    assert "match" in received_types
+    assert received_types.count("partial_result") == 2
+    assert "match" not in received_types
     assert received_types[-1] == "complete"
 
 
-async def test_run_pipeline_emits_intro_event_after_params(db_session: AsyncSession, monkeypatch):
+async def test_run_pipeline_emits_intro_event_after_params(
+    db_session: AsyncSession, monkeypatch, test_user_id: int
+):
     """The pipeline must publish exactly one `intro` event after parsing the query."""
     embeddings_service.load()
-    await cv_service.upload_cv(db_session, "cv.pdf", PDF.read_bytes())
+    await cv_service.upload_cv(db_session, test_user_id, "cv.pdf", PDF.read_bytes())
     await db_session.commit()
 
     from sqlalchemy.ext.asyncio import async_sessionmaker
@@ -99,7 +105,9 @@ async def test_run_pipeline_emits_intro_event_after_params(db_session: AsyncSess
 
     monkeypatch.setattr("app.services.search_service.orchestrator.run_portals", _fake_run_portals)
 
-    query_id = await search_service.create_search_row(db_session, "Cari React Junior di Jakarta")
+    query_id = await search_service.create_search_row(
+        db_session, "Cari React Junior di Jakarta", user_id=test_user_id
+    )
     await db_session.commit()
 
     bus.open(query_id)
@@ -116,7 +124,8 @@ async def test_run_pipeline_emits_intro_event_after_params(db_session: AsyncSess
 
     intros = [e for e in received if e.get("type") == "intro"]
     assert len(intros) == 1
-    assert "React" in intros[0]["message"] or "Junior" in intros[0]["message"]
+    intro = intros[0]["message"].lower()
+    assert "react" in intro or "junior" in intro
 
 
 async def test_intro_event_unit(monkeypatch):
@@ -132,16 +141,29 @@ async def test_intro_event_unit(monkeypatch):
     # Stub session_scope so the DB update calls are no-ops.
     @contextlib.asynccontextmanager
     async def _fake_session_scope():
+        class _FakeResult:
+            def scalar_one_or_none(self):
+                return SimpleNamespace(user_id=1)
+
         class _FakeSession:
             async def execute(self, *a, **kw):
-                return None
+                return _FakeResult()
 
-            async def add(self, *a, **kw):
+            def add(self, *a, **kw):
                 pass
 
         yield _FakeSession()
 
     monkeypatch.setattr("app.services.search_service.session_scope", _fake_session_scope)
+
+    async def _fake_active_cv(session, user_id):
+        return SimpleNamespace(id=1)
+
+    async def _no_cache(session, params_hash):
+        return None
+
+    monkeypatch.setattr("app.services.search_service.cv_service.get_active_cv_full", _fake_active_cv)
+    monkeypatch.setattr("app.services.search_service.cache_service.lookup", _no_cache)
 
     # Stub run_portals so the pipeline terminates quickly.
     async def _noop_portals(portals, params, on_event):
@@ -174,13 +196,13 @@ async def test_intro_event_unit(monkeypatch):
     )
 
 
-async def test_pipeline_emits_scored_partial_result_with_db_id(
-    db_session: AsyncSession, monkeypatch
+async def test_pipeline_emits_unscored_partial_result_with_db_id(
+    db_session: AsyncSession, monkeypatch, test_user_id: int
 ):
-    """After scoring, each emitted partial_result must use a DB integer id
-    (as a string) and carry a non-null match_score on the post-score emission."""
+    """Search discovery emits DB ids but leaves AI scoring to the on-demand
+    job-detail action."""
     embeddings_service.load()
-    await cv_service.upload_cv(db_session, "cv.pdf", PDF.read_bytes())
+    await cv_service.upload_cv(db_session, test_user_id, "cv.pdf", PDF.read_bytes())
     await db_session.commit()
 
     from sqlalchemy.ext.asyncio import async_sessionmaker
@@ -220,7 +242,9 @@ async def test_pipeline_emits_scored_partial_result_with_db_id(
 
     monkeypatch.setattr("app.services.search_service.orchestrator.run_portals", fake_run_portals)
 
-    query_id = await search_service.create_search_row(db_session, "Test Engineer in Jakarta")
+    query_id = await search_service.create_search_row(
+        db_session, "Test Engineer in Jakarta", user_id=test_user_id
+    )
     await db_session.commit()
 
     bus.open(query_id)
@@ -236,16 +260,91 @@ async def test_pipeline_emits_scored_partial_result_with_db_id(
     await pipeline
 
     partials = [e for e in received if e.get("type") == "partial_result"]
-    # Expect at least one pre-score and one post-score emission per scraped job.
-    assert len(partials) >= 2, f"Expected >= 2 partial_result events, got {len(partials)}"
+    assert len(partials) == 1, f"Expected 1 partial_result event, got {len(partials)}"
     # Every emission must have a numeric-string id (no external scraper ids leak through).
     for ev in partials:
         assert ev["job"]["id"].isdigit(), f"non-DB id leaked: {ev['job']['id']}"
-    # The last partial_result must have a non-null match_score (post-score emission).
-    assert partials[-1]["job"]["match_score"] is not None, (
-        "last partial_result has null match_score"
+    assert partials[-1]["job"]["match_score"] is None
+
+
+async def test_pipeline_filters_irrelevant_role_and_location(
+    db_session: AsyncSession, monkeypatch, test_user_id: int
+):
+    embeddings_service.load()
+    await cv_service.upload_cv(db_session, test_user_id, "cv.pdf", PDF.read_bytes())
+    await db_session.commit()
+
+    from sqlalchemy.ext.asyncio import async_sessionmaker
+
+    import app.db as db_mod
+
+    db_mod.engine = db_session.bind
+    db_mod.SessionLocal = async_sessionmaker(db_session.bind, expire_on_commit=False)
+
+    def job(job_id: str, title: str, location: str, skills: list[str]) -> JobListingDTO:
+        return JobListingDTO(
+            id=job_id,
+            portal="glints",
+            title=title,
+            company=f"Acme {job_id}",
+            company_logo_bg="#000",
+            location=location,
+            work_type="onsite",
+            seniority="mid",
+            salary_min=0,
+            salary_max=0,
+            posted_date="2026-01-01",
+            posted_label="recent",
+            apply_url="https://example.com",
+            match_score=None,
+            cosine=0.0,
+            llm_score=0,
+            matched_skills=[],
+            missing_skills=[],
+            summary_id="",
+            summary_en="",
+            description=" ".join(skills),
+            requirements="",
+            skills_tags=skills,
+        )
+
+    async def fake_run_portals(portals, params, on_event):
+        return [
+            job("ok", "PHP Developer", "Jakarta Barat", ["Laravel", "MySQL"]),
+            job("wrong-role", "Data Analyst", "Jakarta", ["SQL", "Tableau"]),
+            job("wrong-location", "Laravel Developer", "Bandung", ["Laravel"]),
+        ]
+
+    monkeypatch.setattr("app.services.search_service.orchestrator.run_portals", fake_run_portals)
+
+    query_id = await search_service.create_search_row(
+        db_session, "tolong cari kerjaan laravel di jakarta", user_id=test_user_id
     )
-    assert partials[-1]["job"]["match_score"] > 0, "last partial_result match_score not > 0"
+    await db_session.commit()
+
+    bus.open(query_id)
+    received: list[dict] = []
+    subscriber = bus.subscribe(query_id)
+
+    pipeline = asyncio.create_task(
+        search_service.run_pipeline(
+            query_id, "tolong cari kerjaan laravel di jakarta", force_refresh=False
+        )
+    )
+
+    async for ev in subscriber:
+        received.append(ev)
+    await pipeline
+
+    partials = [e for e in received if e.get("type") == "partial_result"]
+    assert len(partials) == 1
+    assert partials[0]["job"]["title"] == "PHP Developer"
+
+    complete = next(e for e in received if e.get("type") == "complete")
+    assert complete["total"] == 1
+
+    params_event = next(e for e in received if e.get("type") == "params")
+    assert params_event["payload"]["role_keywords"] == ["laravel"]
 
 
 async def test_structured_fields_round_trip_through_upsert(db_session: AsyncSession):
