@@ -1,3 +1,4 @@
+import uuid
 from datetime import date, datetime
 
 from pgvector.sqlalchemy import Vector
@@ -14,7 +15,7 @@ from sqlalchemy import (
     UniqueConstraint,
     func,
 )
-from sqlalchemy.dialects.postgresql import ARRAY, JSONB
+from sqlalchemy.dialects.postgresql import ARRAY, JSONB, UUID as PG_UUID
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 
@@ -77,6 +78,12 @@ class SearchQuery(Base):
     __tablename__ = "search_query"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    public_id: Mapped[uuid.UUID] = mapped_column(
+        PG_UUID(as_uuid=True),
+        nullable=False,
+        unique=True,
+        default=uuid.uuid4,
+    )
     user_id: Mapped[int | None] = mapped_column(
         ForeignKey("user_account.id", ondelete="CASCADE"), nullable=True
     )
@@ -110,6 +117,12 @@ class Conversation(Base):
     __tablename__ = "conversation"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    public_id: Mapped[uuid.UUID] = mapped_column(
+        PG_UUID(as_uuid=True),
+        nullable=False,
+        unique=True,
+        default=uuid.uuid4,
+    )
     user_id: Mapped[int] = mapped_column(
         ForeignKey("user_account.id", ondelete="CASCADE"), nullable=False
     )

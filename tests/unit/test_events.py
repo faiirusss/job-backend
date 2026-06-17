@@ -17,7 +17,7 @@ async def test_publish_subscribe_roundtrip():
 
 
 @pytest.mark.asyncio
-async def test_subscriber_after_close_gets_nothing():
+async def test_subscriber_after_close_replays_history():
     bus = EventBus()
     bus.open(7)
     await bus.publish(7, {"type": "status", "message": "first"})
@@ -26,7 +26,7 @@ async def test_subscriber_after_close_gets_nothing():
     received = []
     async for ev in sub:
         received.append(ev)
-    assert received == []
+    assert received == [{"type": "status", "message": "first"}]
 
 
 @pytest.mark.asyncio

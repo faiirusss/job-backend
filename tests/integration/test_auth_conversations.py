@@ -1,11 +1,13 @@
+import uuid
+
 from fastapi.testclient import TestClient
 
 
 def _make_client(monkeypatch, db_engine) -> TestClient:
     from sqlalchemy.ext.asyncio import async_sessionmaker
 
-    import app.db as db_mod
     import app.api.deps as deps_mod
+    import app.db as db_mod
     import app.ws.search as ws_search_mod
 
     db_mod.engine = db_engine
@@ -54,6 +56,7 @@ def test_conversation_crud_and_general_message(monkeypatch, db_engine):
         created = client.post("/api/v1/conversations", json={"title": "Laravel Bandung"})
         assert created.status_code == 201
         conversation_id = created.json()["id"]
+        uuid.UUID(conversation_id)
 
         listed = client.get("/api/v1/conversations")
         assert listed.status_code == 200
@@ -66,7 +69,10 @@ def test_conversation_crud_and_general_message(monkeypatch, db_engine):
         assert message.status_code == 200
         body = message.json()
         assert body["action"] == "general_chat"
+        assert body["conversation_id"] == conversation_id
         assert body["query_id"] is None
+        assert body["user_message"]["conversation_id"] == conversation_id
+        assert body["assistant_message"]["conversation_id"] == conversation_id
 
         renamed = client.patch(
             f"/api/v1/conversations/{conversation_id}", json={"title": "Laravel Jakarta"}
@@ -76,7 +82,9 @@ def test_conversation_crud_and_general_message(monkeypatch, db_engine):
 
         detail = client.get(f"/api/v1/conversations/{conversation_id}")
         assert detail.status_code == 200
-        assert len(detail.json()["messages"]) == 2
+        detail_body = detail.json()
+        assert detail_body["conversation"]["id"] == conversation_id
+        assert len(detail_body["messages"]) == 2
 
         deleted = client.delete(f"/api/v1/conversations/{conversation_id}")
         assert deleted.status_code == 204
@@ -95,6 +103,7 @@ def test_conversation_refinement_merges_previous_search_params(monkeypatch, db_e
         created = client.post("/api/v1/conversations", json={"title": "Chat baru"})
         assert created.status_code == 201
         conversation_id = created.json()["id"]
+        uuid.UUID(conversation_id)
 
         first = client.post(
             f"/api/v1/conversations/{conversation_id}/messages",
@@ -110,7 +119,11 @@ def test_conversation_refinement_merges_previous_search_params(monkeypatch, db_e
         assert refined.status_code == 200
         body = refined.json()
         assert body["action"] == "refine_search"
+        assert body["conversation_id"] == conversation_id
         assert body["query_id"] is not None
+        uuid.UUID(body["conversation_id"])
+        uuid.UUID(body["query_id"])
+        uuid.UUID(body["assistant_message"]["search_query_id"])
 
         params = body["assistant_message"]["metadata"]["params"]
         assert params["role_keywords"] == ["laravel"]

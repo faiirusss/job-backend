@@ -65,9 +65,10 @@ async def test_run_pipeline_emits_full_event_sequence(
 
     monkeypatch.setattr("app.services.search_service.orchestrator.run_portals", _fake_run_portals)
 
-    query_id = await search_service.create_search_row(
+    query = await search_service.create_search_row(
         db_session, "Cari backend python remote", user_id=test_user_id
     )
+    query_id = query.id
     await db_session.commit()
 
     bus.open(query_id)
@@ -105,9 +106,10 @@ async def test_run_pipeline_emits_intro_event_after_params(
 
     monkeypatch.setattr("app.services.search_service.orchestrator.run_portals", _fake_run_portals)
 
-    query_id = await search_service.create_search_row(
+    query = await search_service.create_search_row(
         db_session, "Cari React Junior di Jakarta", user_id=test_user_id
     )
+    query_id = query.id
     await db_session.commit()
 
     bus.open(query_id)
@@ -242,9 +244,10 @@ async def test_pipeline_emits_unscored_partial_result_with_db_id(
 
     monkeypatch.setattr("app.services.search_service.orchestrator.run_portals", fake_run_portals)
 
-    query_id = await search_service.create_search_row(
+    query = await search_service.create_search_row(
         db_session, "Test Engineer in Jakarta", user_id=test_user_id
     )
+    query_id = query.id
     await db_session.commit()
 
     bus.open(query_id)
@@ -317,9 +320,10 @@ async def test_pipeline_filters_irrelevant_role_and_location(
 
     monkeypatch.setattr("app.services.search_service.orchestrator.run_portals", fake_run_portals)
 
-    query_id = await search_service.create_search_row(
+    query = await search_service.create_search_row(
         db_session, "tolong cari kerjaan laravel di jakarta", user_id=test_user_id
     )
+    query_id = query.id
     await db_session.commit()
 
     bus.open(query_id)

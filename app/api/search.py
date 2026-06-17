@@ -24,11 +24,11 @@ async def start_search(
             status_code=409,
             detail={"error": {"code": "NO_CV", "message": "Upload a CV before searching"}},
         )
-    query_id = await search_service.create_search_row(session, req.query, user_id=current_user.id)
+    query = await search_service.create_search_row(session, req.query, user_id=current_user.id)
     await session.commit()
-    bus.open(query_id)
-    asyncio.create_task(search_service.run_pipeline(query_id, req.query, req.force_refresh))
-    return SearchAccepted(query_id=query_id)
+    bus.open(query.id)
+    asyncio.create_task(search_service.run_pipeline(query.id, req.query, req.force_refresh))
+    return SearchAccepted(query_id=search_service.public_query_id(query))
 
 
 @router.get("/history")
@@ -42,7 +42,7 @@ async def list_history(
 
 @router.get("/{query_id}/results", response_model=SearchResultsResponse)
 async def get_results(
-    query_id: int,
+    query_id: str,
     session: AsyncSession = Depends(get_db),
     current_user: UserAccount = Depends(get_current_user),
 ) -> SearchResultsResponse:
@@ -56,7 +56,7 @@ async def get_results(
 
 @router.get("/{query_id}")
 async def get_one(
-    query_id: int,
+    query_id: str,
     session: AsyncSession = Depends(get_db),
     current_user: UserAccount = Depends(get_current_user),
 ) -> dict:

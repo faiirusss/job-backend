@@ -68,7 +68,8 @@ class EventBus:
         self._channels: dict[int, _Channel] = {}
 
     def open(self, query_id: int) -> None:
-        if query_id not in self._channels:
+        channel = self._channels.get(query_id)
+        if channel is None or channel.closed:
             self._channels[query_id] = _Channel()
 
     async def publish(self, query_id: int, event: dict[str, Any]) -> None:
@@ -91,10 +92,12 @@ class EventBus:
         ch = self._channels.get(query_id)
         q: asyncio.Queue[Any] = asyncio.Queue()
 
-        if ch is not None and not ch.closed:
-            # Replay history so far + register for future events
+        if ch is not None:
+            # Replay history so far. If the pipeline already completed, this
+            # still lets a slightly late WebSocket receive the full run.
             for past in ch.history:
                 q.put_nowait(past)
+        if ch is not None and not ch.closed:
             ch.subscribers.append(q)
         # elif ch is None or ch.closed: queue stays empty, gen returns immediately
 

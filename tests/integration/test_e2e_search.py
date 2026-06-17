@@ -8,6 +8,7 @@ Run:
 
 from __future__ import annotations
 
+import uuid
 from pathlib import Path
 from typing import Any
 
@@ -70,8 +71,8 @@ def _reset_event_bus():
 def _patch_db_for_tests(monkeypatch, db_engine) -> None:
     from sqlalchemy.ext.asyncio import async_sessionmaker
 
-    import app.db as db_mod
     import app.api.deps as deps_mod
+    import app.db as db_mod
     import app.ws.search as ws_search_mod
 
     db_mod.engine = db_engine
@@ -103,13 +104,13 @@ def _register(client: TestClient) -> None:
     assert r.status_code == 201
 
 
-def _start_search(client: TestClient, query: str) -> int:
+def _start_search(client: TestClient, query: str) -> str:
     r = client.post("/api/v1/search", json={"query": query})
     assert r.status_code == 202
     return r.json()["query_id"]
 
 
-def _consume_search_ws(client: TestClient, query_id: int) -> list[dict[str, Any]]:
+def _consume_search_ws(client: TestClient, query_id: str) -> list[dict[str, Any]]:
     events: list[dict[str, Any]] = []
     with client.websocket_connect(f"/ws/search?query_id={query_id}") as ws:
         while True:
@@ -144,6 +145,7 @@ def test_search_api_job_query_flow(monkeypatch, db_engine):
         _upload_cv(client)
 
         query_id = _start_search(client, SEARCH_QUERY)
+        uuid.UUID(query_id)
         events = _consume_search_ws(client, query_id)
         types_seen = [ev["type"] for ev in events]
         jobs = _jobs_from_events(events)

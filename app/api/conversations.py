@@ -8,8 +8,8 @@ from app.events import bus
 from app.models import UserAccount
 from app.schemas import (
     ConversationCreateRequest,
-    ConversationDTO,
     ConversationDetailDTO,
+    ConversationDTO,
     ConversationMessageRequest,
     ConversationMessageResponse,
     ConversationUpdateRequest,
@@ -45,7 +45,7 @@ async def create_conversation(
 
 @router.get("/{conversation_id}", response_model=ConversationDetailDTO)
 async def get_conversation(
-    conversation_id: int,
+    conversation_id: str,
     session: AsyncSession = Depends(get_db),
     current_user: UserAccount = Depends(get_current_user),
 ) -> ConversationDetailDTO:
@@ -57,7 +57,7 @@ async def get_conversation(
 
 @router.patch("/{conversation_id}", response_model=ConversationDTO)
 async def update_conversation(
-    conversation_id: int,
+    conversation_id: str,
     req: ConversationUpdateRequest,
     session: AsyncSession = Depends(get_db),
     current_user: UserAccount = Depends(get_current_user),
@@ -72,7 +72,7 @@ async def update_conversation(
 
 @router.delete("/{conversation_id}", status_code=204)
 async def delete_conversation(
-    conversation_id: int,
+    conversation_id: str,
     session: AsyncSession = Depends(get_db),
     current_user: UserAccount = Depends(get_current_user),
 ) -> Response:
@@ -85,7 +85,7 @@ async def delete_conversation(
 
 @router.post("/{conversation_id}/messages", response_model=ConversationMessageResponse)
 async def post_message(
-    conversation_id: int,
+    conversation_id: str,
     req: ConversationMessageRequest,
     session: AsyncSession = Depends(get_db),
     current_user: UserAccount = Depends(get_current_user),
@@ -108,11 +108,11 @@ async def post_message(
 
     await session.commit()
 
-    if result.response.query_id is not None:
-        bus.open(result.response.query_id)
+    if result.internal_query_id is not None:
+        bus.open(result.internal_query_id)
         asyncio.create_task(
             search_service.run_pipeline(
-                result.response.query_id,
+                result.internal_query_id,
                 req.content,
                 result.force_refresh,
                 params_override=result.params_override,

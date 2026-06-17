@@ -1,4 +1,5 @@
 import time
+import uuid
 from typing import Any
 
 from loguru import logger
@@ -11,7 +12,7 @@ from app.ai.llm import LLM, get_llm
 from app.config import settings
 from app.db import session_scope
 from app.events import bus
-from app.models import JobListing, MatchResult, SearchQuery, SearchResult
+from app.models import Conversation, JobListing, MatchResult, SearchQuery, SearchResult
 from app.schemas import IntroEvent, JobListingDTO, SearchParams, SearchResultsResponse
 from app.scrapers import orchestrator
 from app.services import cache_service, cv_service
@@ -72,7 +73,7 @@ async def create_search_row(
     user_id: int,
     conversation_id: int | None = None,
     parsed_params: dict[str, Any] | None = None,
-) -> int:
+) -> SearchQuery:
     row = SearchQuery(
         raw_query=query,
         user_id=user_id,
@@ -83,7 +84,30 @@ async def create_search_row(
     session.add(row)
     await session.flush()
     await session.refresh(row)
-    return row.id
+    return row
+
+
+def public_query_id(row: SearchQuery) -> str:
+    return str(row.public_id)
+
+
+async def get_owned_search_query(
+    session: AsyncSession, user_id: int, query_ref: int | str
+) -> SearchQuery | None:
+    stmt = select(SearchQuery).where(SearchQuery.user_id == user_id)
+    if isinstance(query_ref, int):
+        stmt = stmt.where(SearchQuery.id == query_ref)
+    else:
+        ref = query_ref.strip()
+        if ref.isdecimal():
+            stmt = stmt.where(SearchQuery.id == int(ref))
+        else:
+            try:
+                public_id = uuid.UUID(ref)
+            except ValueError:
+                return None
+            stmt = stmt.where(SearchQuery.public_id == public_id)
+    return (await session.execute(stmt)).scalar_one_or_none()
 
 
 async def get_history(session: AsyncSession, user_id: int, limit: int = 50) -> list[dict[str, Any]]:
@@ -94,34 +118,38 @@ async def get_history(session: AsyncSession, user_id: int, limit: int = 50) -> l
         .limit(limit)
     )
     rows = (await session.execute(stmt)).scalars().all()
+    conversation_public_ids = await _conversation_public_id_map(
+        session, [r.conversation_id for r in rows]
+    )
     return [
         {
-            "id": r.id,
+            "id": public_query_id(r),
             "query": r.raw_query,
             "date": r.created_at.isoformat(),
             "count": r.result_count or 0,
             "duration_ms": r.duration_ms or 0,
             "from_cache": bool(r.from_cache),
-            "conversation_id": r.conversation_id,
+            "conversation_id": (
+                conversation_public_ids.get(r.conversation_id) if r.conversation_id else None
+            ),
             "status": r.status,
         }
         for r in rows
     ]
 
 
-async def get_search(session: AsyncSession, user_id: int, query_id: int) -> dict[str, Any] | None:
-    row = (
-        await session.execute(
-            select(SearchQuery).where(SearchQuery.id == query_id, SearchQuery.user_id == user_id)
-        )
-    ).scalar_one_or_none()
+async def get_search(
+    session: AsyncSession, user_id: int, query_ref: int | str
+) -> dict[str, Any] | None:
+    row = await get_owned_search_query(session, user_id, query_ref)
     if row is None:
         return None
+    conversation_id = await _conversation_public_id(session, row.conversation_id)
     return {
-        "id": row.id,
+        "id": public_query_id(row),
         "raw_query": row.raw_query,
         "parsed_params": row.parsed_params,
-        "conversation_id": row.conversation_id,
+        "conversation_id": conversation_id,
         "result_count": row.result_count,
         "from_cache": bool(row.from_cache),
         "duration_ms": row.duration_ms,
@@ -164,6 +192,26 @@ def _job_dto_from_row(j: JobListing) -> JobListingDTO:
         benefits=j.benefits or [],
         detail=(NormalizedJob.model_validate(j.detail_json) if j.detail_json else None),
     )
+
+
+async def _conversation_public_id_map(
+    session: AsyncSession, conversation_ids: list[int | None]
+) -> dict[int, str]:
+    ids = {conversation_id for conversation_id in conversation_ids if conversation_id is not None}
+    if not ids:
+        return {}
+    rows = await session.execute(
+        select(Conversation.id, Conversation.public_id).where(Conversation.id.in_(ids))
+    )
+    return {row_id: str(public_id) for row_id, public_id in rows}
+
+
+async def _conversation_public_id(
+    session: AsyncSession, conversation_id: int | None
+) -> str | None:
+    if conversation_id is None:
+        return None
+    return (await _conversation_public_id_map(session, [conversation_id])).get(conversation_id)
 
 
 async def _upsert_job(
@@ -421,7 +469,6 @@ async def run_pipeline(
         )
     finally:
         await bus.close(query_id)
-        bus.drop(query_id)
 
 
 async def _replay_cached(
@@ -483,21 +530,18 @@ async def _replace_search_results(
 
 
 async def get_search_results(
-    session: AsyncSession, user_id: int, query_id: int
+    session: AsyncSession, user_id: int, query_ref: int | str
 ) -> SearchResultsResponse | None:
-    query = (
-        await session.execute(
-            select(SearchQuery).where(SearchQuery.id == query_id, SearchQuery.user_id == user_id)
-        )
-    ).scalar_one_or_none()
+    query = await get_owned_search_query(session, user_id, query_ref)
     if query is None:
         return None
+    conversation_id = await _conversation_public_id(session, query.conversation_id)
 
     rows = (
         await session.execute(
             select(JobListing)
             .join(SearchResult, SearchResult.job_id == JobListing.id)
-            .where(SearchResult.query_id == query_id)
+            .where(SearchResult.query_id == query.id)
             .order_by(SearchResult.position)
         )
     ).scalars().all()
@@ -536,8 +580,8 @@ async def get_search_results(
         jobs.append(dto)
 
     return SearchResultsResponse(
-        query_id=query.id,
-        conversation_id=query.conversation_id,
+        query_id=public_query_id(query),
+        conversation_id=conversation_id,
         jobs=jobs,
         status=query.status,
         result_count=query.result_count or len(jobs),

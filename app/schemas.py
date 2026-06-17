@@ -188,13 +188,13 @@ class CVData(BaseModel):
 
 
 class SearchRecord(BaseModel):
-    id: int
+    id: str
     query: str
     date: str
     count: int
     duration_ms: int
     from_cache: bool
-    conversation_id: int | None = None
+    conversation_id: str | None = None
     status: str = "completed"
 
 
@@ -282,7 +282,7 @@ class SearchRequest(BaseModel):
 
 
 class SearchAccepted(BaseModel):
-    query_id: int
+    query_id: str
 
 
 class UserDTO(BaseModel):
@@ -307,20 +307,20 @@ class AuthResponse(BaseModel):
 
 
 class ConversationDTO(BaseModel):
-    id: int
+    id: str
     title: str
     created_at: datetime
     updated_at: datetime
     deleted_at: datetime | None = None
-    last_query_id: int | None = None
+    last_query_id: str | None = None
 
 
 class ConversationMessageDTO(BaseModel):
     id: int
-    conversation_id: int
+    conversation_id: str
     role: Literal["user", "assistant", "system"]
     content: str
-    search_query_id: int | None = None
+    search_query_id: str | None = None
     metadata: dict = Field(default_factory=dict)
     created_at: datetime
 
@@ -344,16 +344,16 @@ class ConversationMessageRequest(BaseModel):
 
 
 class ConversationMessageResponse(BaseModel):
-    conversation_id: int
+    conversation_id: str
     user_message: ConversationMessageDTO
     assistant_message: ConversationMessageDTO
     action: Literal["new_search", "refine_search", "general_chat"]
-    query_id: int | None = None
+    query_id: str | None = None
 
 
 class SearchResultsResponse(BaseModel):
-    query_id: int
-    conversation_id: int | None = None
+    query_id: str
+    conversation_id: str | None = None
     jobs: list[JobListingDTO]
     status: str
     result_count: int
