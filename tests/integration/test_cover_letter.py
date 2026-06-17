@@ -1,8 +1,9 @@
+import asyncio
 from pathlib import Path
 
 import pytest
 from sqlalchemy import select
-from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
 from app.ai.embeddings import embeddings_service
 from app.ai.llm import CoverLetterPair
@@ -73,6 +74,34 @@ async def test_generate_then_cache_hit(
     out2 = await cover_letter_service.generate(db_session, test_user_id, job_id)
     assert out2.from_cache is True
     assert out2.content_id == out1.content_id
+
+
+async def test_concurrent_generate_upserts_one_cached_row(
+    db_engine, db_session: AsyncSession, test_user_id: int, monkeypatch
+):
+    embeddings_service.load()
+    await cv_service.upload_cv(db_session, test_user_id, "cv.pdf", PDF.read_bytes())
+    await db_session.commit()
+    job_id = await _seed_job(db_session)
+    await db_session.commit()
+    monkeypatch.setattr(cover_letter_service, "_get_cover_letter_llm", lambda: CoverLetterLLM())
+
+    factory = async_sessionmaker(db_engine, expire_on_commit=False)
+
+    async def generate_once():
+        async with factory() as session:
+            out = await cover_letter_service.generate(session, test_user_id, job_id)
+            await session.commit()
+            return out
+
+    out1, out2 = await asyncio.gather(generate_once(), generate_once())
+
+    assert out1.content_id
+    assert out2.content_id
+    cached_rows = (
+        await db_session.execute(select(CoverLetter).where(CoverLetter.job_id == job_id))
+    ).scalars().all()
+    assert len(cached_rows) == 1
 
 
 async def test_generate_raises_generation_error_when_qwen_fails(

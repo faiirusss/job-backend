@@ -2,6 +2,7 @@ from datetime import UTC, datetime
 
 from loguru import logger
 from sqlalchemy import select
+from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.ai.llm import LLM, CoverLetterPair
@@ -75,25 +76,7 @@ async def generate(session: AsyncSession, user_id: int, job_id: int) -> CoverLet
 
     pair = await _generate_pair(cv.text_content, job_dto, matched_skills)
     generated_at = datetime.now(UTC)
-    if existing is not None:
-        existing.content_id = pair.content_id
-        existing.content_en = pair.content_en
-        existing.word_count_id = pair.word_count_id
-        existing.word_count_en = pair.word_count_en
-        existing.generated_at = generated_at
-    else:
-        row = CoverLetter(
-            user_id=user_id,
-            job_id=job.id,
-            cv_id=cv.id,
-            content_id=pair.content_id,
-            content_en=pair.content_en,
-            word_count_id=pair.word_count_id,
-            word_count_en=pair.word_count_en,
-            generated_at=generated_at,
-        )
-        session.add(row)
-    await session.flush()
+    await _upsert_cover_letter(session, user_id, job.id, cv.id, pair, generated_at)
     return CoverLetterResponse(
         content_id=pair.content_id,
         content_en=pair.content_en,
@@ -102,6 +85,41 @@ async def generate(session: AsyncSession, user_id: int, job_id: int) -> CoverLet
         from_cache=False,
         generated_at=generated_at,
     )
+
+
+async def _upsert_cover_letter(
+    session: AsyncSession,
+    user_id: int,
+    job_id: int,
+    cv_id: int,
+    pair: CoverLetterPair,
+    generated_at: datetime,
+) -> None:
+    stmt = (
+        insert(CoverLetter)
+        .values(
+            user_id=user_id,
+            job_id=job_id,
+            cv_id=cv_id,
+            content_id=pair.content_id,
+            content_en=pair.content_en,
+            word_count_id=pair.word_count_id,
+            word_count_en=pair.word_count_en,
+            generated_at=generated_at,
+        )
+        .on_conflict_do_update(
+            constraint="uq_cover_letter_job_cv",
+            set_={
+                "user_id": user_id,
+                "content_id": pair.content_id,
+                "content_en": pair.content_en,
+                "word_count_id": pair.word_count_id,
+                "word_count_en": pair.word_count_en,
+                "generated_at": generated_at,
+            },
+        )
+    )
+    await session.execute(stmt)
 
 
 async def _generate_pair(
