@@ -1,4 +1,5 @@
 import asyncio
+from datetime import UTC, datetime
 from pathlib import Path
 
 import pytest
@@ -102,6 +103,42 @@ async def test_concurrent_generate_upserts_one_cached_row(
         await db_session.execute(select(CoverLetter).where(CoverLetter.job_id == job_id))
     ).scalars().all()
     assert len(cached_rows) == 1
+
+
+async def test_generate_replaces_incomplete_cached_cover_letter(
+    db_session: AsyncSession, test_user_id: int, monkeypatch
+):
+    embeddings_service.load()
+    await cv_service.upload_cv(db_session, test_user_id, "cv.pdf", PDF.read_bytes())
+    await db_session.commit()
+    cv = await cv_service.get_active_cv_full(db_session, test_user_id)
+    assert cv is not None
+    job_id = await _seed_job(db_session)
+    db_session.add(
+        CoverLetter(
+            user_id=test_user_id,
+            job_id=job_id,
+            cv_id=cv.id,
+            content_id="cover_letter_tokopedia_001",
+            content_en=" ".join(["valid"] * 80),
+            word_count_id=1,
+            word_count_en=80,
+            generated_at=datetime.now(UTC),
+        )
+    )
+    await db_session.commit()
+    monkeypatch.setattr(cover_letter_service, "_get_cover_letter_llm", lambda: CoverLetterLLM())
+
+    out = await cover_letter_service.generate(db_session, test_user_id, job_id)
+    await db_session.commit()
+
+    assert out.from_cache is False
+    assert out.content_id.startswith("Yth. Tim HRD Tokopedia")
+    cached_rows = (
+        await db_session.execute(select(CoverLetter).where(CoverLetter.job_id == job_id))
+    ).scalars().all()
+    assert len(cached_rows) == 1
+    assert cached_rows[0].content_id == out.content_id
 
 
 async def test_generate_raises_generation_error_when_qwen_fails(

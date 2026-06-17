@@ -45,7 +45,11 @@ async def generate(session: AsyncSession, user_id: int, job_id: int) -> CoverLet
             select(CoverLetter).where(CoverLetter.job_id == job.id, CoverLetter.cv_id == cv.id)
         )
     ).scalar_one_or_none()
-    if existing is not None and _cover_letter_is_current(existing, job):
+    if (
+        existing is not None
+        and _cover_letter_is_current(existing, job)
+        and _cached_cover_letter_is_usable(existing)
+    ):
         return CoverLetterResponse(
             content_id=existing.content_id,
             content_en=existing.content_en,
@@ -166,6 +170,13 @@ def _cover_letter_pair_has_content(pair: CoverLetterPair) -> bool:
 
 def _word_count(text: str) -> int:
     return len(text.strip().split()) if text.strip() else 0
+
+
+def _cached_cover_letter_is_usable(row: CoverLetter) -> bool:
+    return (
+        _word_count(row.content_id) >= _MIN_COVER_LETTER_WORDS
+        and _word_count(row.content_en) >= _MIN_COVER_LETTER_WORDS
+    )
 
 
 def _cover_letter_is_current(row: CoverLetter, job: JobListing) -> bool:
