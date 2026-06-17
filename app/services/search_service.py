@@ -179,6 +179,15 @@ async def _upsert_job(
         pd = None
 
     detail_json = j.detail.model_dump(mode="json") if j.detail else None
+    description_update = j.description or JobListing.description
+    requirements_update = j.requirements or JobListing.requirements
+    responsibilities_update = j.responsibilities or JobListing.responsibilities
+    mandatory_update = j.mandatory_requirements or JobListing.mandatory_requirements
+    nice_to_have_update = j.nice_to_have_requirements or JobListing.nice_to_have_requirements
+    skills_update = j.skills_tags or JobListing.skills_tags
+    benefits_update = j.benefits or JobListing.benefits
+    detail_update = detail_json if detail_json is not None else JobListing.detail_json
+    embedding_update = embedding if (j.description or detail_json) else JobListing.embedding
 
     stmt = (
         insert(JobListing)
@@ -210,15 +219,15 @@ async def _upsert_job(
             set_={
                 "title": j.title,
                 "company": j.company,
-                "description": j.description,
-                "requirements": j.requirements,
-                "responsibilities": j.responsibilities or None,
-                "mandatory_requirements": j.mandatory_requirements or None,
-                "nice_to_have_requirements": j.nice_to_have_requirements or None,
-                "skills_tags": j.skills_tags or None,
-                "benefits": j.benefits or None,
-                "detail_json": detail_json,
-                "embedding": embedding,
+                "description": description_update,
+                "requirements": requirements_update,
+                "responsibilities": responsibilities_update,
+                "mandatory_requirements": mandatory_update,
+                "nice_to_have_requirements": nice_to_have_update,
+                "skills_tags": skills_update,
+                "benefits": benefits_update,
+                "detail_json": detail_update,
+                "embedding": embedding_update,
             },
         )
         .returning(JobListing.id)

@@ -7,7 +7,7 @@ from app.ai.llm import get_llm
 from app.ai.matcher import cosine_score_pct, hybrid_score
 from app.models import JobListing, MatchResult
 from app.schemas import JobListingDTO
-from app.services import cv_service
+from app.services import cv_service, job_detail_service
 from app.services.search_service import _apply_jd_extraction, _job_dto_from_row
 
 
@@ -41,6 +41,8 @@ async def analyze_job(
     if cv is None:
         raise NoActiveCVError()
 
+    await job_detail_service.ensure_job_detail(session, job)
+
     existing = None
     if not force_refresh:
         existing = (
@@ -55,7 +57,7 @@ async def analyze_job(
                 .limit(1)
             )
         ).scalar_one_or_none()
-    if existing is not None:
+    if existing is not None and is_match_current(existing, job):
         return _job_with_match(job, existing)
 
     dto = _job_dto_from_row(job)
@@ -120,6 +122,17 @@ def _copy_structured_fields(job: JobListing, dto: JobListingDTO) -> None:
     job.nice_to_have_requirements = dto.nice_to_have_requirements or None
     job.skills_tags = dto.skills_tags or None
     job.benefits = dto.benefits or None
+
+
+def is_match_current(match: MatchResult, job: JobListing) -> bool:
+    if match.created_at is None or job.scraped_at is None:
+        return True
+    match_created = match.created_at
+    job_updated = job.scraped_at
+    try:
+        return match_created >= job_updated
+    except TypeError:
+        return match_created.replace(tzinfo=None) >= job_updated.replace(tzinfo=None)
 
 
 def _job_with_match(job: JobListing, match: MatchResult) -> JobListingDTO:

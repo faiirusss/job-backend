@@ -1,11 +1,11 @@
-from app.schemas import JobListingDTO
+from app.schemas import JobListingDTO, Portal
 from app.scrapers.orchestrator import dedupe_by_company_title
 
 
-def _job(jid: str, title: str, company: str) -> JobListingDTO:
+def _job(jid: str, title: str, company: str, portal: Portal = "glints") -> JobListingDTO:
     return JobListingDTO(
         id=jid,
-        portal="glints",
+        portal=portal,
         title=title,
         company=company,
         company_logo_bg="#000",
@@ -39,6 +39,18 @@ def test_dedupe_drops_same_company_title_case_insensitive():
     ids = [j.id for j in out]
     assert "1" in ids and "3" in ids
     assert "2" not in ids
+    assert len(out) == 2
+
+
+def test_dedupe_keeps_same_company_title_from_different_portals():
+    jobs = [
+        _job("glints-1", "Backend Engineer", "Tokopedia", "glints"),
+        _job("linkedin-1", "backend engineer", "TOKOPEDIA", "linkedin"),
+    ]
+
+    out = dedupe_by_company_title(jobs)
+
+    assert [j.portal for j in out] == ["glints", "linkedin"]
     assert len(out) == 2
 
 

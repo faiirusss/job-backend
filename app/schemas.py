@@ -1,11 +1,13 @@
 from datetime import datetime
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, computed_field
 
 Portal = Literal["linkedin", "jobstreet", "glints", "kalibrr"]
 WorkType = Literal["remote", "hybrid", "onsite"]
 Seniority = Literal["junior", "mid", "senior"]
+DetailStatus = Literal["detail_ready", "listing_only"]
+FitActionKind = Literal["load_detail_and_score", "score", "view_analysis"]
 
 
 class JobListingDTO(BaseModel):
@@ -42,6 +44,50 @@ class JobListingDTO(BaseModel):
     skills_tags: list[str] = Field(default_factory=list)
     benefits: list[str] = Field(default_factory=list)
     detail: "NormalizedJob | None" = None
+
+    @computed_field
+    @property
+    def detail_status(self) -> DetailStatus:
+        if self.portal == "linkedin" and not (self.description and self.detail):
+            return "listing_only"
+        return "detail_ready"
+
+    @computed_field
+    @property
+    def fit_action_kind(self) -> FitActionKind:
+        if self.match_score is not None:
+            return "view_analysis"
+        if self.detail_status == "listing_only":
+            return "load_detail_and_score"
+        return "score"
+
+    @computed_field
+    @property
+    def fit_action_label(self) -> str:
+        if self.fit_action_kind == "view_analysis":
+            return "Lihat Analisis"
+        if self.fit_action_kind == "load_detail_and_score":
+            return "Muat Detail & Cek Fit"
+        return "Cek Kecocokan"
+
+    @computed_field
+    @property
+    def fit_action_loading_label(self) -> str:
+        if self.fit_action_kind == "load_detail_and_score":
+            return "Mengambil detail..."
+        return "Menghitung fit..."
+
+    @computed_field
+    @property
+    def fit_action_hint(self) -> str:
+        if self.fit_action_kind == "view_analysis":
+            return "Lihat ringkasan kecocokan lowongan ini dengan CV Anda."
+        if self.fit_action_kind == "load_detail_and_score":
+            return (
+                "Mengambil detail lowongan jika belum lengkap, lalu menghitung "
+                "kecocokan dengan CV Anda."
+            )
+        return "Menghitung kecocokan lowongan ini dengan CV Anda."
 
 
 class NJSocial(BaseModel):

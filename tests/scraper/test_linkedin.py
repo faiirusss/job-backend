@@ -319,6 +319,56 @@ async def test_scrape_uses_voyager_when_session_present(monkeypatch):
     assert j.detail is not None and j.detail.company.name == "PT IKONSULTAN INOVATAMA"
 
 
+class _PagedVoyagerRequest:
+    def __init__(self):
+        self.starts: list[str] = []
+
+    async def get(self, url, headers=None):
+        if "/voyager/api/graphql" in url:
+            start = url.split("start:", 1)[1].split(")", 1)[0]
+            self.starts.append(start)
+            if start == "0":
+                return _FakeResponse(200, VOY_SEARCH)
+            if start == "25":
+                body = (
+                    VOY_SEARCH.replace("4277612327", "5277612327")
+                    .replace("4418621292", "5418621292")
+                    .replace("4332554777", "5332554777")
+                )
+                return _FakeResponse(200, body)
+            return _FakeResponse(200, '{"included":[]}')
+        if "/voyager/api/jobs/jobPostings/" in url:
+            return _FakeResponse(200, VOY_DETAIL)
+        return _FakeResponse(404, "")
+
+
+class _PagedVoyagerPage:
+    def __init__(self):
+        self.request = _PagedVoyagerRequest()
+
+
+@pytest.mark.asyncio
+async def test_voyager_scrape_paginates_search_results(monkeypatch):
+    from app.scrapers import linkedin as li
+
+    monkeypatch.setattr(li.linkedin_auth, "storage_state_path", lambda: "/tmp/s.json")
+    monkeypatch.setattr(li.lv, "voyager_headers", lambda _p: {"csrf-token": "x"})
+    monkeypatch.setattr("app.scrapers.linkedin.humanizer_delay", lambda _k: 0)
+
+    scraper = LinkedInScraper()
+    page = _PagedVoyagerPage()
+
+    async def on_event(ev):
+        pass
+
+    jobs = await scraper.scrape(
+        page, SearchParams(role_keywords=["software engineer"]), on_event
+    )
+
+    assert len(jobs) == 6
+    assert page.request.starts == ["0", "25", "50"]
+
+
 @pytest.mark.asyncio
 async def test_scrape_falls_back_to_guest_without_session(monkeypatch):
     from app.scrapers import linkedin as li

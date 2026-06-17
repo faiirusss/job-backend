@@ -32,6 +32,7 @@ _DETAIL_BACKOFF_BASE = 0.5  # seconds; exponential per attempt, plus jitter
 
 _LISTING_BASE = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
 _DETAIL_BASE = "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting"
+_VOYAGER_PAGE_SIZE = 25
 
 
 def _retry_after_seconds(headers: Any) -> float | None:
@@ -172,30 +173,57 @@ class LinkedInScraper(BaseScraper):
         headers = lv.voyager_headers(state)
         if not headers:
             return []
+        loop = asyncio.get_event_loop()
         keywords = " ".join(params.role_keywords) or "engineer"
         location = " ".join(params.location) or "Indonesia"
-        url = lv.voyager_search_url(keywords, location, start=0)
-        try:
-            resp = await page.request.get(url, headers=headers)
-            body = await resp.text()
-            if resp.status != 200:
-                logger.warning(f"linkedin: Voyager search HTTP {resp.status}")
-                return []
-            jobs = vn.parse_voyager_search(body)
-        except Exception as e:  # noqa: BLE001
-            logger.warning(f"linkedin: Voyager search failed: {e}")
-            return []
+        jobs: list[JobListingDTO] = []
+        seen: set[str] = set()
+
+        for page_idx in range(_MAX_PAGES):
+            if loop.time() >= deadline or len(jobs) >= _MAX_JOBS:
+                break
+            start = page_idx * _VOYAGER_PAGE_SIZE
+            url = lv.voyager_search_url(
+                keywords,
+                location,
+                start=start,
+                count=_VOYAGER_PAGE_SIZE,
+            )
+            try:
+                resp = await page.request.get(url, headers=headers)
+                body = await resp.text()
+                if resp.status != 200:
+                    logger.warning(f"linkedin: Voyager search start={start} HTTP {resp.status}")
+                    break
+                page_jobs = vn.parse_voyager_search(body)
+            except Exception as e:  # noqa: BLE001
+                logger.warning(f"linkedin: Voyager search start={start} failed: {e}")
+                break
+            if not page_jobs:
+                break
+
+            new_count = 0
+            for job in page_jobs:
+                if job.id in seen:
+                    continue
+                seen.add(job.id)
+                jobs.append(job)
+                new_count += 1
+                if len(jobs) >= _MAX_JOBS:
+                    break
+            await on_event(
+                {
+                    "type": "progress",
+                    "portal": self.portal,
+                    "scraped": len(jobs),
+                    "total": min(_MAX_JOBS, len(jobs) + 1),
+                }
+            )
+            if new_count == 0:
+                break
         if not jobs:
             return []
         jobs = jobs[:_MAX_JOBS]
-        await on_event(
-            {
-                "type": "progress",
-                "portal": self.portal,
-                "scraped": len(jobs),
-                "total": len(jobs),
-            }
-        )
         await self._enrich_voyager(page, jobs, headers, deadline)
         return jobs
 

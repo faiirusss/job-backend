@@ -1,6 +1,6 @@
-# JHAI Backend
+# Lamarin AI Backend
 
-**JHAI** ("Job Hunter AI") is an Indonesian-market job-search assistant. The user uploads a CV and
+**Lamarin AI** is an Indonesian-market job-search assistant. The user uploads a CV and
 types a natural-language query; the backend scrapes job portals (currently Glints + LinkedIn),
 structures each job description with an LLM, embeds and scores every job against the CV, and streams
 results live to the frontend over a WebSocket.

@@ -3,10 +3,9 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.api.deps import get_current_user, get_db
-from app.models import JobListing, MatchResult
-from app.models import UserAccount
+from app.models import JobListing, MatchResult, UserAccount
 from app.schemas import CoverLetterRequest, CoverLetterResponse, JobListingDTO, MatchScoreRequest
-from app.services import cover_letter_service, match_service
+from app.services import cover_letter_service, job_detail_service, match_service
 from app.services.cover_letter_service import JobNotFoundError, NoActiveCVError
 from app.services.match_service import (
     JobNotFoundError as MatchJobNotFoundError,
@@ -30,6 +29,7 @@ async def get_job(
         raise HTTPException(
             status_code=404, detail={"error": {"code": "NOT_FOUND", "message": "job not found"}}
         )
+    await job_detail_service.ensure_job_detail(session, job)
     match = (
         await session.execute(
             select(MatchResult)
@@ -39,7 +39,7 @@ async def get_job(
         )
     ).scalar_one_or_none()
     dto = _job_dto_from_row(job)
-    if match:
+    if match and match_service.is_match_current(match, job):
         dto = dto.model_copy(
             update={
                 "match_score": match.match_score,

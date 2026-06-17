@@ -106,3 +106,33 @@ def test_filters_explicit_work_type():
 
     assert [job.id for job in kept] == ["remote"]
     assert stats.dropped_work_type == 1
+
+
+def test_generic_role_terms_do_not_match_description_only_mentions():
+    jobs = [
+        _job(
+            "passing-mention",
+            title="People Operations Manager",
+            description="Collaborate with engineering teams on hiring plans.",
+        ),
+        _job("title-match", title="Software Engineer"),
+    ]
+    params = SearchParams(role_keywords=["engineer"])
+
+    kept, stats = filter_relevant_jobs(jobs, params)
+
+    assert [job.id for job in kept] == ["title-match"]
+    assert stats.dropped_role == 1
+
+
+def test_role_matching_uses_exact_tokens_not_substrings():
+    jobs = [
+        _job("java", title="Java Developer"),
+        _job("javascript", title="JavaScript Developer"),
+    ]
+    params = SearchParams(role_keywords=["java"])
+
+    kept, stats = filter_relevant_jobs(jobs, params)
+
+    assert [job.id for job in kept] == ["java"]
+    assert stats.dropped_role == 1

@@ -107,7 +107,7 @@ class QwenLLM:
                 "Content-Type": "application/json",
                 # OpenRouter courtesy attribution headers (optional, harmless).
                 "HTTP-Referer": "https://github.com/faiirusss/job-backend",
-                "X-Title": "JHAI",
+                "X-Title": "Lamarin AI",
             },
         )
 

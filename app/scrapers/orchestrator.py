@@ -23,13 +23,23 @@ def _norm(s: str) -> str:
 
 
 def dedupe_by_company_title(jobs: list[JobListingDTO]) -> list[JobListingDTO]:
-    seen: set[tuple[str, str]] = set()
+    seen_external: set[tuple[str, str]] = set()
+    seen_company_title: set[tuple[str, str, str]] = set()
     out: list[JobListingDTO] = []
     for j in jobs:
-        key = (_norm(j.company), _norm(j.title))
-        if key in seen:
+        external_key = (j.portal, _norm(j.id))
+        if external_key[1] and external_key in seen_external:
             continue
-        seen.add(key)
+        seen_external.add(external_key)
+
+        # Keep Glints and LinkedIn copies of the same advertised role. They often
+        # carry different URLs/detail payloads, and dropping one makes a two-portal
+        # search look artificially small. Within one portal, company+title is still
+        # a useful fallback for duplicate cards.
+        company_title_key = (j.portal, _norm(j.company), _norm(j.title))
+        if company_title_key in seen_company_title:
+            continue
+        seen_company_title.add(company_title_key)
         out.append(j)
     return out
 

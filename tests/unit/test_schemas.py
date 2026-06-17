@@ -32,6 +32,8 @@ def test_job_listing_dto_round_trip():
     dto = JobListingDTO.model_validate(raw)
     assert dto.id == "1"
     assert dto.match_score == 87
+    assert dto.fit_action_kind == "view_analysis"
+    assert dto.fit_action_label == "Lihat Analisis"
 
 
 def test_partial_result_event_shape():
@@ -63,6 +65,7 @@ def test_partial_result_event_shape():
     payload = ev.model_dump()
     assert payload["type"] == "partial_result"
     assert payload["job"]["match_score"] is None
+    assert payload["job"]["fit_action_label"] == "Cek Kecocokan"
 
 
 def test_job_listing_dto_new_metadata_fields_default_to_empty():
@@ -96,3 +99,73 @@ def test_job_listing_dto_new_metadata_fields_default_to_empty():
     assert job.nice_to_have_requirements == []
     assert job.skills_tags == []
     assert job.benefits == []
+
+
+def test_linkedin_listing_only_fit_action_copy():
+    job = JobListingDTO(
+        id="1",
+        portal="linkedin",
+        title="t",
+        company="c",
+        company_logo_bg="#000",
+        location="Jakarta",
+        work_type="remote",
+        seniority="mid",
+        salary_min=0,
+        salary_max=0,
+        posted_date="2026-01-01",
+        posted_label="now",
+        apply_url="https://example.com",
+        match_score=None,
+        cosine=0.0,
+        llm_score=0,
+        matched_skills=[],
+        missing_skills=[],
+        summary_id="",
+        summary_en="",
+        description="",
+        requirements="",
+    )
+
+    payload = job.model_dump()
+
+    assert payload["detail_status"] == "listing_only"
+    assert payload["fit_action_kind"] == "load_detail_and_score"
+    assert payload["fit_action_label"] == "Muat Detail & Cek Fit"
+    assert payload["fit_action_loading_label"] == "Mengambil detail..."
+    assert "Mengambil detail lowongan" in payload["fit_action_hint"]
+
+
+def test_detail_ready_unscored_fit_action_copy():
+    job = JobListingDTO(
+        id="1",
+        portal="linkedin",
+        title="t",
+        company="c",
+        company_logo_bg="#000",
+        location="Jakarta",
+        work_type="remote",
+        seniority="mid",
+        salary_min=0,
+        salary_max=0,
+        posted_date="2026-01-01",
+        posted_label="now",
+        apply_url="https://example.com",
+        match_score=None,
+        cosine=0.0,
+        llm_score=0,
+        matched_skills=[],
+        missing_skills=[],
+        summary_id="",
+        summary_en="",
+        description="Full JD",
+        requirements="",
+        detail={},
+    )
+
+    payload = job.model_dump()
+
+    assert payload["detail_status"] == "detail_ready"
+    assert payload["fit_action_kind"] == "score"
+    assert payload["fit_action_label"] == "Cek Kecocokan"
+    assert payload["fit_action_loading_label"] == "Menghitung fit..."
