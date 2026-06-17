@@ -77,6 +77,21 @@ def test_provider_cooldown_seconds_default_and_override(monkeypatch):
     assert Settings().llm_provider_cooldown_seconds == 60
 
 
+def test_cover_letter_qwen_model_resolves_from_base_url_and_override(monkeypatch):
+    monkeypatch.setenv("USE_FAKE_LLM", "true")
+    monkeypatch.setenv("QWEN_BASE_URL", "https://openrouter.ai/api/v1")
+    monkeypatch.setenv("COVER_LETTER_QWEN_MODEL", "")
+    assert Settings().resolved_cover_letter_qwen_model == "qwen/qwen3.6-flash"
+
+    monkeypatch.setenv(
+        "QWEN_BASE_URL", "https://example.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1"
+    )
+    assert Settings().resolved_cover_letter_qwen_model == "qwen3.6-flash"
+
+    monkeypatch.setenv("COVER_LETTER_QWEN_MODEL", "custom-cover-model")
+    assert Settings().resolved_cover_letter_qwen_model == "custom-cover-model"
+
+
 def test_qwen_fallback_requires_api_key(monkeypatch):
     monkeypatch.setenv("LLM_PROVIDER", "gemini")
     monkeypatch.setenv("GEMINI_API_KEY", "g-key")

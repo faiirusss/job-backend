@@ -92,15 +92,24 @@ Jobs:
 {jobs}
 """
 
-COVER_PROMPT = """You are a professional career writer. Generate two cover letters for the
-candidate (1) Bahasa Indonesia, formal, "Yth. ..." salutation (2) English, professional.
+COVER_PROMPT = """You are a professional career writer. Generate two complete cover letters for the
+candidate:
+(1) Bahasa Indonesia, formal, starts with "Yth. Tim HRD {company},"
+(2) English, professional, starts with "Dear Hiring Manager,"
+
+Rules:
 - 250-350 words each
 - Mention {company} explicitly
 - Highlight these specific skills: {skills}
 - Concrete experience, no generic platitudes
 - End with call-to-action
+- Do not return IDs, slugs, filenames, titles, metadata, markdown, or explanations
 
-Output JSON: {{ "content_id": "...", "content_en": "..." }}
+Output ONLY valid JSON:
+{{
+  "content_id": "FULL Bahasa Indonesia cover letter text here. The suffix _id means Indonesian content, NOT an identifier.",
+  "content_en": "FULL English cover letter text here."
+}}
 
 CV:
 {cv}

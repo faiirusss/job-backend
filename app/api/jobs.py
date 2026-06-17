@@ -6,7 +6,11 @@ from app.api.deps import get_current_user, get_db
 from app.models import JobListing, MatchResult, UserAccount
 from app.schemas import CoverLetterRequest, CoverLetterResponse, JobListingDTO, MatchScoreRequest
 from app.services import cover_letter_service, job_detail_service, match_service
-from app.services.cover_letter_service import JobNotFoundError, NoActiveCVError
+from app.services.cover_letter_service import (
+    CoverLetterGenerationError,
+    JobNotFoundError,
+    NoActiveCVError,
+)
 from app.services.match_service import (
     JobNotFoundError as MatchJobNotFoundError,
     NoActiveCVError as MatchNoActiveCVError,
@@ -94,4 +98,14 @@ async def cover_letter(
     except NoActiveCVError as e:
         raise HTTPException(
             status_code=409, detail={"error": {"code": "NO_CV", "message": "No active CV"}}
+        ) from e
+    except CoverLetterGenerationError as e:
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "error": {
+                    "code": "COVER_LETTER_FAILED",
+                    "message": "Cover letter belum bisa dibuat. Coba lagi sebentar lagi.",
+                }
+            },
         ) from e

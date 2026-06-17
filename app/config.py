@@ -45,6 +45,7 @@ class Settings(BaseSettings):
     qwen_model: str = "qwen/qwen3-next-80b-a3b-instruct:free"
     qwen_rpm_limit: int = 15
     qwen_base_url: str = "https://openrouter.ai/api/v1"
+    cover_letter_qwen_model: str = ""
     # Qwen3 "thinking" toggle (Alibaba Model Studio): False strips the
     # reasoning_content step, cutting completion tokens ~10x and latency. Leave
     # unset (None) for endpoints that don't accept the param, e.g. OpenRouter.
@@ -108,6 +109,15 @@ class Settings(BaseSettings):
             seen.add(provider)
             providers.append(provider)
         return providers
+
+    @property
+    def resolved_cover_letter_qwen_model(self) -> str:
+        model = self.cover_letter_qwen_model.strip()
+        if model:
+            return model
+        if "openrouter.ai" in self.qwen_base_url.lower():
+            return "qwen/qwen3.6-flash"
+        return "qwen3.6-flash"
 
     @model_validator(mode="after")
     def _check_llm_keys(self) -> "Settings":
